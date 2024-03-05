@@ -1,4 +1,4 @@
-
+  UserNationality.destroy_all
   Nationality.destroy_all
   User.destroy_all
   Restaurant.destroy_all
@@ -59,63 +59,70 @@
   )
 
 nationality1= Nationality.create!(
-  name: "Turkish"
-  # add nationality list
+  name: "Turkish",
 )
 
-Nationality.create!(
+nationality2= Nationality.create!(
   name: "Italian"
 )
 
 # Seed 3
-Nationality.create!(
+nationality3= Nationality.create!(
   name: "Indian"
 )
 
 # Seed 4
-Nationality.create!(
+nationality4= Nationality.create!(
   name: "Thai"
 )
 
 # Seed 5
-nationality5 = Nationality.create!(
-  name: "Syrian"
+nationality5= Nationality.create!(
+  name: "German"
 )
 
 # Seed 6
-Nationality.create!(
-  name: "Turkish"
+nationality6= Nationality.create!(
+  name: "American"
+
 )
 
-nationality_list1= UserNationality.create!(
+UserNationality.create!(
 user_id: user1.id,
-
+nationality_id: nationality2.id
 )
 
 # NationalitiesList 1
-nationality_list2= UserNationality.create!(
-  user_id: user2.id
+ UserNationality.create!(
+  user_id: user2.id,
+  nationality_id: nationality2.id
 )
 
+ UserNationality.create!(
+  user_id: user2.id,
+  nationality_id: nationality5.id
+)
 # NationalitiesList 2
-nationality_list3= UserNationality.create!(
-  user_id: user3.id
+UserNationality.create!(
+  user_id: user3.id,
+  nationality_id: nationality3.id,
 )
 
 # User 5 national
-nationality_list4= UserNationality.create!(
-  user_id: user5.id,
-  nationality_id: nationality1
+UserNationality.create!(
+  user_id: user4.id,
+  nationality_id: nationality4.id
 )
 
-nationality_list5= UserNationality.create!(
+user_nationality5= UserNationality.create!(
   user_id: user5.id,
-  nationality_id: nationality5
+  nationality_id: nationality5.id
 )
 
 # NationalitiesList 5
-nationality_list6= UserNationality.create!(
-  user_id: user6.id
+user_nationality6= UserNationality.create!(
+  user_id: user6.id,
+  nationality_id: nationality6.id
 )
 
 restaurant1= Restaurant.create!(

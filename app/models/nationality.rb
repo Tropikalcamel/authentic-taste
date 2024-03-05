@@ -1,3 +1,3 @@
 class Nationality < ApplicationRecord
-  belongs_to :user_nationalities, optional: true
+  has_many :user_nationalities
 end
