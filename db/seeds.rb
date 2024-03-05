@@ -136,10 +136,10 @@ restaurant1= Restaurant.create!(
 restaurant2= Restaurant.create!(
   name: "Flavors of Bangkok",
   address: "Kurfürstendamm 123, 10711 Berlin",
-  cuisine: "Asian",
+  cuisine: "Thai",
   phone: "030-9876543",
-  photo: "https://example.com/flavors_of_arabia.jpg",
-  description: "Authentic Middle Eastern flavors that transport you to the heart of Arabia.",
+  photo: "https://www.exberliner.com/wp-content/uploads/2022/07/279199115_1591934121207091_591962041408098858_n.jpg",
+  description: "Authentic Thai flavors that transport you to the heart of Bangkok.",
   take_away: true,
   price_catagory: "2",
   authentic_badge: true,
@@ -154,8 +154,8 @@ restaurant3 =Restaurant.create!(
   address: "Friedrichstraße 45, 10117 Berlin",
   cuisine: "Italian",
   phone: "030-3333333",
-  photo: "https://example.com/mediterranean_oasis.jpg",
-  description: "Escape to a Mediterranean paradise with our delightful dishes and serene ambiance.",
+  photo: "https://www.exberliner.com/wp-content/uploads/2022/10/New-Project-2022-06-13T163530.803.jpg",
+  description: "Escape to a pizza paradise with our delightful dishes and serene ambiance.",
   take_away: true,
   price_catagory: "3",
   authentic_badge: false,
@@ -170,7 +170,7 @@ restaurant4= Restaurant.create!(
   address: "Hauptstraße 76, 10317 Berlin",
   cuisine: "Indian",
   phone: "030-11112222",
-  photo: "https://example.com/spicy_haven.jpg",
+  photo: "https://www.exberliner.com/wp-content/uploads/2023/03/123164328_2713974175485422_6410358567733428040_n-1.jpg",
   description: "Embark on a spice-filled journey with our authentic Indian flavors and aromatic dishes.",
   take_away: true,
   price_catagory: "2",
@@ -187,7 +187,7 @@ restaurant5= Restaurant.create!(
   cuisine: "thai",
   phone: "030-55554444",
   photo: "https://example.com/urban_eats.jpg",
-  description: "A culinary adventure through global flavors, bringing the world to your plate.",
+  description: "A culinary adventure through Thai flavors, bringing the world to your plate.",
   take_away: true,
   price_catagory: "3",
   authentic_badge: false,
@@ -202,8 +202,8 @@ restaurant6= Restaurant.create!(
   address: "Alexanderplatz 2, 10178 Berlin",
   cuisine: "mexican",
   phone: "030-99998888",
-  photo: "https://example.com/sushi_delight.jpg",
-  description: "Experience the art of sushi-making with our fresh and exquisite Japanese creations.",
+  photo: "https://www.exberliner.com/wp-content/uploads/2023/09/Screenshot-2023-09-11-at-10-53-50-Taqueria-el-Oso-@taqueria_el_oso_berlin-%E2%80%A2-Instagram-photos-and-videos.png",
+  description: "Experience the art of taco with our fresh and exquisite Mexican creations.",
   take_away: true,
   price_catagory: "4",
   authentic_badge: true,
@@ -212,7 +212,7 @@ restaurant6= Restaurant.create!(
   dietary_requirements: "Pescatarian options"
 )
 
-review1 = Review.create!(
+review1= Review.create!(
   user_id: user1.id,
   restaurant_id: restaurant1.id,
   rating: "5",
@@ -221,6 +221,54 @@ review1 = Review.create!(
   photo: "https://imageproxy.wolt.com/venue/6049015c277cf0ebd69a61f7/cbc3ba12-077b-11ed-bc5c-722a4a08bf78_city_chicken_close_up_2.jpg",
 )
 
+review2= Review.create!(
+  user_id: user2.id,
+  restaurant_id: restaurant2.id,
+  rating: "4",
+  service: "4",
+  description: "Enjoyed the dining experience. The service was good, and the food was delicious!",
+
+)
+
+# Review 3
+review3= Review.create!(
+  user_id: user3.id,
+  restaurant_id: restaurant3.id,
+  rating: "3",
+  service: "3",
+  description: "Average experience. The ambiance could be improved, but the food was decent.",
+
+)
+
+# Review 4
+review4= Review.create!(
+  user_id: user4.id,
+  restaurant_id: restaurant4.id,
+  rating: "5",
+  service: "5",
+  description: "Exceptional! The staff went above and beyond, and the dishes were outstanding.",
+
+)
+
+# Review 5
+review5= Review.create!(
+  user_id: user5.id,
+  restaurant_id: restaurant5.id,
+  rating: "4",
+  service: "4",
+  description: "Great atmosphere and friendly staff. The menu has a good variety of options.",
+
+)
+
+# Review 6
+review6= Review.create!(
+  user_id: user1.id,
+  restaurant_id: restaurant1.id,
+  rating: "1",
+  service: "1",
+  description: "the worst place in town! such a crazy chicken!",
+  photo: "https://imageproxy.wolt.com/venue/6049015c277cf0ebd69a61f7/cbc3ba12-077b-11ed-bc5c-722a4a08bf78_city_chicken_close_up_2.jpg"
+)
 bookmark1= Bookmark.create!(
   user_id= user1.id,
   restaurant_id= restaurant1.id,
