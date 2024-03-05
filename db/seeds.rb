@@ -7,33 +7,6 @@ if:Rails.env.production
 
 end
 
-nationality1= Nationality.create!(
-  Nationality: "turkish"
-)
-
-Nationality.create!(
-  Nationality: "italian"
-)
-
-# Seed 3
-Nationality.create!(
-  Nationality: "Indian"
-)
-
-# Seed 4
-Nationality.create!(
-  Nationality: "thai"
-)
-
-# Seed 5
-Nationality.create!(
-  Nationality: "Syrian"
-)
-
-# Seed 6
-Nationality.create!(
-  Nationality: "Turkish"
-)
 user1= User.create!(
   email: "jhon@smith.com",
   password: "1234567",
@@ -115,6 +88,35 @@ nationality_list5= NationalitiesList.create!(
 # NationalitiesList 5
 nationality_list6= NationalitiesList.create!(
   user_id: user6.id
+)
+
+nationality1= Nationality.create!(
+  name: "Turkish"
+  # add nationality list
+)
+
+Nationality.create!(
+  name: "Italian"
+)
+
+# Seed 3
+Nationality.create!(
+  name: "Indian"
+)
+
+# Seed 4
+Nationality.create!(
+  name: "Thai"
+)
+
+# Seed 5
+Nationality.create!(
+  name: "Syrian"
+)
+
+# Seed 6
+Nationality.create!(
+  name: "Turkish"
 )
 
 restaurant1= Restaurant.create!(
