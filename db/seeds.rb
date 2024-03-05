@@ -4,6 +4,7 @@
   Restaurant.destroy_all
   Review.destroy_all
   Bookmark.destroy_all
+  Follower.destroy_all
 
   user1= User.create!(
     email: "jhon@smith.com",
@@ -317,4 +318,13 @@ Bookmark.create!(
 Bookmark.create!(
   user_id: user1.id,
   restaurant_id: restaurant6.id
+)
+
+follower01= Follower.create!(
+  user_id: user1.id,
+  taster_id: user2.id
+)
+follower02= Follower.create!(
+  user_id: user1.id,
+  taster_id: user5.id
 )

@@ -25,18 +25,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_04_162655) do
 
   create_table "followers", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "followers_list_id", null: false
+    t.integer "taster_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["followers_list_id"], name: "index_followers_on_followers_list_id"
     t.index ["user_id"], name: "index_followers_on_user_id"
-  end
-
-  create_table "followers_lists", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_followers_lists_on_user_id"
   end
 
   create_table "nationalities", force: :cascade do |t|
@@ -102,9 +94,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_04_162655) do
 
   add_foreign_key "bookmarks", "restaurants"
   add_foreign_key "bookmarks", "users"
-  add_foreign_key "followers", "followers_lists"
   add_foreign_key "followers", "users"
-  add_foreign_key "followers_lists", "users"
   add_foreign_key "reviews", "restaurants"
   add_foreign_key "reviews", "users"
   add_foreign_key "user_nationalities", "nationalities"
