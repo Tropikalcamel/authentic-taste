@@ -40,19 +40,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_04_162655) do
   end
 
   create_table "nationalities", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "nationalities_list_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["nationalities_list_id"], name: "index_nationalities_on_nationalities_list_id"
-    t.index ["user_id"], name: "index_nationalities_on_user_id"
-  end
-
-  create_table "nationalities_lists", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_nationalities_lists_on_user_id"
+    t.string "name"
+    t.string "#<ActiveRecord::ConnectionAdapters::PostgreSQL::TableDefinition"
   end
 
   create_table "restaurants", force: :cascade do |t|
@@ -85,6 +76,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_04_162655) do
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
+  create_table "user_nationalities", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "nationality_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["nationality_id"], name: "index_user_nationalities_on_nationality_id"
+    t.index ["user_id"], name: "index_user_nationalities_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -105,9 +105,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_04_162655) do
   add_foreign_key "followers", "followers_lists"
   add_foreign_key "followers", "users"
   add_foreign_key "followers_lists", "users"
-  add_foreign_key "nationalities", "nationalities_lists"
-  add_foreign_key "nationalities", "users"
-  add_foreign_key "nationalities_lists", "users"
   add_foreign_key "reviews", "restaurants"
   add_foreign_key "reviews", "users"
+  add_foreign_key "user_nationalities", "nationalities"
+  add_foreign_key "user_nationalities", "users"
 end

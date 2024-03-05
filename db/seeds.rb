@@ -1,94 +1,62 @@
-if:Rails.env.production
+
   Nationality.destroy_all
   User.destroy_all
   Restaurant.destroy_all
   Review.destroy_all
   Bookmark.destroy_all
 
-end
+  user1= User.create!(
+    email: "jhon@smith.com",
+    password: "1234567",
+    username: "Fouad Merkel",
+    photo: "https://image.hurimg.com/i/hurriyet/75/0x0/59c9c56b45d2a027e83e2b0b.jpg",
+    description: "originally from Morocco, loving food and travel , I am living in Berlin in the last 20 years and I am a foodie, check my reviews there are authentic "
 
-user1= User.create!(
-  email: "jhon@smith.com",
-  password: "1234567",
-  username: "Fouad Merkel",
-  photo: "https://image.hurimg.com/i/hurriyet/75/0x0/59c9c56b45d2a027e83e2b0b.jpg",
-  description: "originally from Morocco, loving food and travel , I am living in Berlin in the last 20 years and I am a foodie, check my reviews there are authentic "
+  )
+  # Seed 2
+  user2= User.create!(
+    email: "alice@example.com",
+    password: "password123",
+    username: "Alice Johnson",
+    photo: "https://example.com/alice.jpg",
+    description: "Hello, I'm Alice! I enjoy exploring new places and trying different cuisines. Currently based in London."
+  )
 
-)
-# Seed 2
-user2= User.create!(
-  email: "alice@example.com",
-  password: "password123",
-  username: "Alice Johnson",
-  photo: "https://example.com/alice.jpg",
-  description: "Hello, I'm Alice! I enjoy exploring new places and trying different cuisines. Currently based in London."
-)
+  # Seed 3
+  user3= User.create!(
+    email: "bob@example.com",
+    password: "bobpassword",
+    username: "Bob Smith",
+    photo: "https://example.com/bob.jpg",
+    description: "Hey there! I'm Bob, a nature enthusiast and aspiring photographer. Living in Vancouver, Canada."
+  )
 
-# Seed 3
-user3= User.create!(
-  email: "bob@example.com",
-  password: "bobpassword",
-  username: "Bob Smith",
-  photo: "https://example.com/bob.jpg",
-  description: "Hey there! I'm Bob, a nature enthusiast and aspiring photographer. Living in Vancouver, Canada."
-)
+  # Seed 4
+  user4= User.create!(
+    email: "emma@example.com",
+    password: "emma1234",
+    username: "Emma Davis",
+    photo: "https://example.com/emma.jpg",
+    description: "Hi, I'm Emma. I have a passion for art and design. Currently calling Paris my home."
+  )
 
-# Seed 4
-user4= User.create!(
-  email: "emma@example.com",
-  password: "emma1234",
-  username: "Emma Davis",
-  photo: "https://example.com/emma.jpg",
-  description: "Hi, I'm Emma. I have a passion for art and design. Currently calling Paris my home."
-)
+  # Seed 5
+  user5= User.create!(
+    email: "david@example.com",
+    password: "davidpass",
+    username: "David Miller",
+    photo: "https://example.com/david.jpg",
+    description: "Greetings! I'm David, a tech enthusiast and avid reader. Residing in San Francisco, USA."
+  )
 
-# Seed 5
-user5= User.create!(
-  email: "david@example.com",
-  password: "davidpass",
-  username: "David Miller",
-  photo: "https://example.com/david.jpg",
-  description: "Greetings! I'm David, a tech enthusiast and avid reader. Residing in San Francisco, USA."
-)
-
-# Seed 6
-user6= User.create!(
-  email: "lily@example.com",
-  password: "lilypassword",
-  username: "Lily Brown",
-  photo: "https://example.com/lily.jpg",
-  description: "Hello from Lily! I love music and outdoor activities. Currently enjoying life in Sydney, Australia."
-)
-
-nationality_list1= Nationalities_list.create!(
-user_id: user1.id,
-
-)
-
-# NationalitiesList 1
-nationality_list2= NationalitiesList.create!(
-  user_id: user2.id
-)
-
-# NationalitiesList 2
-nationality_list3= NationalitiesList.create!(
-  user_id: user3.id
-)
-
-# NationalitiesList 3
-nationality_list4= NationalitiesList.create!(
-  user_id: user4.id
-)
-
-# NationalitiesList 4
-nationality_list5= NationalitiesList.create!(
-  user_id: user5.id
-)
-
-# NationalitiesList 5
-nationality_list6= NationalitiesList.create!(
-  user_id: user6.id
-)
+  # Seed 6
+  user6= User.create!(
+    email: "lily@example.com",
+    password: "lilypassword",
+    username: "Lily Brown",
+    photo: "https://example.com/lily.jpg",
+    description: "Hello from Lily! I love music and outdoor activities. Currently enjoying life in Sydney, Australia."
+  )
 
 nationality1= Nationality.create!(
   name: "Turkish"
@@ -110,13 +78,44 @@ Nationality.create!(
 )
 
 # Seed 5
-Nationality.create!(
+nationality5 = Nationality.create!(
   name: "Syrian"
 )
 
 # Seed 6
 Nationality.create!(
   name: "Turkish"
+)
+
+nationality_list1= UserNationality.create!(
+user_id: user1.id,
+
+)
+
+# NationalitiesList 1
+nationality_list2= UserNationality.create!(
+  user_id: user2.id
+)
+
+# NationalitiesList 2
+nationality_list3= UserNationality.create!(
+  user_id: user3.id
+)
+
+# User 5 national
+nationality_list4= UserNationality.create!(
+  user_id: user5.id,
+  nationality_id: nationality1
+)
+
+nationality_list5= UserNationality.create!(
+  user_id: user5.id,
+  nationality_id: nationality5
+)
+
+# NationalitiesList 5
+nationality_list6= UserNationality.create!(
+  user_id: user6.id
 )
 
 restaurant1= Restaurant.create!(
@@ -272,43 +271,43 @@ review6= Review.create!(
   photo: "https://imageproxy.wolt.com/venue/6049015c277cf0ebd69a61f7/cbc3ba12-077b-11ed-bc5c-722a4a08bf78_city_chicken_close_up_2.jpg"
 )
 bookmark1= Bookmark.create!(
-  user_id= user1.id,
-  restaurant_id= restaurant1.id,
+  user_id: user1.id,
+  restaurant_id: restaurant1.id,
 )
 
 
 # Bookmark 1
 Bookmark.create!(
-  user_id: 1,
+  user_id: user1.id,
   restaurant_id: restaurant1.id
 )
 
 # Bookmark 2
 Bookmark.create!(
-  user_id: 2,
+  user_id: user1.id,
   restaurant_id: restaurant2.id
 )
 
 # Bookmark 3
 Bookmark.create!(
-  user_id: 3,
+  user_id: user1.id,
   restaurant_id: restaurant3.id
 )
 
 # Bookmark 4
 Bookmark.create!(
-  user_id: 4,
+  user_id: user1.id,
   restaurant_id: restaurant4.id
 )
 
 # Bookmark 5
 Bookmark.create!(
-  user_id: 5,
+  user_id: user1.id,
   restaurant_id: restaurant5.id
 )
 
 # Bookmark 6
 Bookmark.create!(
-  user_id: 6,
+  user_id: user1.id,
   restaurant_id: restaurant6.id
 )
