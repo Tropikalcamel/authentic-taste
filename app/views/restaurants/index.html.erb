@@ -1,0 +1,5 @@
+<h1>restaurants</h1>
+ <% @top_restaurants.each do |restaurant| %>
+
+<p><%= restaurant.name %> <%= (restaurant.reviews.pluck(:rating).sum / restaurant.reviews.count.to_f).round(1) %></p>
+ <% end %>

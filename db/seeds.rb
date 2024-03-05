@@ -248,7 +248,14 @@ review3= Review.create!(
   description: "Average experience. The ambiance could be improved, but the food was decent.",
 
 )
+review7= Review.create!(
+  user_id: user4.id,
+  restaurant_id: restaurant3.id,
+  rating: "5",
+  service: "2",
+  description: "enjoied the food not the service.",
 
+)
 # Review 4
 review4= Review.create!(
   user_id: user4.id,
