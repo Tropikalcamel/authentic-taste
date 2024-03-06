@@ -7,23 +7,30 @@ class RestaurantsController < ApplicationController
     #calculates average of all restaurants
     average = (Review.pluck(:rating).sum / Review.count.to_f).round(1)
 
-         # calculates and selects restaurants that are above average
+    # calculates and selects restaurants that are above average
     @restaurants.each do |restaurant|
       review_sum = 0
       restaurant.reviews.each do |review|
         review_sum += review.rating
       end
+
       if (review_sum/restaurant.reviews.length.to_f).round(1) > average
         @top_restaurants << restaurant
       end
-# top users
+
+      # top users
       top_users = User.joins(:reviews)
                 .group(:id)
                 .order('COUNT(reviews.id) DESC')
                 .limit(5)
-      raise
-    end
+
+      # reviews of the week
+      week_reviews = Review.joins(user: :followers)
+                  .where(followers: { taster_id: 49} ).order(created_at: :desc)
+                  .limit(3)
+    raise
   end
+end
 
 # # top tasters method
 #   @reviews = Review.all

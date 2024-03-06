@@ -1,3 +1,5 @@
+require 'faker'
+
   UserNationality.destroy_all
   Nationality.destroy_all
   User.destroy_all
@@ -221,6 +223,22 @@ restaurant6= Restaurant.create!(
   dietary_requirements: "Pescatarian options"
 )
 
+users = User.limit(6)
+restaurants = Restaurant.limit(6)
+
+30.times do
+  user = users.sample
+  restaurant = restaurants.sample
+
+  Review.create!(
+    user_id: user.id,
+    restaurant_id: restaurant.id,
+    rating: rand(0..5),
+    service: rand(0..5),
+    description: Faker::Lorem.sentence
+  )
+end
+
 review1= Review.create!(
   user_id: user1.id,
   restaurant_id: restaurant1.id,
@@ -229,6 +247,8 @@ review1= Review.create!(
   description: "the greatest place in town! such a crazy chicken!",
   photo: "https://imageproxy.wolt.com/venue/6049015c277cf0ebd69a61f7/cbc3ba12-077b-11ed-bc5c-722a4a08bf78_city_chicken_close_up_2.jpg",
 )
+# Assuming you have 6 users and 6 restaurants already created
+
 
 review2= Review.create!(
   user_id: user2.id,
@@ -335,3 +355,16 @@ follower02= Follower.create!(
   user_id: user1.id,
   taster_id: user5.id
 )
+
+
+# Assuming you have users in your database
+user_ids = User.pluck(:id)
+
+# Create multiple followers with Faker
+30.times do
+  Follower.create!(
+    user_id: user_ids.sample,
+    taster_id: user_ids.sample,
+    created_at: Faker::Time.between(from: 1.year.ago, to: Time.current)
+  )
+end
