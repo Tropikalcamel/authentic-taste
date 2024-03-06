@@ -25,59 +25,11 @@ class RestaurantsController < ApplicationController
                 .limit(5)
 
       # reviews of the week
-      week_reviews = Review.joins(user: :followers)
+      followersgit _reviews = Review.joins(user: :followers)
                   .where(followers: { taster_id: 49} ).order(created_at: :desc)
                   .limit(3)
-    raise
-  end
+    end
 end
-
-# # top tasters method
-#   @reviews = Review.all
-#   @top_tasters = []
-
-
-#   @review.each do |review|
-#     review_sum = 0
-#     review.user.each do |review|
-#     review_sum  += review.user
-#     end
-#     if (review_sum/user.reviews.length)
-#         @top_tasters << review
-#     end
-# # top tasters method 2
-#   @users = User.all
-#   @top_tasters = []
-
-#   @user.each do |user|
-#     review_sum = 0
-#     user.review.each do |review|
-#       review_sum += user.review.count
-#     end
-#     if (review_sum user.reviews.length)
-#       @top_tasters << user
-
-#     end
-#   end
-
-
-
-#     end
-#   end
-
-
-  #   @reviews = Review.all
-  #   @top_tasters = []
-  #       @review.user each do |review|
-  #         review_sum = 0
-  #       end
-  #  end
-
-  #  end
-  #   @top_tasters << tasters
-  # end
-  #  end
-  #   end
 
   def show
     @restaurant = Restaurant.find(params[:id])
