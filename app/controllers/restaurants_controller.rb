@@ -1,4 +1,5 @@
 class RestaurantsController < ApplicationController
+
   def index
     #top restaurants
     @restaurants = Restaurant.all
@@ -25,9 +26,14 @@ class RestaurantsController < ApplicationController
                 .limit(5)
 
       # reviews of the week
-      followersgit _reviews = Review.joins(user: :followers)
+      followers_reviews = Review.joins(user: :followers)
                   .where(followers: { taster_id: 49} ).order(created_at: :desc)
                   .limit(3)
+# search method
+                  @restaurants = Restaurant.all
+  if params[:query].present?
+    @restaurants = @restaurants.where("neighborhood ILIKE ?", "%#{params[:query]}%")
+
     end
 end
 
@@ -35,4 +41,7 @@ end
     @restaurant = Restaurant.find(params[:id])
   end
 
+
+
+end
 end
