@@ -316,6 +316,20 @@ review6= Review.create!(
   description: "the worst place in town! such a crazy chicken!",
   photo: "https://imageproxy.wolt.com/venue/6049015c277cf0ebd69a61f7/cbc3ba12-077b-11ed-bc5c-722a4a08bf78_city_chicken_close_up_2.jpg"
 )
+
+
+
+30.times do
+  user = users.sample
+  restaurant = restaurants.sample
+
+  Bookmark.create!(
+    user_id: user.id,
+    restaurant_id: restaurant.id,
+    )
+end
+
+
 bookmark1= Bookmark.create!(
   user_id: user1.id,
   restaurant_id: restaurant1.id,

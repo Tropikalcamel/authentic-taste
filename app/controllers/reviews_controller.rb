@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
 
-  before_action :set_restaurant, only: %i[ new create authentic_badge_card]
+  before_action :set_restaurant, only: %i[ new create ]
 
   def show
     @review = Review.all
@@ -43,12 +43,6 @@ class ReviewsController < ApplicationController
     redirect_to restaurant_path, status: :see_other
   end
 
-
-
-
-  # def calculate_percentage(value, percentage)
-  #   (value * percentage) / 100.0
-  # end
   private
 
   def reviews_params
@@ -58,6 +52,5 @@ class ReviewsController < ApplicationController
   def set_restaurant
     @restaurant = Restaurant.find(params[:restaurant_id])
   end
-
 
 end
