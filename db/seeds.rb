@@ -131,7 +131,7 @@ user_nationality6= UserNationality.create!(
 restaurant1= Restaurant.create!(
   name: "City Chicken",
   address:"Sonnenallee 59, 12045 Berlin",
-  cuisine: "turkish",
+  cuisine: "Turkish",
   phone: "030-6248600",
   photo: "https://lh3.googleusercontent.com/p/AF1QipO5ocbjjwmv1W9aKz4Fj2aETBHNQ6UeQeG5LCGh=s1360-w1360-h1020-rw",
   description: "Best chicken",
@@ -195,7 +195,7 @@ restaurant4= Restaurant.create!(
 restaurant5= Restaurant.create!(
   name: "Thai Mai",
   address: "Warschauer Straße 15, 10245 Berlin",
-  cuisine: "thai",
+  cuisine: "Thai",
   phone: "030-55554444",
   photo: "https://example.com/urban_eats.jpg",
   description: "A culinary adventure through Thai flavors, bringing the world to your plate.",
@@ -211,7 +211,7 @@ restaurant5= Restaurant.create!(
 restaurant6= Restaurant.create!(
   name: "Taco Delight",
   address: "Alexanderplatz 2, 10178 Berlin",
-  cuisine: "mexican",
+  cuisine: "Mexican",
   phone: "030-99998888",
   photo: "https://www.exberliner.com/wp-content/uploads/2023/09/Screenshot-2023-09-11-at-10-53-50-Taqueria-el-Oso-@taqueria_el_oso_berlin-%E2%80%A2-Instagram-photos-and-videos.png",
   description: "Experience the art of taco with our fresh and exquisite Mexican creations.",
@@ -223,14 +223,21 @@ restaurant6= Restaurant.create!(
   dietary_requirements: "Pescatarian options"
 )
 
-users = User.limit(6)
-restaurants = Restaurant.limit(6)
+users = User.all
+restaurants = Restaurant.all
 
 
 30.times do
   user = users.sample
   restaurant = restaurants.sample
-  weight = restaurant.cuisine == user.nationalities ? 2 : 1
+  weight= 1
+  user.nationalities.each do |nationality|
+    if nationality.name == restaurant.cuisine
+      weight= 2
+      break
+    end
+  end
+
 
   Review.create!(
     user_id: user.id,
@@ -276,6 +283,7 @@ review7= Review.create!(
   restaurant_id: restaurant3.id,
   rating: "5",
   service: "5",
+  weight: 2,
   description: "authenthic! the food and the service.",
 
 )

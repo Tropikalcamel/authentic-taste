@@ -59,11 +59,5 @@ class ReviewsController < ApplicationController
     @restaurant = Restaurant.find(params[:restaurant_id])
   end
 
-  def authentic_rate
-    @review = Review.find(params[:id])
-    if @restaurant.cuisine == @user.nationality
-      @review.weight *= 2
-      sum =(weight)/ 100
-    end
-  end
+
 end

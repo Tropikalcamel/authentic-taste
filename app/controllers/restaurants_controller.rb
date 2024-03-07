@@ -33,11 +33,15 @@ class RestaurantsController < ApplicationController
                   @restaurants = Restaurant.all
   if params[:query].present?
     @restaurants = @restaurants.where("neighborhood ILIKE ?", "%#{params[:query]}%")
-
+# follow method
+  @user = User.find(params [:id])
+  
     end
 end
 
   def show
+    # calculting the rating of authenthic user as two reviews,
+    # and the result is a persantge
     @restaurant = Restaurant.find(params[:id])
     @restaurant.reviews.each do |review|
       review_sum += review.rating * review.weight
@@ -45,19 +49,26 @@ end
     total_weight = @restaurant.reviews.sum(:weight)
     @average_rating = (review_sum / total_weight.to_f).round(1)
   end
-end
 
-def review_scale
-  @restaurant = Restaurant.find(params[:id])
-  @sorted_reviews = @restaurant.reviews.order(rating: :desc)
+
+  def review_scale
+    # the rating scale in an decnding order
+    @restaurant = Restaurant.find(params[:id])
+    @sorted_reviews = @restaurant.reviews.order(rating: :desc)
+    end
+
   end
 
-end
-
-def authentic_badge
-  @restaurant = Restaurant.find(params[:id])
+  def authentic_badge
+    # determines if the restaurant has a authentic badge
+    @restaurant = Restaurant.find(params[:id])
     @authentic_badge = @restaurant.authentic_badge? ? "authentic_badge" : "no_badge"
 
-end
+  end
+
 
 end
+
+# user.nationalities.each do |nationality|
+#   if nationality.name == restaurant.cuisine
+#     weight= 2
