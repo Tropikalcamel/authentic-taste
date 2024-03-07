@@ -226,15 +226,18 @@ restaurant6= Restaurant.create!(
 users = User.limit(6)
 restaurants = Restaurant.limit(6)
 
+
 30.times do
   user = users.sample
   restaurant = restaurants.sample
+  weight = restaurant.cuisine == user.nationalities ? 2 : 1
 
   Review.create!(
     user_id: user.id,
     restaurant_id: restaurant.id,
     rating: rand(0..5),
     service: rand(0..5),
+    weight: weight,
     description: Faker::Lorem.sentence
   )
 end
