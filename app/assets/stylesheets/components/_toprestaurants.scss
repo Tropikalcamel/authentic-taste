@@ -1,0 +1,140 @@
+.flex-wrap {
+    display: flex;
+    margin-top: 25px;
+    margin-bottom: 50px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.zoom-effect {
+  transition: transform 0.3s ease;
+}
+
+.zoom-effect:hover {
+  transform: scale(1.09);
+  cursor: pointer;
+}
+
+.Popular-restaurant-info {
+  width: 242.09px;
+    height: 375px;
+    background: #ffffffb5;
+    border: 0.5px solid #efefef;
+    box-shadow: 9px 28px 26px -37px rgba(0, 0, 0, 0.25);
+    border-radius: 26px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 12px;
+    margin: 0 0px;
+}
+
+.Popular-restaurant-img-link {
+    width: 216px;
+      height: 174px;
+      -o-object-fit: cover;
+      object-fit: cover;
+      border-radius: 14px;
+}
+
+.Popular-restaurant-title a {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 21px;
+  color: #525252;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.Popular-restaurant-rating-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Popular-rateScorVar {
+  margin-left: 5px;
+  color: #ff7f00;
+  font-size: 12.5px;
+}
+
+.Popular-rating-score {
+  object-fit: none;
+  object-position: left;
+  height: 13.12px;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+}
+
+.Popular-restaurant-OpenNow {
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  color: #828282;
+  font-size: 12px;
+}
+
+.Popular-restaurant-OpenNow p {
+  margin: 0;
+}
+.restaurant-category-tag {
+  padding: 14px;
+  width: 75px;
+  height: 15px;
+  background: #fb000054;
+  border-radius: 12px;
+  display: flex;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  line-height: 12px;
+  color: #ffffff;
+}
+.Popular-restaurant-description p {
+  width: 192px;
+  height: 71px;
+  color: rgb(189, 189, 189);
+  font-style: normal;
+  font-weight: normal;
+  max-height: 65px;
+  font-size: 13px;
+  margin: 0px;
+  overflow: hidden;
+}
+
+.Popular-restaurant-rating-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Popular-restaurant-rating-scoreVar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.Popular-restaurant-rating {
+  width: 74.04px;
+  position: relative;
+  height: 13.12px;
+  background-size: cover;
+  background-image: url(/app/assets/images/ratingbackground.svg);
+  margin: 6px 0px 8px;
+  background-position: center center;
+  padding: 0px;
+}
+.Popular-restaurant-text-info {
+display: flex;
+  flex-direction: column;
+  width: 192px;
+  justify-content: space-evenly;
+  height: 100%;
+}
+
+.section-header{
+  color: #333;
+}

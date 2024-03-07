@@ -1,0 +1,635 @@
+
+.rightCol {
+  width: 60%;
+  margin-top: 20px;
+}
+
+.restaurantTitle h2 {
+  font-size: 24px;
+  color: #000;
+}
+
+.restaurant-rating {
+width: 74.04px;
+  margin: 6px 0px 8px 0;
+  position: relative;
+  height: 13.12px;
+  background-size: cover;
+  background-position: center;
+  background-image: url(/app/assets/images/ratingbackground.svg);
+  padding: 0;
+}
+
+
+.restaurant-Rate-Price-OpenNow {
+    display: flex;
+      width: 305px;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 33px;
+}
+
+.restaurant-rating-scoreVar {
+  display: flex;
+  align-items: center;
+}
+
+.restaurant-rating-scoreVar .restaurant-rating {
+    width: 74.04px;
+      margin: 6px 0px 8px 0;
+      position: relative;
+      height: 13.12px;
+      background-size: cover;
+      background-position: center;
+      background-image: url(/app/assets/images/ratingbackground.svg);
+      padding: 0;
+}
+
+.Popular-rating-score.rating-score {
+  width: 92%;
+  height: auto;
+}
+
+.rateScorVar {
+  margin-left: 5px;
+  color: #ff7f00;
+}
+
+.restaurant-Price {
+  color: #ff7f00;
+  font-size: 20px;
+}
+
+.restaurant-OpenNow {
+  display: flex;
+  align-items: center;
+  color: #828282;
+  font-size: 14px;
+}
+
+.restaurant-OpenNow p {
+  margin: 0 5px;
+}
+
+.restaurant-Cuisine-DietaryRestriction-Delivery {
+      display: flex;
+        width: 346px;
+        justify-content: space-between;
+}
+
+.CuisineContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 77px;
+}
+
+.categoryDivider {
+  background-color: #0000001a;
+  height: 50px;
+  width: 1px;
+}
+.CuisineImg img {
+  width: 57px;
+  height: 74px;
+}
+
+.CuisineTitle p {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.restaurantDescription {
+  font-size: 16px;
+  margin-top: 10px;
+  color: #6D6D6D;
+}
+
+.restaurant-Address,
+.restaurant-tel,
+.restaurant-OpningTime {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.Img-Icon {
+  margin-right: 10px;
+  width: 20px;
+}
+
+.textInfo {
+  font-size: 14px;
+}
+
+.booking {
+  height: fit-content;
+  margin-top: 20px;
+  border-radius: 9px;
+  border: solid 1px gainsboro;
+  width: 40%;
+  background-color: #f8f9fa;
+  box-shadow: 0px 0px 10px #1212120f;
+  padding: 13px;
+}
+
+.restaurant-cover-img{
+  border-style: none;
+    width: 100%;
+    height: 271px;
+    object-fit: cover;
+  }
+
+
+  .rating-card{
+
+
+  }
+
+
+
+  // badge card
+
+    .BadgeRatingCard {
+      width: 100%;
+      height: 100%;
+      padding-left: 64.67px;
+      padding-right: 64.67px;
+      padding-top: 60.30px;
+      padding-bottom: 60.30px;
+      background: #FCFCFC;
+      box-shadow: -2px 1px 85.80000305175781px rgba(0, 0, 0, 0.14);
+      border-radius: 27.09px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 55.06px;
+      display: inline-flex;
+    }
+
+    .BadgeRating {
+      justify-content: center;
+      align-items: center;
+      gap: 53.31px;
+      display: inline-flex;
+    }
+
+    .BadgeText {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 19.23px;
+      display: inline-flex;
+    }
+
+    .Badge {
+      height: 115.12px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+    }
+
+    .BadgePersentage {
+      height: 77.12px;
+      padding-left: 0.93px;
+      padding-right: 0.93px;
+      padding-top: 2.80px;
+      padding-bottom: 2.80px;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 3.43px;
+      display: inline-flex;
+    }
+
+    .AuthenticTaste {
+      text-align: center;
+    }
+
+    .Seperator {
+      width: 77.78px;
+      height: 0px;
+      border: 0.87px #C2C1C1 solid;
+    }
+
+    .OfItalianRateThisRestaurantAsAuthenticTaste {
+      width: 229.86px;
+      text-align: center;
+    }
+
+    .RatingDiv {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 36.71px;
+      display: inline-flex;
+    }
+
+    .RatingScore {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 8.74px;
+      display: flex;
+    }
+
+    .RatingScoreBar {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 13.11px;
+      display: flex;
+    }
+
+    .RatingBar {
+      justify-content: flex-start;
+      align-items: center;
+      gap: 5.24px;
+      display: inline-flex;
+    }
+
+    .TastersUsers {
+      width: 383.27px;
+      height: 117.03px;
+      position: relative;
+    }
+
+    .TopAuthenticTasters {
+      left: 0px;
+      top: 0px;
+      position: absolute;
+    }
+
+    .UsersImg {
+      width: 383.27px;
+      height: 75.95px;
+      left: -0px;
+      top: 41.08px;
+      position: absolute;
+      justify-content: flex-start;
+      align-items: center;
+      display: inline-flex;
+    }
+
+    .MoreUser {
+      width: 74.29px;
+      height: 74.29px;
+      position: relative;
+    }
+
+    .UserImg {
+      width: 74.29px;
+      height: 74.29px;
+      left: 0px;
+      top: 0px;
+      position: absolute;
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.58) 0%, rgba(0, 0, 0, 0.58) 100%);
+      border-radius: 43.70px;
+    }
+
+    .15 {
+      left: 17.56px;
+      top: 23.64px;
+      position: absolute;
+      color: white;
+      font-size: 22.37px;
+      font-family: Roboto;
+      font-weight: 600;
+      word-wrap: break-word;
+    }
+
+
+
+
+
+    // AI figma
+
+
+.badge-rating-card {
+display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 37.27px;
+  padding: 40.82px 43.78px;
+  position: relative;
+  background-color: #fcfcfc;
+  border: 0px none;
+  margin-top: -74px;
+  border-radius: 15px;
+}
+
+.badge-rating-card .badge-rating {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 36.09px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.badge-rating-card .badge-text {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 13.01px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.badge-rating-card .badge {
+  display: flex;
+  flex-direction: column;
+  width: 151.82px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.badge-rating-card .badge-persentage {
+  display: inline-flex;
+  height: 52.2px;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 2.32px;
+  padding: 1.89px 0.63px;
+  position: relative;
+}
+
+.badge-rating-card .badge-left-wing {
+  position: relative;
+  width: 23.2px;
+  height: 37.12px;
+}
+
+.badge-rating-card .element {
+  position: relative;
+  width: fit-content;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #b1471c;
+  font-size: 29.9px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.badge-rating-card .text-wrapper {
+  font-weight: 600;
+      margin-right: -8px;
+}
+
+.badge-rating-card .span {
+  font-weight: 200;
+  font-size: 14.6px;
+}
+
+.badge-rating-card .authentic-taste {
+  position: relative;
+  width: fit-content;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #b1471c;
+  font-size: 22px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.badge-rating-card .text-wrapper-2 {
+  font-weight: 700;
+}
+
+.badge-rating-card .text-wrapper-3 {
+  font-weight: 200;
+}
+
+.badge-rating-card .seperator {
+  position: relative;
+  width: 52.65px;
+  height: 1px;
+}
+
+.badge-rating-card .element-of-italian-rate {
+  position: relative;
+  width: 155.58px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #773216;
+  font-size: 15.1px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  margin: 0;
+}
+
+.badge-rating-card .text-wrapper-4 {
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #773216;
+  font-size: 15.1px;
+  letter-spacing: 0;
+}
+
+.badge-rating-card .text-wrapper-5 {
+  font-weight: 500;
+}
+
+.badge-rating-card .img {
+  position: relative;
+  width: 1.78px;
+  height: 218.88px;
+}
+
+.badge-rating-card .rating-div {
+  flex-direction: column;
+  justify-content: center;
+  gap: 72.85px;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.badge-rating-card .rating-score {
+  flex-direction: column;
+  gap: 5.92px;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.badge-rating-card .div {
+  position: relative;
+  width: fit-content;
+  margin-top: -0.59px;
+  font-weight: 400;
+  color: #000000;
+  font-size: 32.6px;
+  font-family: "Roboto", Helvetica;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.badge-rating-card .vector {
+  position: relative;
+  width: 76.63px;
+  height: 12.33px;
+}
+
+.badge-rating-card .element-reviews {
+  position: relative;
+  width: fit-content;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #818181;
+  font-size: 8.9px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.badge-rating-card .rating-score-bar {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8.87px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.badge-rating-card .rating-bar {
+  gap: 3.55px;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.badge-rating-card .text-wrapper-6 {
+  position: relative;
+  width: fit-content;
+  margin-top: -0.59px;
+  font-weight: 400;
+  color: #686868;
+  font-size: 14.6px;
+  font-family: "Roboto", Helvetica;
+  letter-spacing: 0;
+  line-height: normal;
+
+  white-space: nowrap;
+}
+
+.badge-rating-card .group {
+  position: relative;
+  width: 158.54px;
+  height: 10.06px;
+  background-color: #d9d9d9;
+  border-radius: 13.01px;
+}
+
+.badge-rating-card .rating-bar-green {
+  width: 92px;
+  height: 10px;
+  background-color: #ff7f00;
+  border-radius: 13.01px;
+}
+
+.badge-rating-card .tasters-users {
+  position: relative;
+  width: 261.42px;
+  height: 79.21px;
+}
+
+.badge-rating-card .top-authentic {
+  position: absolute;
+  height: 18px;
+  top: 0;
+  left: 0;
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 15.1px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.badge-rating-card .text-wrapper-7 {
+  font-family: "Roboto", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 15.1px;
+  letter-spacing: 0;
+}
+
+.badge-rating-card .users-img {
+  display: inline-flex;
+  align-items: center;
+  position: absolute;
+  top: 28px;
+  left: 0;
+}
+
+.badge-rating-card .img-2 {
+  position: relative;
+  width: 50.87px;
+  height: 50.87px;
+  border-radius: 59.16px;
+  border: 0.59px solid;
+  border-color: #ffffff;
+  background-image: url(https://c.animaapp.com/GgaLeXbT/img/img1@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.badge-rating-card .img-3 {
+  position: relative;
+  width: 50.36px;
+  height: 50.36px;
+  margin-left: -8.8px;
+}
+
+.badge-rating-card .img-4 {
+  position: relative;
+  width: 50.28px;
+  height: 50.28px;
+  margin-left: -8.8px;
+  object-fit: cover;
+}
+
+.badge-rating-card .more-user {
+  position: relative;
+  width: 52.28px;
+  height: 50.28px;
+  margin-right: -2px;
+  margin-left: -8.8px;
+}
+
+.badge-rating-card .overlap-group {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  background-image: url(https://c.animaapp.com/GgaLeXbT/img/user-img@2x.png);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.badge-rating-card .text-wrapper-8 {
+  position: absolute;
+  height: 18px;
+  top: 16px;
+  left: 12px;
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 15.1px;
+  font-family: "Roboto", Helvetica;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
