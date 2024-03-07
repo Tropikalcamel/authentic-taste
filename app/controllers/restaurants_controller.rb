@@ -39,6 +39,17 @@ end
 
   def show
     @restaurant = Restaurant.find(params[:id])
+    @restaurant.reviews.each do |review|
+      review_sum += review.rating.weight
+    end
+      @average_rating= (review_sum/@restaurant.reviews.pluck( :weight).sum).round(1)
   end
 end
+
+def authentic_badge
+  @restaurant = Restaurant.find(params[:id])
+    @authentic_badge = @restaurant.authentic_badge? ? "authentic_badge" : "no_badge"
+raise
+end
+
 end

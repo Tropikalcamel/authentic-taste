@@ -1,14 +1,14 @@
 class ReviewsController < ApplicationController
 
-    before_action :set_restaurant, only: %i[ new create]
+  before_action :set_restaurant, only: %i[ new create authentic_badge_card]
 
-    def show
-      @review = Review.all
-    end
+  def show
+    @review = Review.all
+  end
 
-    def new
-      @review = Review.new
-    end
+  def new
+    @review = Review.new
+  end
 
   def create
     @review = Review.new(review_params)
@@ -22,12 +22,12 @@ class ReviewsController < ApplicationController
     end
   end
 
-    def edit
-      @review = Review.find(params[:id])
-    end
-
-    def update
+  def edit
     @review = Review.find(params[:id])
+  end
+
+  def update
+  @review = Review.find(params[:id])
     if @review.update(review_params)
       # Handle successful update
       redirect_to restaurant_path, notice: 'Review was successfully updated.'
@@ -35,22 +35,35 @@ class ReviewsController < ApplicationController
       # Handle validation errors or other errors
       render :edit
     end
-    end
+  end
 
-    def destroy
-      @review = Review.find(params[:id])
-      @review.destroy
-      redirect_to restaurant_path, status: :see_other
-    end
+  def destroy
+    @review = Review.find(params[:id])
+    @review.destroy
+    redirect_to restaurant_path, status: :see_other
+  end
 
 
+
+
+  # def calculate_percentage(value, percentage)
+  #   (value * percentage) / 100.0
+  # end
   private
 
   def reviews_params
     params.require(:review).permit(:description, :rating, :service)
   end
 
-    def set_restaurant
-      @restaurant = Restaurant.find(params[:restaurant_id])
+  def set_restaurant
+    @restaurant = Restaurant.find(params[:restaurant_id])
+  end
+
+  def authentic_rate
+    @review = Review.find(params[:id])
+    if @restaurant.cuisine == @user.nationality
+      @review.weight *= 2
+      sum =(weight)/ 100
     end
   end
+end
