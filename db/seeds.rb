@@ -272,11 +272,11 @@ review3= Review.create!(
 
 )
 review7= Review.create!(
-  user_id: user4.id,
+  user_id: user2.id,
   restaurant_id: restaurant3.id,
   rating: "5",
-  service: "2",
-  description: "enjoied the food not the service.",
+  service: "5",
+  description: "authenthic! the food and the service.",
 
 )
 # Review 4
