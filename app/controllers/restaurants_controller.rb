@@ -35,7 +35,11 @@ class RestaurantsController < ApplicationController
     @restaurants = @restaurants.where("neighborhood ILIKE ?", "%#{params[:query]}%")
   # follow method
     @user = User.find(params [:id])
-
+    @boomarks = Bookmark.new
+        @bookmark.user = @bookmark
+        if @bookmark.save
+      redirect_to profile_path
+      end
   end
 end
 
