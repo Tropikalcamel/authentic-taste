@@ -1,4 +1,5 @@
 require 'faker'
+Faker::Config.locale = :en
 
   UserNationality.destroy_all
   Nationality.destroy_all
@@ -245,7 +246,7 @@ restaurants = Restaurant.all
     rating: rand(0..5),
     service: rand(0..5),
     weight: weight,
-    description: Faker::Lorem.sentence
+    description: Faker::Lorem.paragraph
   )
 end
 
