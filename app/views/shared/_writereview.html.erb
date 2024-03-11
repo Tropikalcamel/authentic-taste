@@ -1,0 +1,57 @@
+<div class="review-container ReviewRestaurantContainer">
+
+  <form id="review-form">
+    <div class="form-group-review">
+     <textarea id="review-content" name="review-content" rows="4" cols="50" placeholder="Write your review here..." required></textarea>
+    </div>
+    <div class="reviewBtnBlex">
+    <div class="form-group flex-review">
+      <label class="label-margin" for="star-rating">Overall rating:</label>
+      <div class="star-rating" id="star-rating">
+        <input type="hidden" name="rating" id="rating-value" value="0" />
+        <span class="star" data-value="1">&#9733;</span>
+        <span class="star" data-value="2">&#9733;</span>
+        <span class="star" data-value="3">&#9733;</span>
+        <span class="star" data-value="4">&#9733;</span>
+        <span class="star" data-value="5">&#9733;</span>
+      </div>
+    </div>
+    <button type="submit" class="submit-btn">Submit Review</button>
+
+    </div>
+  </form>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const stars = document.querySelectorAll(".star");
+
+  stars.forEach(star => {
+    star.addEventListener("mouseenter", function() {
+      const value = this.getAttribute("data-value");
+      highlightStars(value);
+    });
+
+    star.addEventListener("mouseleave", function() {
+      const ratingValue = document.getElementById("rating-value").value;
+      highlightStars(ratingValue);
+    });
+
+    star.addEventListener("click", function() {
+      const value = this.getAttribute("data-value");
+      document.getElementById("rating-value").value = value;
+    });
+  });
+
+  function highlightStars(value) {
+    stars.forEach(star => {
+      if (star.getAttribute("data-value") <= value) {
+        star.classList.add("active");
+      } else {
+        star.classList.remove("active");
+      }
+    });
+  }
+});
+
+</script>

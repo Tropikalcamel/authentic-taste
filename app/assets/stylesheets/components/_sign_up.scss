@@ -1,0 +1,93 @@
+.container_signup {
+  display: flex;
+  flex-shrink: 0;
+  border-radius: 40px;
+  background: #D9D9D9;
+  box-shadow: 8px 8px 4px 0px rgba(0, 0, 0, 0.07);
+  backdrop-filter: blur(10px);
+  margin: 50px;
+}
+
+.greenfood {
+  display: flex;
+  height: 800px;
+}
+
+.food-image {
+  border-radius: 40px 0 0 40px;
+}
+
+.sign-up-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.sign-up-form {
+  width: 100%;
+  margin: 70px;
+  }
+
+.create-account-button{
+  width: 338.301px;
+  height: 49.211px;
+  flex-shrink: 0;
+  border-radius: 40px;
+  background: #F9ED32;
+  font-size: 26px;
+  margin: 30px;
+    }
+
+  .already-account{
+    font-size: 15px;
+    color: black;
+    }
+
+// .left, .right {
+//   width: 50%;
+// }
+
+// .left {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   width: 739px;
+//   height: 882px;
+//   flex-shrink: 0;
+//   border-radius: 40px;
+//   background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+// }
+
+// .right {
+//   display: flex;
+//   flex-direction: column;
+//   padding: 20px;
+//   width: 1546px;
+//   height: 883px;
+//   flex-shrink: 0;
+//   border-radius: 40px;
+//   background: #D9D9D9;
+//   box-shadow: 8px 8px 4px 0px rgba(0, 0, 0, 0.07);
+//   backdrop-filter: blur(10px);
+// }
+
+// .right input {
+//   margin-bottom: 10px;
+//   width: 597.002px;
+//   height: 53.312px;
+//   flex-shrink: 0;
+//   border-radius: 40px;
+//   background: #FFF;
+// }
+
+// .right button {
+//   margin-top: 10px;
+//   width: 213.926px;
+//   height: 31.987px;
+//   flex-shrink: 0;
+//   color: #000;
+//   font-family: Poppins;
+//   font-size: 26px;
+//   font-style: normal;
+//   font-weight: 500;
+//   line-height: normal;
+// }
