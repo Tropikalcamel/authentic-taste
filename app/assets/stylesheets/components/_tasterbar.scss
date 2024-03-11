@@ -1,0 +1,64 @@
+.profile {
+    display: flex;
+    /* align-items: center; */
+    width: 32%;
+    justify-content: center;
+
+    /* flex-direction: row;
+
+}
+
+.profile-img {
+  margin-right: 20px;
+  /* Adjust as needed */
+}
+
+.profile-img img {
+  width: 100px;
+  /* Adjust as needed */
+  height: 100px;
+  /* Adjust as needed */
+  border-radius: 50%;
+  /* Makes the image round */
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 12px;
+  color: #333;
+}
+
+.taster-name {
+  font-size: 1.2rem;
+  /* Adjust as needed */
+  font-weight: bold;
+}
+
+.taster-about {
+  font-size: 1rem;
+  /* Adjust as needed */
+  color: #555;
+  /* Adjust the color as needed */
+}
+
+.taster-btn {
+  margin-top: 10px;
+  /* Adjust as needed */
+}
+
+.v57_400 {
+    padding: 8px 16px;
+      background-color: #afa011;
+      color: #fff;
+      border: none;
+      border-radius: 15px;
+      border-radius: 20px;
+      cursor: pointer;
+}
+
+/* Hover effect for the button */
+.v57_400:hover {
+  background-color: #24b300;
+  /* Adjust the hover background color as needed */
+}
