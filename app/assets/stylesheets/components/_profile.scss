@@ -1,0 +1,102 @@
+// .avatar-container {
+//   width: 286px;
+//   height: 292.427px;
+//   flex-shrink: 0;
+//   border-radius: 292.427px;
+//   border: 9px solid #3AAFD4;
+//   background: url(/home/marcus/code/marcusxmeier/authentic-taste/app/assets/images/widget.png), lightgray 50% / cover no-repeat;
+//   margin-left: 70px;
+//   margin-top: 70px;
+// }
+
+.big-container {
+  display: flex;
+  height: 100vh;
+  padding: 40px;
+}
+
+.left-container {
+  border: 2px solid red;
+  width: 400px;
+  height: 580px;
+  flex-shrink: 0;
+  fill: #F7F7F7;
+  filter: drop-shadow(-4px 10px 13.8px rgba(0, 0, 0, 0.08));
+}
+
+.right-container {
+  border: 2px solid blue;
+  width: 65%;
+  padding: 40px;
+}
+
+.top-right-container{
+  height: 50%;
+  border: 2px solid purple;
+}
+
+.bottom-right-container {
+  display: flex;
+  height: 50%;
+  border: 2px solid yellow;
+}
+
+.bottom-right-subcontainer-1 {
+  border: 2px solid green;
+  height: 100%;
+  width: 50%;
+  padding: 20px;
+}
+
+.bottom-right-subcontainer-2{
+  border: 2px solid pink;
+  height: 100%;
+  width: 50%;
+  padding: 20px;
+}
+
+// .container1 {
+//   width: 400px;
+//   height: 580px;
+//   flex-shrink: 0;
+//   fill: #F7F7F7;
+//   filter: drop-shadow(-4px 10px 13.8px rgba(0, 0, 0, 0.08));
+// }
+
+// .container2 {
+//   width: 1029px;
+//   height: 396px;
+//   flex-shrink: 0;
+//   border-radius: 25px;
+//   background: #F7F7F7;
+// }
+
+// .container3 {
+//   display: flex;
+//   width: 497px;
+//   height: 656px;
+//   padding: 24px 27px 24px 24px;
+//   flex-direction: column;
+//   align-items: flex-start;
+//   gap: 24px;
+//   flex-shrink: 0;
+//   border-radius: 24px;
+//   background: rgba(248, 244, 244, 0.60);
+//   /* Glass Card */
+//   backdrop-filter: blur(21px);
+// }
+
+// .container4 {
+//   display: flex;
+//   width: 497px;
+//   height: 656px;
+//   padding: 24px 27px 24px 24px;
+//   flex-direction: column;
+//   align-items: flex-start;
+//   gap: 24px;
+//   flex-shrink: 0;
+//   border-radius: 24px;
+//   background: rgba(248, 244, 244, 0.60);
+//   /* Glass Card */
+//   backdrop-filter: blur(21px);
+// }
