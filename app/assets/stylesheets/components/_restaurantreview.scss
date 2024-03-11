@@ -1,16 +1,16 @@
 /* ReviewContainer */
-.ReviewContainer {
-    // margin: 20px;
-    padding: 11px 10px;
-    width: min-content;
-    border-radius: 36px;
-    width: -moz-min-content;
-    width: min-content;
-    background: #F8F4F4;
-    // opacity: 0.6;
+.ReviewRestaurantContainer {
+  // margin: 20px;
+  width: 100%;
+  padding: 21px 16px;
+
+      margin: 19px 0px;
+  border-radius: 22px;
+  background-color: #F8F4F4;
 }
-.profile-user{
-      margin-left: 15px;
+
+.profile-user {
+  margin-left: 15px;
 }
 
 /* ProfileImgBtn */
@@ -110,8 +110,8 @@
 }
 
 /* Frame13 */
-.ReviewImgWrap img{
-      width: 121px;
+.ReviewImgWrap img {
+  width: 121px;
 }
 
 /* Italian */
@@ -178,22 +178,33 @@
   width: 24px;
 }
 
-.profile-user-img{
+.profile-user-img {
+
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.restaurant-info-reviews {
+  width: 400px;
+  height: 171px;
+  background: #FFFFFF;
+  border: 0.5px solid #EFEFEF;
+  box-shadow: 9px 28px 26px -37px rgba(0, 0, 0, 0.25);
+  border-radius: 26px;
+  display: flex;
+  align-items: center;
+
+  padding: 9px;
+}
+
+.reviewBtnFollow{
 
       display: flex;
+        justify-content: space-between;
+        width: 100%;
         align-content: center;
         align-items: center;
-        justify-content: flex-start;
-}
-.restaurant-info-reviews{
-    width: 400px;
-      height: 171px;
-      background: #FFFFFF;
-      border: 0.5px solid #EFEFEF;
-      box-shadow: 9px 28px 26px -37px rgba(0, 0, 0, 0.25);
-      border-radius: 26px;
-      display: flex;
-      align-items: center;
-
-      padding: 9px;
+        padding-right: 28px;
 }

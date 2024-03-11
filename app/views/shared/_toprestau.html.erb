@@ -1,13 +1,16 @@
-<section>
 <div class="container">
 
-<h3 class="section-header">Top <strong>restaurant</strong> </h3>
-<div class="flex-wrap">
-
-<div class="carousel-container">
-  <div class="carousel">
-
-  <div class=" zoom-effect restaurant-card">
+<div class="header-nav">
+  <h3 class="section-header">Top <strong>restaurant</strong></h3>
+  <div class="btn">
+      <button class="prev" onclick="moveCarousel(-1)">❮</button>
+      <button class="next" onclick="moveCarousel(1)">❯</button></div>
+  </div>
+  <div class="flex-wrap">
+    <div class="carousel-container">
+      <div class="carousel">
+        <!-- Your restaurant cards here -->
+          <div class=" zoom-effect restaurant-card">
     <div class="Popular-restaurant-info">
       <div class="Popular-restaurant-img">
             <a href="#">
@@ -422,119 +425,67 @@
 
   </div>
 
-
-   <div class=" zoom-effect restaurant-card">
-    <div class="Popular-restaurant-info">
-      <div class="Popular-restaurant-img">
-            <a href="#">
-            <img class=" Popular-restaurant-img-link " src="https://imageproxy.wolt.com/venue/6049015c277cf0ebd69a61f7/cbc3ba12-077b-11ed-bc5c-722a4a08bf78_city_chicken_close_up_2.jpg" alt=" "></a>
-        </div>
-
-
-
-        <div class=" Popular-restaurant-text-info ">
-            <div class="Popular-restaurant-text-Title-favoriteIcon ">
-              <h3 class=" Popular-restaurant-title ">
-              <a href="#">blabla restaurant</a>
-              </h3>
-            </div>
-
-            <div class=" Popular-restaurant-description ">
-                <p>We are committed to using the finest ingredients in our recipes. No food leaves our kitchen that we ourselves would not eat.
-                </p>
-            </div>
-
-            <div class="restaurant-category-tag ">Italian</div>
-
-            <div class=" Popular-restaurant-rating-scoreVar ">
-                <div class="Popular-restaurant-rating-wrapper">
-                <div class="Popular-restaurant-rating" style="background-image: url(<%= asset_path('ratingbackground.svg') %>) ">
-                  <img class="Popular-rating-score" src="<%= asset_path('ratingscore.svg') %>" width="100%"   alt=" ">
-                </div>
-                <div class=" Popular-rateScorVar ">5.0</div>
-                </div>
-                <div class=" Popular-restaurant-OpenNow ">
-                    <p>Open now</p>
-                    <img src="<%= asset_path('Open-now-Icon.svg') %>" alt=" ">
-                </div>
-            </div>
-
-            <div class=" Popular-restaurant-tel-cuisine-openNow ">
-
-
-            </div>
-        </div>
-
+      </div>
     </div>
 
   </div>
-
-
-   <div class=" zoom-effect restaurant-card">
-    <div class="Popular-restaurant-info">
-      <div class="Popular-restaurant-img">
-            <a href="#">
-            <img class=" Popular-restaurant-img-link " src="https://imageproxy.wolt.com/venue/6049015c277cf0ebd69a61f7/cbc3ba12-077b-11ed-bc5c-722a4a08bf78_city_chicken_close_up_2.jpg" alt=" "></a>
-        </div>
-
-
-
-        <div class=" Popular-restaurant-text-info ">
-            <div class="Popular-restaurant-text-Title-favoriteIcon ">
-              <h3 class=" Popular-restaurant-title ">
-              <a href="#">blabla restaurant</a>
-              </h3>
-            </div>
-
-            <div class=" Popular-restaurant-description ">
-                <p>We are committed to using the finest ingredients in our recipes. No food leaves our kitchen that we ourselves would not eat.
-                </p>
-            </div>
-
-            <div class="restaurant-category-tag ">Italian</div>
-
-            <div class=" Popular-restaurant-rating-scoreVar ">
-                <div class="Popular-restaurant-rating-wrapper">
-                <div class="Popular-restaurant-rating" style="background-image: url(<%= asset_path('ratingbackground.svg') %>) ">
-                  <img class="Popular-rating-score" src="<%= asset_path('ratingscore.svg') %>" width="100%"   alt=" ">
-                </div>
-                <div class=" Popular-rateScorVar ">5.0</div>
-                </div>
-                <div class=" Popular-restaurant-OpenNow ">
-                    <p>Open now</p>
-                    <img src="<%= asset_path('Open-now-Icon.svg') %>" alt=" ">
-                </div>
-            </div>
-
-            <div class=" Popular-restaurant-tel-cuisine-openNow ">
-
-
-            </div>
-        </div>
-
-    </div>
-
-  </div>
-
-
-
-    <!-- Repeat the above div for each restaurant card -->
-  </div>
-  <button class="prev" onclick="moveCarousel(-1)">&#10094;</button>
-  <button class="next" onclick="moveCarousel(1)">&#10095;</button>
 </div>
 
-</div>
-</div>
-</section>
+
+<style>
+.container {
+  position: relative;
+}
+
+.section-header {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.flex-wrap {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.carousel-container {
+  overflow: hidden;
+  flex: 1;
+}
+
+.carousel {
+  display: flex;
+}
+
+.restaurant-card {
+  flex: 0 0 auto;
+  margin-right: 10px;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1;
+}
+
+</style>
+
+
 <script>
 let currentIndex = 0;
-const carousel = document.querySelector('.carousel');
 
 function moveCarousel(direction) {
-  const cardWidth = carousel.offsetWidth / 5; // Display 5 cards at a time
-  const numCards = carousel.querySelectorAll('.restaurant-card').length;
-  const maxIndex = Math.ceil(numCards / 5) - 1;
+  const carousel = document.querySelector('.carousel');
+  const cardWidth = carousel.offsetWidth / 5; // Change 5 to the number of cards you want to display
+  const numCards = carousel.children.length;
+  const maxIndex = Math.ceil(numCards / 5) - 1; // Change 5 to the number of cards you want to display
 
   currentIndex += direction;
   if (currentIndex < 0) {
@@ -543,7 +494,8 @@ function moveCarousel(direction) {
     currentIndex = 0;
   }
 
-  const offset = -currentIndex * cardWidth * 5;
+  const offset = -currentIndex * cardWidth * 5; // Change 5 to the number of cards you want to display
   carousel.style.transform = `translateX(${offset}px)`;
 }
+
 </script>

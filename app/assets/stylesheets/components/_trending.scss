@@ -24,9 +24,9 @@
 .restaurant-info {
   width: 421px;
     height: 171px;
-    background: #FFFFFF;
+        background: #F8F4F4;
     border: 0.5px solid #EFEFEF;
-    box-shadow: 9px 28px 26px -37px rgba(0, 0, 0, 0.25);
+    // box-shadow: 9px 28px 26px -37px rgba(0, 0, 0, 0.25);
     border-radius: 26px;
     display: flex;
     align-items: center;
@@ -64,7 +64,7 @@
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
-  font-size: 17px;
+  font-size: 0.9em;
   display: flex;
   align-items: center;
   margin-bottom: 12px;
@@ -158,7 +158,7 @@
 }
 
 .restaurant-category-tag {
-    padding: 8px;
+        padding: 13px 36px;
       width: 66px;
       height: 15px;
       background: #DBDBDB;

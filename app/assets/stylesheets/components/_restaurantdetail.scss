@@ -140,163 +140,155 @@ width: 74.04px;
     object-fit: cover;
   }
 
-
-  .rating-card{
-
-
-  }
-
-
-
   // badge card
 
-    .BadgeRatingCard {
-      width: 100%;
-      height: 100%;
-      padding-left: 64.67px;
-      padding-right: 64.67px;
-      padding-top: 60.30px;
-      padding-bottom: 60.30px;
-      background: #FCFCFC;
-      box-shadow: -2px 1px 85.80000305175781px rgba(0, 0, 0, 0.14);
-      border-radius: 27.09px;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 55.06px;
-      display: inline-flex;
-    }
+.BadgeRatingCard {
+  width: 100%;
+  height: 100%;
+  padding-left: 64.67px;
+  padding-right: 64.67px;
+  padding-top: 60.30px;
+  padding-bottom: 60.30px;
+  background: #FCFCFC;
+  box-shadow: -2px 1px 85.80000305175781px rgba(0, 0, 0, 0.14);
+  border-radius: 27.09px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 55.06px;
+  display: inline-flex;
+}
 
-    .BadgeRating {
-      justify-content: center;
-      align-items: center;
-      gap: 53.31px;
-      display: inline-flex;
-    }
+.BadgeRating {
+  justify-content: center;
+  align-items: center;
+  gap: 53.31px;
+  display: inline-flex;
+}
 
-    .BadgeText {
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      gap: 19.23px;
-      display: inline-flex;
-    }
+.BadgeText {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 19.23px;
+  display: inline-flex;
+}
 
-    .Badge {
-      height: 115.12px;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      display: flex;
-    }
+.Badge {
+  height: 115.12px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
 
-    .BadgePersentage {
-      height: 77.12px;
-      padding-left: 0.93px;
-      padding-right: 0.93px;
-      padding-top: 2.80px;
-      padding-bottom: 2.80px;
-      justify-content: center;
-      align-items: flex-end;
-      gap: 3.43px;
-      display: inline-flex;
-    }
+.BadgePersentage {
+  height: 77.12px;
+  padding-left: 0.93px;
+  padding-right: 0.93px;
+  padding-top: 2.80px;
+  padding-bottom: 2.80px;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 3.43px;
+  display: inline-flex;
+}
 
-    .AuthenticTaste {
-      text-align: center;
-    }
+.AuthenticTaste {
+  text-align: center;
+}
 
-    .Seperator {
-      width: 77.78px;
-      height: 0px;
-      border: 0.87px #C2C1C1 solid;
-    }
+.Seperator {
+  width: 77.78px;
+  height: 0px;
+  border: 0.87px #C2C1C1 solid;
+}
 
-    .OfItalianRateThisRestaurantAsAuthenticTaste {
-      width: 229.86px;
-      text-align: center;
-    }
+.OfItalianRateThisRestaurantAsAuthenticTaste {
+  width: 229.86px;
+  text-align: center;
+}
 
-    .RatingDiv {
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 36.71px;
-      display: inline-flex;
-    }
+.RatingDiv {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 36.71px;
+  display: inline-flex;
+}
 
-    .RatingScore {
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      gap: 8.74px;
-      display: flex;
-    }
+.RatingScore {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8.74px;
+  display: flex;
+}
 
-    .RatingScoreBar {
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: flex-start;
-      gap: 13.11px;
-      display: flex;
-    }
+.RatingScoreBar {
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 13.11px;
+  display: flex;
+}
 
-    .RatingBar {
-      justify-content: flex-start;
-      align-items: center;
-      gap: 5.24px;
-      display: inline-flex;
-    }
+.RatingBar {
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5.24px;
+  display: inline-flex;
+}
 
-    .TastersUsers {
-      width: 383.27px;
-      height: 117.03px;
-      position: relative;
-    }
+.TastersUsers {
+  width: 383.27px;
+  height: 117.03px;
+  position: relative;
+}
 
-    .TopAuthenticTasters {
-      left: 0px;
-      top: 0px;
-      position: absolute;
-    }
+.TopAuthenticTasters {
+  left: 0px;
+  top: 0px;
+  position: absolute;
+}
 
-    .UsersImg {
-      width: 383.27px;
-      height: 75.95px;
-      left: -0px;
-      top: 41.08px;
-      position: absolute;
-      justify-content: flex-start;
-      align-items: center;
-      display: inline-flex;
-    }
+.UsersImg {
+  width: 383.27px;
+  height: 75.95px;
+  left: -0px;
+  top: 41.08px;
+  position: absolute;
+  justify-content: flex-start;
+  align-items: center;
+  display: inline-flex;
+}
 
-    .MoreUser {
-      width: 74.29px;
-      height: 74.29px;
-      position: relative;
-    }
+.MoreUser {
+  width: 74.29px;
+  height: 74.29px;
+  position: relative;
+}
 
-    .UserImg {
-      width: 74.29px;
-      height: 74.29px;
-      left: 0px;
-      top: 0px;
-      position: absolute;
-      background: linear-gradient(0deg, rgba(0, 0, 0, 0.58) 0%, rgba(0, 0, 0, 0.58) 100%);
-      border-radius: 43.70px;
-    }
+.UserImg {
+  width: 74.29px;
+  height: 74.29px;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.58) 0%, rgba(0, 0, 0, 0.58) 100%);
+  border-radius: 43.70px;
+}
 
-    .15 {
-      left: 17.56px;
-      top: 23.64px;
-      position: absolute;
-      color: white;
-      font-size: 22.37px;
-      font-family: Roboto;
-      font-weight: 600;
-      word-wrap: break-word;
-    }
+.15 {
+  left: 17.56px;
+  top: 23.64px;
+  position: absolute;
+  color: white;
+  font-size: 22.37px;
+  font-family: Roboto;
+  font-weight: 600;
+  word-wrap: break-word;
+}
 
 
 
@@ -632,4 +624,43 @@ display: inline-flex;
   letter-spacing: 0;
   line-height: normal;
   white-space: nowrap;
+}
+
+
+// for the restaurant tabs
+.tab {
+  overflow: hidden;
+  border-bottom: 1px solid #ccc;
+}
+
+.tab button {
+  background-color: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+.tab button.active {
+  border-bottom: 2px solid blue;
+  /* Change border-bottom color for active tab */
+}
+
+.tabcontent {
+  display: none;
+  padding: 20px 0;
+}
+
+/* end of css tabs */
+.flex-review{
+  display: flex;
+  align-items: center;
+}
+
+
+.badge-rating-card{
+  box-shadow: -2px 1px 85.8px 0px rgba(0, 0, 0, 0.14);
+  position: sticky;
+  top: 33px;
 }

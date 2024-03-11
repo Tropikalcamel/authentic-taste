@@ -18,9 +18,9 @@
 .Popular-restaurant-info {
   width: 242.09px;
     height: 375px;
-    background: #ffffffb5;
+        background: #F8F4F4;
     border: 0.5px solid #efefef;
-    box-shadow: 9px 28px 26px -37px rgba(0, 0, 0, 0.25);
+    // box-shadow: 9px 28px 26px -37px rgba(0, 0, 0, 0.25);
     border-radius: 26px;
     display: flex;
     align-items: center;
@@ -80,7 +80,7 @@
   margin: 0;
 }
 .restaurant-category-tag {
-  padding: 14px;
+      padding: 13px 36px;
   width: 75px;
   height: 15px;
   background: #fb000054;
@@ -137,4 +137,47 @@ display: flex;
 
 .section-header{
   color: #333;
+}
+
+
+// cards carousel
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease;
+  /* Add a transition for smooth movement */
+}
+
+.restaurant-card {
+  flex: 0 0 calc(20% - 20px);
+  /* Adjust the width based on your layout */
+      margin: 8px;
+  /* Add any other styles you need for your restaurant cards */
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 57%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 8px;
+  z-index: 1;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
 }
