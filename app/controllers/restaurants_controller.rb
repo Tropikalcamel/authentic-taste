@@ -33,21 +33,23 @@ class RestaurantsController < ApplicationController
     @followers_reviews = Review.joins(user: :followers)
                 .where(followers: { taster_id: current_user.id} ).order(created_at: :desc)
                 .limit(10)
-raise
+
 
     # search method
     @restaurants = Restaurant.all
-  if params[:query].present?
-    @restaurants = @restaurants.where("neighborhood ILIKE ?", "%#{params[:query]}%")
+        if params[:query].present?
+        @restaurants = @restaurants.where("neighborhood ILIKE ?", "%#{params[:query]}%")
 
   # follow restaurant method
+
     @user = current.user
-    @boomarks = Bookmark.new
-        @bookmark.current.user = @bookmark
+    @restaurant = Restaurant.find(params[:restaurant_id])
+    @bookmark = Bookmark.new(user: @user , restaurant: @restaurant)
         if @bookmark.save
+        end
       redirect_to profile_path
-      end
-  end
+      render :new
+    end
 end
 
   def show
@@ -61,7 +63,7 @@ end
     @average_rating = (review_sum / total_weight.to_f).round(1)
 
     # follower taster method method
-    follower_params = { user_id: params[:user_id], taster_id: current_user.id }
+    follower_params = { user_id: current_user.id , taster_id:params[:user_id]}
     @follower = Follower.new(follower_params)
       if @follower.save
       end
