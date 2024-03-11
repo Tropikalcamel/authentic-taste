@@ -1,3 +1,6 @@
+require 'faker'
+Faker::Config.locale = :en
+
   UserNationality.destroy_all
   Nationality.destroy_all
   User.destroy_all
@@ -129,7 +132,7 @@ user_nationality6= UserNationality.create!(
 restaurant1= Restaurant.create!(
   name: "City Chicken",
   address:"Sonnenallee 59, 12045 Berlin",
-  cuisine: "turkish",
+  cuisine: "Turkish",
   phone: "030-6248600",
   photo: "https://lh3.googleusercontent.com/p/AF1QipO5ocbjjwmv1W9aKz4Fj2aETBHNQ6UeQeG5LCGh=s1360-w1360-h1020-rw",
   description: "Best chicken",
@@ -193,7 +196,7 @@ restaurant4= Restaurant.create!(
 restaurant5= Restaurant.create!(
   name: "Thai Mai",
   address: "Warschauer Straße 15, 10245 Berlin",
-  cuisine: "thai",
+  cuisine: "Thai",
   phone: "030-55554444",
   photo: "https://example.com/urban_eats.jpg",
   description: "A culinary adventure through Thai flavors, bringing the world to your plate.",
@@ -209,7 +212,7 @@ restaurant5= Restaurant.create!(
 restaurant6= Restaurant.create!(
   name: "Taco Delight",
   address: "Alexanderplatz 2, 10178 Berlin",
-  cuisine: "mexican",
+  cuisine: "Mexican",
   phone: "030-99998888",
   photo: "https://www.exberliner.com/wp-content/uploads/2023/09/Screenshot-2023-09-11-at-10-53-50-Taqueria-el-Oso-@taqueria_el_oso_berlin-%E2%80%A2-Instagram-photos-and-videos.png",
   description: "Experience the art of taco with our fresh and exquisite Mexican creations.",
@@ -221,6 +224,32 @@ restaurant6= Restaurant.create!(
   dietary_requirements: "Pescatarian options"
 )
 
+users = User.all
+restaurants = Restaurant.all
+
+
+30.times do
+  user = users.sample
+  restaurant = restaurants.sample
+  weight= 1
+  user.nationalities.each do |nationality|
+    if nationality.name == restaurant.cuisine
+      weight= 2
+      break
+    end
+  end
+
+
+  Review.create!(
+    user_id: user.id,
+    restaurant_id: restaurant.id,
+    rating: rand(0..5),
+    service: rand(0..5),
+    weight: weight,
+    description: Faker::Lorem.paragraph
+  )
+end
+
 review1= Review.create!(
   user_id: user1.id,
   restaurant_id: restaurant1.id,
@@ -229,6 +258,8 @@ review1= Review.create!(
   description: "the greatest place in town! such a crazy chicken!",
   photo: "https://imageproxy.wolt.com/venue/6049015c277cf0ebd69a61f7/cbc3ba12-077b-11ed-bc5c-722a4a08bf78_city_chicken_close_up_2.jpg",
 )
+# Assuming you have 6 users and 6 restaurants already created
+
 
 review2= Review.create!(
   user_id: user2.id,
@@ -248,7 +279,15 @@ review3= Review.create!(
   description: "Average experience. The ambiance could be improved, but the food was decent.",
 
 )
+review7= Review.create!(
+  user_id: user2.id,
+  restaurant_id: restaurant3.id,
+  rating: "5",
+  service: "5",
+  weight: 2,
+  description: "authenthic! the food and the service.",
 
+)
 # Review 4
 review4= Review.create!(
   user_id: user4.id,
@@ -278,6 +317,20 @@ review6= Review.create!(
   description: "the worst place in town! such a crazy chicken!",
   photo: "https://imageproxy.wolt.com/venue/6049015c277cf0ebd69a61f7/cbc3ba12-077b-11ed-bc5c-722a4a08bf78_city_chicken_close_up_2.jpg"
 )
+
+
+
+30.times do
+  user = users.sample
+  restaurant = restaurants.sample
+
+  Bookmark.create!(
+    user_id: user.id,
+    restaurant_id: restaurant.id,
+    )
+end
+
+
 bookmark1= Bookmark.create!(
   user_id: user1.id,
   restaurant_id: restaurant1.id,
@@ -328,3 +381,16 @@ follower02= Follower.create!(
   user_id: user1.id,
   taster_id: user5.id
 )
+
+
+# Assuming you have users in your database
+user_ids = User.pluck(:id)
+
+# Create multiple followers with Faker
+30.times do
+  Follower.create!(
+    user_id: user_ids.sample,
+    taster_id: user_ids.sample,
+    created_at: Faker::Time.between(from: 1.year.ago, to: Time.current)
+  )
+end
