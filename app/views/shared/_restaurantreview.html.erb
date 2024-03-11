@@ -17,12 +17,13 @@
 
         <div class="WadeWarren">Emma Anna</div>
       </div>
-      <div class="followbtn">
-
-         <div class="taster-btn">
-              <span class="v57_400">Follow</span>
-          </div>
+      <div class="followbtn" onclick="toggleFollow(this)">
+        <div class="taster-btn">
+            <span class="v57_400">Follow</span>
+        </div>
       </div>
+
+
       </div>
 
     </div>
@@ -58,55 +59,13 @@
 
         <div class="WadeWarren">Emma Anna</div>
       </div>
-      <div class="followbtn">
-
-         <div class="taster-btn">
-              <span class="v57_400">Follow</span>
-          </div>
-      </div>
+      <div class="followbtn" onclick="toggleFollow(this)">
+        <div class="taster-btn">
+            <span class="v57_400">Follow</span>
+        </div>
       </div>
 
-    </div>
 
-
-
-  </div>
-  <div class="ReviewContent">
-    <div class="LoremIpsumDolorSitAmetConsecteturAdipiscingElitIdQuamTortorNecArcuEuismodNequeUltriciesEgetAdipiscingCondimentumLoremIpsumDolorSitAmetConsecteturAdipiscingElitIdQuamTortorNecArcuEuismodNequeUltriciesEgetAdipiscingCondimentum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id quam tortor nec arcu. Euismod neque ultricies eget adipiscing condimentum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id quam tortor nec arcu. Euismod neque ultricies eget adipiscing condimentum.</div>
-  </div>
-
-
-</div>
-
-
-
-
-
-<div class="ReviewRestaurantContainer">
-  <div class="ProfileImgBtn">
-
-    <div class="profile-user-img">
-      <img class="Profile3" src="https://ca.slack-edge.com/T02NE0241-U02FW703QBZ-210ec2150a11-72" alt="">
-
-      <div class="reviewBtnFollow">
-      <div class="profile-user">
-        <div class=" restaurant-rating-scoreVar ">
-              <div class="restaurant-rating-scoreVar restaurant-rating" style="background-image: url(<%= asset_path('ratingbackground.svg') %>) ">
-                 <img class="Popular-rating-score rating-score" src="<%= asset_path('ratingscore.svg') %>" width="80%"   alt=" ">
-              </div>
-
-
-              <div class=" rateScorVar ">5</div>
-          </div>
-
-        <div class="WadeWarren">Emma Anna</div>
-      </div>
-      <div class="followbtn">
-
-         <div class="taster-btn">
-              <span class="v57_400">Follow</span>
-          </div>
-      </div>
       </div>
 
     </div>
@@ -144,12 +103,13 @@
 
         <div class="WadeWarren">Emma Anna</div>
       </div>
-      <div class="followbtn">
-
-         <div class="taster-btn">
-              <span class="v57_400">Follow</span>
-          </div>
+    <div class="followbtn" onclick="toggleFollow(this)">
+        <div class="taster-btn">
+            <span class="v57_400">Follow</span>
+        </div>
       </div>
+
+
       </div>
 
     </div>
@@ -163,3 +123,76 @@
 
 
 </div>
+
+
+
+
+
+<div class="ReviewRestaurantContainer">
+  <div class="ProfileImgBtn">
+
+    <div class="profile-user-img">
+      <img class="Profile3" src="https://ca.slack-edge.com/T02NE0241-U02FW703QBZ-210ec2150a11-72" alt="">
+
+      <div class="reviewBtnFollow">
+      <div class="profile-user">
+        <div class=" restaurant-rating-scoreVar ">
+              <div class="restaurant-rating-scoreVar restaurant-rating" style="background-image: url(<%= asset_path('ratingbackground.svg') %>) ">
+                 <img class="Popular-rating-score rating-score" src="<%= asset_path('ratingscore.svg') %>" width="80%"   alt=" ">
+              </div>
+
+
+              <div class=" rateScorVar ">5</div>
+          </div>
+
+        <div class="WadeWarren">Emma Anna</div>
+      </div>
+     <div class="followbtn" onclick="toggleFollow(this)">
+        <div class="taster-btn">
+            <span class="v57_400">Follow</span>
+        </div>
+      </div>
+
+
+      </div>
+
+    </div>
+
+
+
+  </div>
+  <div class="ReviewContent">
+    <div class="LoremIpsumDolorSitAmetConsecteturAdipiscingElitIdQuamTortorNecArcuEuismodNequeUltriciesEgetAdipiscingCondimentumLoremIpsumDolorSitAmetConsecteturAdipiscingElitIdQuamTortorNecArcuEuismodNequeUltriciesEgetAdipiscingCondimentum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id quam tortor nec arcu. Euismod neque ultricies eget adipiscing condimentum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id quam tortor nec arcu. Euismod neque ultricies eget adipiscing condimentum.</div>
+  </div>
+
+
+</div>
+
+
+
+
+<script>
+function toggleFollow(button) {
+    var buttonText = button.querySelector(".v57_400");
+
+    if (buttonText.innerHTML === "Follow") {
+        buttonText.innerHTML = "Unfollow";
+        buttonText.style.color = "#8c800d"; // Change text color to black
+        buttonText.style.border = " 1px solid #afa011"; // Add border
+        buttonText.style.background= "#afa01100"
+    } else {
+        buttonText.innerHTML = "Follow";
+        // buttonText.style.color = ""; // Reset text color
+        // buttonText.style.border = ""; // Reset border
+        // buttonText.style.padding = ""; // Reset padding
+          buttonText.style.padding = "8px 16px";
+        buttonText.style.backgroundColor = "#afa011";
+        buttonText.style.color = "#fff";
+        buttonText.style.border = "none";
+        buttonText.style.borderRadius = "20px";
+        buttonText.style.cursor = "pointer";
+    }
+}
+
+</script>
+

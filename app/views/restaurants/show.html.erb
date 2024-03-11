@@ -2,7 +2,7 @@
 
 
 <div class="">
-
+<img src="" alt="">
   <img class="restaurant-cover-img" src="https://imageproxy.wolt.com/venue/6049015c277cf0ebd69a61f7/cbc3ba12-077b-11ed-bc5c-722a4a08bf78_city_chicken_close_up_2.jpg" alt="" "card-img-top" >
 </div>
 
@@ -139,6 +139,7 @@
  <div class="badge-rating-card">
       <div class="badge-rating">
         <div class="badge-text">
+
           <div class="badge">
             <div class="badge-persentage">
               <img class="badge-left-wing" src="https://c.animaapp.com/GgaLeXbT/img/badge-left-wing-1.svg" />
@@ -149,7 +150,9 @@
               <span class="text-wrapper-2">Authentic</span>
               <span class="text-wrapper-3">taste</span>
             </p>
+            <div class="category-badge"><p>Italian</p></div>
           </div>
+
           <img class="seperator" src="https://c.animaapp.com/GgaLeXbT/img/seperator-1.svg" />
           <p class="element-of-italian-rate">
             <span class="text-wrapper-4">90% of </span>
@@ -172,25 +175,25 @@
           </div>
           </div>
           <div class="rating-score-bar">
-            <div class="rating-bar">
+            <div class="rating-bar" id="greenBar">
               <div class="text-wrapper-6">5.</div>
-              <div class="group"><div class="rating-bar-green"></div></div>
+              <div class="group"><div class="rating-bar-green" style="width: 90%;" ></div></div>
             </div>
             <div class="rating-bar">
               <div class="text-wrapper-6">4.</div>
-              <div class="group"><div class="rating-bar-green"></div></div>
+              <div class="group"><div class="rating-bar-green" style="width: 60%;" ></div></div>
             </div>
             <div class="rating-bar">
               <div class="text-wrapper-6">3.</div>
-              <div class="group"><div class="rating-bar-green"></div></div>
+              <div class="group"><div class="rating-bar-green" style="width: 50%;" ></div></div>
             </div>
             <div class="rating-bar">
               <div class="text-wrapper-6">2.</div>
-              <div class="group"><div class="rating-bar-green"></div></div>
+              <div class="group"><div class="rating-bar-green" style="width: 20%;" ></div></div>
             </div>
             <div class="rating-bar">
               <div class="text-wrapper-6">1.</div>
-              <div class="group"><div class="rating-bar-green"></div></div>
+              <div class="group"><div class="rating-bar-green" style="width: 10%;" ></div></div>
             </div>
           </div>
         </div>
@@ -210,8 +213,8 @@
           </div>
         </div>
       </div>
-    </div>
-  </body>
+
+
 
 
 
@@ -254,4 +257,24 @@
   document.addEventListener("DOMContentLoaded", function() {
     document.querySelector('.tablinks.active').click();
   });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var percentageElement = document.querySelector('.element .text-wrapper');
+    var currentPercentage = 0;
+    var targetPercentage = 90;
+    var duration = 2000; // Duration in milliseconds
+    var increment = targetPercentage / (duration / 100); // Increment per 100 milliseconds
+
+    var interval = setInterval(function() {
+        if (currentPercentage >= targetPercentage) {
+            clearInterval(interval);
+        } else {
+            currentPercentage += increment;
+            percentageElement.textContent = Math.floor(currentPercentage);
+        }
+    }, 100);
+});
+
+
 </script>
