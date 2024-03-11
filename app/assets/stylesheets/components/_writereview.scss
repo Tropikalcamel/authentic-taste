@@ -1,0 +1,112 @@
+.review-container {
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 0;
+
+}
+.star-rating{
+  margin-right: 25px;
+}
+label {
+  font-weight: bold;
+}
+.label-margin{
+margin-right: 25px;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical;
+}
+#review-content{
+ border-radius: 12px;
+}
+.star-rating {
+  font-size: 0;
+}
+
+.star-rating input {
+  display: none;
+}
+.reviewBtnBlex{
+  display: flex;
+  justify-content: space-between;
+}
+
+.star-rating label {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  font-size: 24px;
+  color: #ffd700;
+  /* Change the color to match your design */
+  cursor: pointer;
+}
+
+.submit-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+.star-rating input[type="radio"] {
+  display: none;
+}
+
+.star-rating label {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-image: url('path_to_your_empty_star.svg');
+  background-size: cover;
+}
+
+.star-rating label:hover,
+.star-rating input[type="radio"]:checked~label {
+  background-image: url('path_to_your_filled_star.svg');
+}
+
+.star-rating {
+  font-size: 30px;
+}
+
+.star-rating .star {
+  cursor: pointer;
+  color: gray;
+}
+
+.star-rating .star:hover,
+.star-rating .star.active {
+  color: gold;
+}
+
+
+.submit-btn {
+  padding: 14px 29px;
+  background-color: #afa011;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  border-radius: 35px;
+  cursor: pointer;
+}
+.form-group-review{
+  margin-bottom: 8px;
+}

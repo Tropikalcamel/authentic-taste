@@ -1,0 +1,257 @@
+
+
+
+<div class="">
+
+  <img class="restaurant-cover-img" src="https://imageproxy.wolt.com/venue/6049015c277cf0ebd69a61f7/cbc3ba12-077b-11ed-bc5c-722a4a08bf78_city_chicken_close_up_2.jpg" alt="" "card-img-top" >
+</div>
+
+
+<div class="container">
+
+<div class=" flex-wrap">
+<div class="rightCol">
+  <div class="tab">
+    <button class="tablinks active" onclick="openTab(event, 'RestaurantDetail')">Restaurant Detail</button>
+    <button class="tablinks " onclick="openTab(event, 'Reviews')">Reviews</button>
+  </div>
+
+  <div id="RestaurantDetail" class="tabcontent">
+    <!-- Restaurant detail content goes here -->
+      <div id="listOfRestautants">
+      <!-- start Restaurant Title -->
+      <div class="restaurantTitle">
+          <h2>Restaurant name</h2>
+      </div>
+      <!-- END Restaurant Title -->
+
+      <!-- start Restaurant Rating - Price - OpenNow-->
+      <div class="restaurant-Rate-Price-OpenNow">
+
+          <div class=" restaurant-rating-scoreVar ">
+              <div class="restaurant-rating-scoreVar restaurant-rating" style="background-image: url(<%= asset_path('ratingbackground.svg') %>) ">
+                 <img class="Popular-rating-score rating-score" src="<%= asset_path('ratingscore.svg') %>" width="80%"   alt=" ">
+              </div>
+
+
+              <div class=" rateScorVar ">5</div>
+          </div>
+
+
+          <div class="divider"></div>
+          <div class="restaurant-Price">€€€</div>
+          <div class="divider"></div>
+          <div class=" restaurant-OpenNow ">
+
+              <img src="<%= asset_path('Open-now-Icon.svg') %>" alt=" ">
+              <p>Open now</p>
+          </div>
+      </div>
+      <!-- END Restaurant Rating - Price - OpenNow-->
+
+
+      <!-- start Restaurant Cuisine / DietaryRestriction / Delivery -->
+      <div class="restaurant-Cuisine-DietaryRestriction-Delivery">
+          <div class="restaurant-Cuisine CuisineContainer">
+              <div class="CuisineImg">
+
+
+                <img src="<%= asset_path("indian.svg") %>" alt="">
+              </div>
+              <div class="CuisineTitle">
+                  <p>indian</p>
+              </div>
+          </div>
+          <div class="categoryDivider"></div>
+          <div class="restaurant-DietaryRestriction CuisineContainer">
+              <div class="CuisineImg">
+                  <img src="<%= asset_path("Kosher.svg") %>" alt="">
+              </div>
+              <div class="CuisineTitle">
+                  <p>Halal</p>
+              </div>
+          </div>
+          <div class="categoryDivider"></div>
+          <div class="restaurant-Delivery CuisineContainer">
+              <div class="CuisineImg">
+                  <img src="<%= asset_path("pickup.svg") %>" alt="">
+              </div>
+              <div class="CuisineTitle">
+                  <p>pickup</p>
+              </div>
+          </div>
+
+      </div>
+      <!-- END Restaurant Cuisine / DietaryRestriction / Delivery -->
+
+
+      <!-- start Restaurant Description -->
+      <div class="restaurantDescription">
+          <p>blabla restaurant/p>
+      </div>
+      <!-- End Restaurant Description -->
+
+      <!-- start Restaurant Address -->
+      <div class="restaurant-Address">
+          <img class="Img-Icon" src="<%= asset_path("adressIcon.svg") %>" alt=" ">
+          <div class="textInfo">adress.str 15</div>
+      </div>
+      <!-- END Restaurant Address -->
+
+      <!-- start Restaurant Phone Number -->
+      <div class=" restaurant-tel ">
+          <img class="Img-Icon" src="<%= asset_path("phoneIcon.svg") %>"alt=" ">
+
+          <div class="textInfo">+495265624555</div>
+      </div>
+      <!-- END Restaurant Phone Number -->
+
+      <!-- start Restaurant OpningTime -->
+      <div class="restaurant-OpningTime">
+          <img class="Img-Icon" src="<%= asset_path("Open-now-Icon.svg") %>"alt=" ">
+          <div class="textInfo">
+              From 9:00 to 23:00
+
+          </div>
+
+      </div>
+      <!-- END Restaurant OpningTime -->
+
+  </div>
+
+
+
+
+  </div>
+
+  <div id="Reviews" class="tabcontent" style="display:none;">
+    <!-- Reviews content goes here -->
+    <%= render "shared/writereview" %>
+    <%= render "shared/restaurantreview" %>
+  </div>
+
+
+
+</div>
+
+<div class="rating-card">
+
+ <div class="badge-rating-card">
+      <div class="badge-rating">
+        <div class="badge-text">
+          <div class="badge">
+            <div class="badge-persentage">
+              <img class="badge-left-wing" src="https://c.animaapp.com/GgaLeXbT/img/badge-left-wing-1.svg" />
+              <p class="element"><span class="text-wrapper">90</span> <span class="span">%</span></p>
+              <img class="badge-left-wing" src="https://c.animaapp.com/GgaLeXbT/img/badge-left-wing.svg" />
+            </div>
+            <p class="authentic-taste">
+              <span class="text-wrapper-2">Authentic</span>
+              <span class="text-wrapper-3">taste</span>
+            </p>
+          </div>
+          <img class="seperator" src="https://c.animaapp.com/GgaLeXbT/img/seperator-1.svg" />
+          <p class="element-of-italian-rate">
+            <span class="text-wrapper-4">90% of </span>
+            <span class="text-wrapper-2">Italian<br /></span>
+            <span class="text-wrapper-4">rate this restaurant as </span>
+            <span class="text-wrapper-5">Authentic</span>
+            <span class="text-wrapper-4"> taste.</span>
+          </p>
+        </div>
+        <img class="img" src="https://c.animaapp.com/GgaLeXbT/img/seperator.svg" />
+        <div class="rating-div">
+          <div class="rating-score">
+            <div class="div">4.2</div>
+            <div class="element-reviews">1,200 Reviews</div>
+            <div class=" restaurant-rating-scoreVar ">
+              <div class="restaurant-rating-scoreVar restaurant-rating" style="background-image: url(/assets/ratingbackground-ba9a001ee738eaf740c2e1ba23e5252f80cd4b10023bab69e1c7311a8707034a.svg) ">
+                 <img class="Popular-rating-score rating-score" src="/assets/ratingscore-80de8d55a2c8c420a5dcd401580190fe9bcc8fbb2f70bc91cf8ea37d43c72c6b.svg" width="80%" alt=" ">
+              </div>
+              <div class=" rateScorVar ">5</div>
+          </div>
+          </div>
+          <div class="rating-score-bar">
+            <div class="rating-bar">
+              <div class="text-wrapper-6">5.</div>
+              <div class="group"><div class="rating-bar-green"></div></div>
+            </div>
+            <div class="rating-bar">
+              <div class="text-wrapper-6">4.</div>
+              <div class="group"><div class="rating-bar-green"></div></div>
+            </div>
+            <div class="rating-bar">
+              <div class="text-wrapper-6">3.</div>
+              <div class="group"><div class="rating-bar-green"></div></div>
+            </div>
+            <div class="rating-bar">
+              <div class="text-wrapper-6">2.</div>
+              <div class="group"><div class="rating-bar-green"></div></div>
+            </div>
+            <div class="rating-bar">
+              <div class="text-wrapper-6">1.</div>
+              <div class="group"><div class="rating-bar-green"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tasters-users">
+        <p class="top-authentic">
+          <span class="text-wrapper-7">Top authentic </span> <span class="text-wrapper">tasters</span>
+        </p>
+        <div class="users-img">
+          <div class="img-2"></div>
+          <img class="img-3" src="https://c.animaapp.com/GgaLeXbT/img/img2@2x.png" />
+          <img class="img-4" src="https://c.animaapp.com/GgaLeXbT/img/img3@2x.png" />
+          <img class="img-4" src="https://c.animaapp.com/GgaLeXbT/img/img4@2x.png" />
+          <img class="img-4" src="https://c.animaapp.com/GgaLeXbT/img/img5@2x.png" />
+          <div class="more-user">
+            <div class="overlap-group"><div class="text-wrapper-8">+15</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+
+
+
+</div>
+
+</div>
+
+<div class="" style="width: 18rem;">
+
+
+</div>
+
+
+
+</div>
+
+<script>
+  function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+
+    // Hide all tabcontent elements
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+
+    // Remove 'active' class from all tablinks
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+
+  // By default, display the "Restaurant Detail" tab
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelector('.tablinks.active').click();
+  });
+</script>
