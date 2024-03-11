@@ -31,8 +31,8 @@
     display: flex;
     align-items: center;
     margin-bottom: 12px;
-    padding: 9px;
-}
+    padding: 9px 16px 9px 9px;
+  }
 
 .restaurant-text-Title-favoriteIcon {
   display: flex;
@@ -187,4 +187,19 @@
 
 .restaurant-OpenNow img {
   margin-left: 4px;
+}
+
+.fa-heart {
+
+  /* Default color */
+  cursor: pointer;
+}
+.favorite-btn {
+  color: rgb(235, 152, 152);
+  /* Color when active (clicked) */
+}
+
+.favorite-btn.active {
+  color: red;
+  /* Color when active (clicked) */
 }

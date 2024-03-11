@@ -1073,3 +1073,60 @@ button {
         display: flex;
         align-content: center;
 }
+
+
+// search btn UI
+
+.search-box {
+position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  display: flex;
+  width: 559px;
+  border-radius: 50px;
+  height: 54px;
+  padding: 7px;
+  align-content: space-between;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-input {
+  outline: none;
+  border: none;
+  background: none;
+  width: 0;
+  padding: 0;
+  color: #782f2f;
+  font-size: 16px;
+  transition: .3s;
+  line-height: 40px;
+}
+
+.search-input::placeholder {
+  color: #dbc5b0;
+}
+
+.search-btn {
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  background: #cd595a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* Remove hover and focus effects */
+.search-box:hover .search-input,
+.search-box:focus .search-input,
+.search-input:hover,
+.search-input:focus,
+.search-input:not(:placeholder-shown) {
+  width: 240px;
+  padding: 0 6px;
+}

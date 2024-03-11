@@ -11,9 +11,11 @@
   <div class="profile-info">
     <span class="taster-name">Marcus chicky</span>
     <span class="taster-about">Lorem ipsum dolor sit amet, consectetur elit.</span>
-    <div class="taster-btn">
-      <span class="v57_400">Follow</span>
-    </div>
+     <div class="followbtn" onclick="toggleFollow(this)">
+        <div class="taster-btn">
+            <span class="v57_400">Follow</span>
+        </div>
+      </div>
   </div>
 </div>
 
@@ -24,9 +26,13 @@
   <div class="profile-info">
     <span class="taster-name">Tarik Hün</span>
     <span class="taster-about">Lorem ipsum dolor sit amet, consectetur elit.</span>
-    <div class="taster-btn">
-      <span class="v57_400">Follow</span>
-    </div>
+
+    <div class="followbtn" onclick="toggleFollow(this)">
+        <div class="taster-btn">
+            <span class="v57_400">Follow</span>
+        </div>
+      </div>
+
   </div>
 </div>
 
@@ -38,12 +44,39 @@
   <div class="profile-info">
     <span class="taster-name">Sidney poulet</span>
     <span class="taster-about">Lorem ipsum dolor sit amet, consectetur elit.</span>
-    <div class="taster-btn">
-      <span class="v57_400">Follow</span>
-    </div>
+     <div class="followbtn" onclick="toggleFollow(this)">
+        <div class="taster-btn">
+            <span class="v57_400">Follow</span>
+        </div>
+      </div>
   </div>
 </div>
 
 </div>
 
 </div>
+
+<script>
+function toggleFollow(button) {
+    var buttonText = button.querySelector(".v57_400");
+
+    if (buttonText.innerHTML === "Follow") {
+        buttonText.innerHTML = "Unfollow";
+        buttonText.style.color = "#8c800d"; // Change text color to black
+        buttonText.style.border = " 1px solid #afa011"; // Add border
+        buttonText.style.background= "#afa01100"
+    } else {
+        buttonText.innerHTML = "Follow";
+        // buttonText.style.color = ""; // Reset text color
+        // buttonText.style.border = ""; // Reset border
+        // buttonText.style.padding = ""; // Reset padding
+          buttonText.style.padding = "8px 16px";
+        buttonText.style.backgroundColor = "#afa011";
+        buttonText.style.color = "#fff";
+        buttonText.style.border = "none";
+        buttonText.style.borderRadius = "20px";
+        buttonText.style.cursor = "pointer";
+    }
+}
+
+</script>
