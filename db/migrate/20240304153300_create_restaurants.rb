@@ -8,7 +8,7 @@ class CreateRestaurants < ActiveRecord::Migration[7.1]
       t.string :photo
       t.text :description
       t.boolean :take_away
-      t.string :price_catagory
+      t.integer :price_catagory
       t.boolean :authentic_badge
       t.string :opening_hours
       t.string :neighborhood

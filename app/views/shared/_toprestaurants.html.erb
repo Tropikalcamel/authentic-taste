@@ -31,9 +31,9 @@
             <div class=" Popular-restaurant-rating-scoreVar ">
                 <div class="Popular-restaurant-rating-wrapper">
                 <div class="Popular-restaurant-rating" style="background-image: url(<%= asset_path('ratingbackground.svg') %>) ">
-                  <img class="Popular-rating-score" src="<%= asset_path('ratingscore.svg') %>" width="100%"   alt=" ">
+                  <img class="Popular-rating-score" src="<%= asset_path('ratingscore.svg') %>" width="<%= (restaurant.calculate_average * 100) / 5 %>%"   alt=" ">
                 </div>
-                <div class=" Popular-rateScorVar ">###</div>
+                <div class=" Popular-rateScorVar "><%= restaurant.calculate_average %></div>
                 </div>
                 <div class=" Popular-restaurant-OpenNow ">
                     <p>Open now</p>

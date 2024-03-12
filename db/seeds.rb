@@ -129,6 +129,31 @@ user_nationality6= UserNationality.create!(
   nationality_id: nationality6.id
 )
 
+berlin_neighborhoods = [
+  'Kreuzberg', 'Neukölln', 'Prenzlauer Berg', 'Friedrichshain', 'Mitte',
+  'Spandau', 'Charlottenburg', 'Pankow', 'Schöneberg', 'Köpenick',
+  'Lichtenberg', 'Reinickendorf', 'Tempelhof', 'Wilmersdorf', 'Zehlendorf',
+  'Marzahn-Hellersdorf', 'Siemensstadt', 'Tegel', 'Alt-Treptow', 'Wedding',
+  'Falkenberg', 'Adlershof'
+]
+
+
+
+30.times do
+  Restaurant.create(
+    name: Faker::Restaurant.name,
+    address: Faker::Address.full_address,
+    cuisine: Faker::Food.dish,
+    phone: Faker::PhoneNumber.phone_number,
+    photo: Faker::LoremFlickr.image,
+    description: Faker::Lorem.paragraph,
+    take_away: Faker::Boolean.boolean,
+    opening_hours: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :short),
+    neighborhood: berlin_neighborhoods.sample,
+    dietary_requirements: Faker::Food.ingredient
+  )
+
+end
 restaurant1= Restaurant.create!(
   name: "City Chicken",
   address:"Sonnenallee 59, 12045 Berlin",
@@ -228,7 +253,7 @@ users = User.all
 restaurants = Restaurant.all
 
 
-30.times do
+90.times do
   user = users.sample
   restaurant = restaurants.sample
   weight= 1
