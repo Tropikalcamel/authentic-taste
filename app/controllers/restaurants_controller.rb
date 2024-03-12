@@ -17,8 +17,7 @@ class RestaurantsController < ApplicationController
     total_weight = @restaurant.reviews.sum(:weight)
     @average_rating = (review_sum / total_weight.to_f).round(1)
 
-    # follower taster method
-
+ 
     # show review
     @review = Review.all
       @review.order(created_at:  :desc, rating: :desc)

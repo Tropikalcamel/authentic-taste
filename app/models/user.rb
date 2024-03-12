@@ -10,4 +10,9 @@ class User < ApplicationRecord
   has_many :bookmarks, dependent: :destroy
   has_many :restaurants, through: :bookmarks
   has_many :followers, dependent: :destroy
+
+
+  def following?(taster_id)
+    followers.exists?(taster_id: taster_id)
+  end
 end

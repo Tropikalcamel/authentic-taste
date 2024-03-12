@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   end
   get 'profile', to: 'pages#profile', as: 'profile'
   post 'users/:user_id/followers', to: "followers#create", as: :taster_follow
+  
 end
