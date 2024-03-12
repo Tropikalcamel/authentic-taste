@@ -66,10 +66,13 @@
 <script>
 
 function toggleFavorite(button) {
-    var heartIcon = button.querySelector(".fa-heart");
+    var heartIcon = button.querySelector(".favorite-btn");
     heartIcon.classList.add("clicked");
-
-    // Optional: Add logic to handle favoriting/unfavoriting functionality
+    setTimeout(function() {
+        heartIcon.style.transform = "scale(1)";
+        heartIcon.style.opacity = "1";
+        button.style.display = "block";
+    }, 500); // Adjust the delay to match the animation duration
 }
 
 

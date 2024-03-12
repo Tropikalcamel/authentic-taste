@@ -34,8 +34,8 @@
         <div class=" restaurant-text-info ">
             <div class=" restaurant-text-Title-favoriteIcon ">
                 <h3 class=" restaurant-title "><a href=" # "><%= review.restaurant.name %></a></h3>
-                <div class=" favoriteIcon ">
-                    <img src="/assets/favoriteIcon-96d11ebd1ef8da04c35331684fcfc148183dbfd95e66c1af1c90db204f45816c.svg" alt=" ">
+                <div class="favorite-btn" onclick="toggleFavorite(this)">
+                   <i class="fa fa-heart " id="heart-icon"></i>
                 </div>
             </div>
             <div class=" restaurant-adress ">
@@ -44,8 +44,8 @@
             </div>
 
             <div class=" restaurant-rating-scoreVar ">
-                <div class=" restaurant-rating ">
-                    <img class=" rating-score " src="/assets/ratingscore-80de8d55a2c8c420a5dcd401580190fe9bcc8fbb2f70bc91cf8ea37d43c72c6b.svg" alt=" ">
+                <div class=" restaurant-rating " style="background-image: url(<%= asset_path('ratingbackground.svg') %>)">
+                    <img class=" rating-score " src="<%= asset_path('ratingscore.svg') %>" width="<%= (review.rating * 100) / 5 %>%"  alt=" ">
                 </div>
                 <div class=" rateScorVar "><%= review.rating %></div>
             </div>

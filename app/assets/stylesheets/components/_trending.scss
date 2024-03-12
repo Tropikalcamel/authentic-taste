@@ -65,7 +65,7 @@
   font-style: normal;
   min-height: 46px;
   font-weight: normal;
-  font-size: 0.9em;
+  font-size: 13px;
   /* background-color: antiquewhite; */
   display: flex;
   align-items: center;
@@ -203,6 +203,8 @@
 
 .favorite-btn.active {
   color: red;
+  animation: zoomOut 0.2s ease-in-out forwards;
+  opacity: 1;
   /* Color when active (clicked) */
 }
 
@@ -217,9 +219,13 @@
     opacity: 1;
   }
 
-  100% {
-    transform: scale(3);
+  90% {
+    transform: scale(4);
     opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
 }
 
