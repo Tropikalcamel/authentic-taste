@@ -301,10 +301,16 @@ restaurants = Restaurant.all
   Review.create!(
     user_id: user.id,
     restaurant_id: restaurant.id,
+<<<<<<< HEAD
     rating: rand(2..5),
     service: rand(2..5),
+=======
+    rating: rand(3..5),
+    service: rand(3..5),
+>>>>>>> 9af66759fb049903d9c76005e6ef57e176554d31
     weight: weight,
-    description: Faker::Lorem.paragraph
+    description: Faker::Lorem.paragraph,
+    created_at: Faker::Time.between(from: 1.month.ago, to: Time.now)
   )
 end
 
@@ -316,7 +322,7 @@ review1= Review.create!(
   description: "the greatest place in town! such a crazy chicken!",
   photo: "https://imageproxy.wolt.com/venue/6049015c277cf0ebd69a61f7/cbc3ba12-077b-11ed-bc5c-722a4a08bf78_city_chicken_close_up_2.jpg",
 )
-# Assuming you have 6 users and 6 restaurants already created
+
 
 
 review2= Review.create!(
