@@ -50,7 +50,7 @@ class PagesController < ApplicationController
       render :new
     end
   end
-  
+
   def profile
     # show reviews
     @reviews = current_user.reviews

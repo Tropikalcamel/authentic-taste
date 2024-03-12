@@ -1,6 +1,6 @@
 class RestaurantsController < ApplicationController
 
-  # before_action :set_restaurant, only: %i[ show show_review ]
+  before_action :set_restaurant, only: %i[ show ]
 
   def index
     #top restaurants
@@ -20,14 +20,12 @@ class RestaurantsController < ApplicationController
     follower_params = { user_id: current_user.id , taster_id:params[:user_id]}
     @follower = Follower.new(follower_params)
       if @follower.save
-      end
-      end
-
-  def show_review
-      @review = Review.all
+    # show review
+    @review = Review.all
       @review.pluck.order(created_at:  :desc, rating: :desc)
+      end
+      end
 
-  end
 
 
   private
