@@ -66,7 +66,7 @@ end
     @bookmarked_restaurants = current_user.bookmarks
   end
 
-def taster
+  def taster
     # show_favourite
     @user = User.find(params[:id])
     @favourite= @user.restaurants
