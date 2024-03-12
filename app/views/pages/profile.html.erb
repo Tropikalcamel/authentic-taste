@@ -5,16 +5,20 @@
     <div class="avatar-container">
         <img class="custom-image" src="<%= asset_path('widget.png') %>">
       <div class="card">
-          <h2>About</h2>
-          <p>Lorem ipsum</p>
+        <h1>City Widget</h1>
       </div>
       <div class="card">
-          <h2>Nationality</h2>
+          <h2>About:</h2>
+          <p>Lorem ipsum</p>
+      </div>
+
+      <div class="card">
+          <h2>Nationality:</h2>
           <p>Italian</p>
       </div>
 
       <div class="card">
-          <h2>Reviews</h2>
+          <h2>Reviews:</h2>
           <p>120</p>
       </div>
     </div>
@@ -22,16 +26,8 @@
 
   <div class="right-container">
       <div class="top-right-container">
-          <!-- Content for the top right container goes here -->
+          <h2>Widget's Favourites</h2>
       </div>
-      <div class="bottom-right-container">
-          <div class="bottom-right-subcontainer-1">
-              <!-- Content for the bottom right subcontainer 1 goes here -->
-          </div>
-          <div class="bottom-right-subcontainer-2">
-              <!-- Content for the bottom right subcontainer 2 goes here -->
-          </div>
-      </div>
+      <%= render "shared/reviewsProfile" %>
   </div>
-
 </div>
