@@ -32,7 +32,6 @@
   font-family: Roboto;
   font-size: 28px;
   font-weight: 700;
-  line-height: 118.182%; /* 26px */
   text-transform: capitalize;
   text-align: center;
 }
@@ -43,7 +42,6 @@
   font-family: Roboto;
   font-size: 22px;
   font-weight: 700;
-  line-height: 118.182%; /* 26px */
   text-transform: capitalize;
   text-align: center;
 }
@@ -53,7 +51,6 @@
   font-family: Roboto;
   font-size: 22px;
   font-weight: 400;
-  line-height: 118.182%;
   text-transform: capitalize;
   text-align: center;
 }
@@ -68,8 +65,17 @@
 .right-container {
   width: 60%;
   backdrop-filter: blur(21px);
-
   }
+
+  .orange-button {
+    background-color: orange;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    justify-content: right;
+}
 
 .top-right-container {
     height: 172px;
