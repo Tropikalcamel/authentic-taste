@@ -251,7 +251,7 @@ restaurant4= Restaurant.create!(
 )
 
 # Seed 5
-restaurant5= Restaurant.create!(
+restaurant5 = Restaurant.create!(
   name: "Thai Mai",
   address: "Warschauer Straße 15, 10245 Berlin",
   cuisine: "Thai",
