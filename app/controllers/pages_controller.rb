@@ -39,15 +39,13 @@ class PagesController < ApplicationController
         if params[:query].present?
         @restaurants = @restaurants.where("neighborhood ILIKE ?", "%#{params[:query]}%")
 
-  # follow restaurant method
+    # follow restaurant method
 
-    @user = current.user
-    @restaurant = Restaurant.find(params[:restaurant_id])
-    @bookmark = Bookmark.new(user: @user , restaurant: @restaurant)
-        if @bookmark.save
-        end
-      redirect_to profile_path
-      render :new
+
+    # specific restaurant rating
+     
+
+
     end
   end
 

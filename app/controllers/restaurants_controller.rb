@@ -23,6 +23,7 @@ class RestaurantsController < ApplicationController
     # show review
     @review = Review.all
       @review.pluck.order(created_at:  :desc, rating: :desc)
+      
       end
       end
 

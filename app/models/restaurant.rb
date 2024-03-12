@@ -34,5 +34,13 @@ class Restaurant < ApplicationRecord
       # Perform the search and prioritize the results
       search(query).order(Arel.sql(order_expression))
     end
-  end
 
+    def calculate_average
+      review_sum = 0
+      self.reviews.each do |review|
+        review_sum += review.rating
+      end
+      review_sum/ reviews.length
+    end
+
+  end
