@@ -1,17 +1,21 @@
 class FollowersController < ApplicationController
+  before_action :authenticate_user! # Add any authentication method you are using
+
+
 
   def create
-      @follower = Follower.new
-      @follower.user = current_user
-      @follower.taster_id = @follower
-        if @follower.save
-        redirect_to taster_follow_path
-        # needs to go confiramtion page
-      else
-        render "bookmark/new", status: :unprocessable_entity
-      end
+    taster_id = params[:user_id]
+    user_id = current_user.id
+
+    if user_id != taster_id.to_i && !current_user.following?(taster_id)
+      Follower.create(user_id: user_id, taster_id: taster_id)
+      redirect_to taster_follow_path(taster_id), notice: 'You are now following this user.'
+    else
+      redirect_to taster_follow_path(taster_id), alert: 'Unable to follow this user.'
+    end
   end
 end
+
 
 
 
