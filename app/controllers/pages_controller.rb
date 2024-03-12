@@ -39,13 +39,6 @@ class PagesController < ApplicationController
         if params[:query].present?
         @restaurants = @restaurants.where("neighborhood ILIKE ?", "%#{params[:query]}%")
 
-    # follow restaurant method
-
-
-    # specific restaurant rating
-     
-
-
     end
   end
 
