@@ -10,7 +10,7 @@ class BookmarksController < ApplicationController
 
   def create
     @bookmark = Bookmark.new
-       @bookmark.user = current_user
+    @bookmark.user = current_user
     @bookmark.restaurant = @restaurant
       if @bookmark.save
       redirect_to profile_path
