@@ -1,13 +1,9 @@
 <%= render "shared/search" %>
+
 <%= render "shared/categorybar" %>
+
 <%= render "shared/toprestaurants" %>
 <%= render "shared/trending" %>
 <%= render "shared/tasterbar" %>
 <%= render "shared/reviews" %>
 <%= link_to "View Restaurants", restaurants_path, class: "btn btn-primary" %>
-<% User.all.each do |user|  %>
-<div>
-  <%= user.username %>
-</div>
-<%= link_to "follow",  taster_follow_path(user), data:{turbo_method: :post} %>
-<% end %>
