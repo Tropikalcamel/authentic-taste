@@ -39,13 +39,6 @@ class PagesController < ApplicationController
         if params[:query].present?
         @restaurants = @restaurants.where("neighborhood ILIKE ?", "%#{params[:query]}%")
 
-    # follow restaurant method
-
-
-    # specific restaurant rating
-     
-
-
     end
   end
 
@@ -64,27 +57,5 @@ class PagesController < ApplicationController
 
     # show reviews
       @reviews = @user.reviews.last(3)
-  end
-
-  def home
-
-
-  @restaurants = Restaurant.all
-  @top_restaurants = []
-
-  # Calculate the average rating of all reviews
-  average_rating = Review.pluck(:rating).sum / Review.count.to_f
-
-  # Select restaurants that are above the average rating
-  @restaurants.each do |restaurant|
-    review_sum = restaurant.reviews.sum(:rating).to_f
-
-    if review_sum / restaurant.reviews.length.to_f > average_rating
-      @top_restaurants << restaurant
-    end
-  end
-
-
-
   end
 end
