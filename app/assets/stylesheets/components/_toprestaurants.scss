@@ -30,11 +30,11 @@
 }
 
 .Popular-restaurant-img-link {
-    width: 216px;
-      height: 174px;
-      -o-object-fit: cover;
-      object-fit: cover;
-      border-radius: 14px;
+    width: 100%;
+    height: 174px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: 14px 14px 0 0;
 }
 
 .Popular-restaurant-title a {
