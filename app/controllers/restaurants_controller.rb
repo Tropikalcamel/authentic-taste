@@ -17,47 +17,23 @@ class RestaurantsController < ApplicationController
       @top_restaurants << restaurant
     end
   end
-
-  # Retrieve top users
-  @top_users = User.joins(:reviews)
-                    .group(:id)
-                    .order('COUNT(reviews.id) DESC')
-                    .limit(5)
-
-  # Retrieve reviews of the week for a specific user (taster_id: 49)
-  @followers_reviews = Review.joins(user: :followers)
-                             .where(followers: { taster_id: 49 })
-                             .order(created_at: :desc)
-                             .limit(3)
-
-  # Search method
-  if params[:query].present?
-    @restaurants = @restaurants.where("neighborhood ILIKE ?", "%#{params[:query]}%")
+def show
+  # calculting the rating of authenthic user as two reviews,
+  # and the result is a persantge
+  # @restaurant = Restaurant.find(params[:id])
+  @restaurant.reviews.each do |review|
+    review_sum += review.rating * review.weight
   end
+  total_weight = @restaurant.reviews.sum(:weight)
+  @average_rating = (review_sum / total_weight.to_f).round(1)
 
-  # Follow restaurant method (I'm assuming this logic will be applied elsewhere)
-  # This code snippet seems out of context and might need adjustments
-  if params[:id].present?
-    @user = User.find(params[:id])
-    @boomarks = Bookmark.new
-    @bookmark.user = @bookmark
-    if @bookmark.save
-      redirect_to profile_path
+  # follower taster method method
+  follower_params = { user_id: params[:user_id], taster_id: current_user.id }
+  @follower = Follower.new(follower_params)
+    if @follower.save
     end
-  end
-end
-
-
-  def show
-    # calculting the rating of authenthic user as two reviews,
-    # and the result is a persantge
-    # @restaurant = Restaurant.find(params[:id])
-    @restaurant.reviews.each do |review|
-      review_sum += review.rating * review.weight
     end
-    total_weight = @restaurant.reviews.sum(:weight)
-    @average_rating = (review_sum / total_weight.to_f).round(1)
-  end
+
 
   def show_review
     @review = Review.all
@@ -71,4 +47,10 @@ end
     @restaurant = Restaurant.find(params[:restaurant_id])
   end
 
+
+  private
+
+  def set_restaurant
+    @restaurant = Restaurant.find(params[:restaurant_id])
+  end
 end
