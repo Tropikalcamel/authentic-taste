@@ -23,6 +23,7 @@ class RestaurantsController < ApplicationController
     @review = Review.all
       @review.order(created_at:  :desc, rating: :desc)
 
+      
       # end
   end
 

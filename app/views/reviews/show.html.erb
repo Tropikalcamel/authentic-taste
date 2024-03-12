@@ -1,0 +1,11 @@
+
+<h1>Your reviews</h1>
+
+<ul>
+  <% @review.each do |review| %>
+    <li>
+      <%= "#{review.review_date} at #{review.review_time}" %> - <%= review.rating %>
+      <%= link_to 'Cancel', cancel_review_path(review), method: :patch, data: { confirm: 'Are you sure you want to cancel this booking?' } %>
+    </li>
+  <% end %>
+</ul>
