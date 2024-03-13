@@ -9,6 +9,19 @@ Faker::Config.locale = :en
   Bookmark.destroy_all
   Follower.destroy_all
 
+  100.times do
+    username = Faker::Internet.username
+    photo = Faker::Avatar.image
+    email = Faker::Internet.email
+    password = Faker::Internet.password(min_length: 7)
+
+    User.create!(
+      username: username,
+      photo: photo,
+      email: email,
+      password: password
+    )
+  end
   user1= User.create!(
     email: "jhon@smith.com",
     password: "1234567",
@@ -91,11 +104,24 @@ nationality6= Nationality.create!(
 
 )
 
+# users = User.all
+# nationality_ids= Nationality.all
+
+# 100.times do
+#   user= users.sample
+#   nationality_id= nationality_ids.sample
+
+#   User.create!(
+#     username: user,
+#     nationality_id: nationality_id
+
+#   )
+# end
+
 UserNationality.create!(
 user_id: user1.id,
 nationality_id: nationality2.id
 )
-
 # NationalitiesList 1
  UserNationality.create!(
   user_id: user2.id,
@@ -172,7 +198,7 @@ imagrestaurant = [  "https://imageproxy.wolt.com/venue/6049015c277cf0ebd69a61f7/
 ]
 
 
-30.times do
+40.times do
   Restaurant.create(
     name: Faker::Restaurant.name,
     address: Faker::Address.full_address,
