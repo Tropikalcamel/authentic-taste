@@ -10,6 +10,11 @@ class ReviewsController < ApplicationController
     @review = Review.new
   end
 
+  def sumstar
+    @five_star_reviews_count = Review.where(rating: 5).count
+    @four_star_reviews_count = Review.where(rating: 4).count
+  end
+
   def create
       @review = Review.new(reviews_params)
     @review.user = current_user
@@ -42,6 +47,8 @@ class ReviewsController < ApplicationController
     @review.destroy
     # redirect_to restaurant_review_path, status: :see_other
   end
+
+
 
   private
 
