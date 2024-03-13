@@ -21,11 +21,16 @@ class RestaurantsController < ApplicationController
     @average_rating = (review_sum / total_weight.to_f).round(1)
 
 
+
+     
+    @reviewers = @restaurant.reviews.includes(:user).map(&:user)
+
+
     # show review
     @review = Review.all
-      @review.order(created_at:  :desc, rating: :desc)
+    @review.order(created_at:  :desc, rating: :desc)
 
-      
+
       # end
   end
 
