@@ -189,6 +189,7 @@ cuisine = [
   'Italian', 'Chinese', 'Thai', 'Mexican', 'Indian',
   'Turkish'
 ]
+dietary_requirements =["Kosher", "Halal", "Vegan", "Vegetarian"]
 imagrestaurant = [  "https://imageproxy.wolt.com/venue/6049015c277cf0ebd69a61f7/cbc3ba12-077b-11ed-bc5c-722a4a08bf78_city_chicken_close_up_2.jpg",
   "https://images.unsplash.com/photo-1543992321-cefacfc2322e?q=80&w=1700&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   "https://plus.unsplash.com/premium_photo-1687888327531-090715f28f74?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -232,7 +233,7 @@ imagrestaurant = [  "https://imageproxy.wolt.com/venue/6049015c277cf0ebd69a61f7/
     take_away: Faker::Boolean.boolean,
     opening_hours: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :short),
     neighborhood: berlin_neighborhoods.sample,
-    dietary_requirements: Faker::Food.ingredient
+    dietary_requirements: dietary_requirements.sample
   )
 
 end
@@ -350,18 +351,8 @@ restaurants = Restaurant.all
   Review.create!(
     user_id: user.id,
     restaurant_id: restaurant.id,
-<<<<<<< HEAD
-<<<<<<< HEAD
     rating: rand(2..5),
     service: rand(2..5),
-=======
-    rating: rand(3..5),
-    service: rand(3..5),
->>>>>>> 9af66759fb049903d9c76005e6ef57e176554d31
-=======
-    rating: rand(3..5),
-    service: rand(3..5),
->>>>>>> bbee61b45df68b49591dec211fce2b383ed77797
     weight: weight,
     description: Faker::Lorem.paragraph,
     created_at: Faker::Time.between(from: 1.month.ago, to: Time.now)
