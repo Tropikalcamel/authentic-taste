@@ -1,8 +1,8 @@
 class Restaurant < ApplicationRecord
   has_many :reviews
   has_many :boomarks
-  validates :rating, presence: true, inclusion: { in: 1..5 }
-  validates :service, presence: true, inclusion: { in: 1..5 }
+  # validates :rating, presence: true, inclusion: { in: 1..5 }
+  # validates :service, presence: true, inclusion: { in: 1..5 }
   # include PgSearch::Model
   # pg_search_scope :search_by_cuisine_and_neighborhood_and_dietary_requirements ,
   #   against: [ :neighborhood, :cuisine, :dietary_requirements],

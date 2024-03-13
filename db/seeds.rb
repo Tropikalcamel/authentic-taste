@@ -9,19 +9,6 @@ Faker::Config.locale = :en
   Bookmark.destroy_all
   Follower.destroy_all
 
-  100.times do
-    username = Faker::Internet.username
-    photo = Faker::Avatar.image
-    email = Faker::Internet.email
-    password = Faker::Internet.password(min_length: 7)
-
-    User.create!(
-      username: username,
-      photo: photo,
-      email: email,
-      password: password
-    )
-  end
   user1= User.create!(
     email: "jhon@smith.com",
     password: "1234567",
@@ -104,19 +91,7 @@ nationality6= Nationality.create!(
 
 )
 
-# users = User.all
-# nationality_ids= Nationality.all
 
-# 100.times do
-#   user= users.sample
-#   nationality_id= nationality_ids.sample
-
-#   User.create!(
-#     username: user,
-#     nationality_id: nationality_id
-
-#   )
-# end
 
 UserNationality.create!(
 user_id: user1.id,
@@ -154,6 +129,54 @@ user_nationality6= UserNationality.create!(
   user_id: user6.id,
   nationality_id: nationality6.id
 )
+
+
+
+# nationalities= ["Turkish","American", "German", "Thai","Indian","Italian"]
+
+200.times do
+  username = Faker::Internet.username
+  photo = Faker::Avatar.image
+  email = Faker::Internet.email
+  password = Faker::Internet.password(min_length: 7)
+
+
+  User.create!(
+    username: username,
+    photo: photo,
+    email: email,
+    password: password,
+        )
+  end
+
+
+  # user_ids = User.pluck(:id)
+  nationality_id = UserNationality.pluck( :nationality_id)
+
+  User.all.each do |user|
+    #generate a random number
+    rand_num = rand(1..3)
+    used = []
+
+    rand_num.times do
+      nationality = nationality_id.sample
+      nationality_id.delete(nationality)
+      used << nationality
+
+      UserNationality.create!(
+        user_id: user.id,
+        nationality_id: nationality
+      )
+
+
+    end
+
+    used.each do |nationality|
+      nationality_id << nationality
+    end
+  end
+
+
 
 berlin_neighborhoods = [
   'Kreuzberg', 'Neukölln', 'Prenzlauer Berg', 'Friedrichshain', 'Mitte',
@@ -198,7 +221,7 @@ imagrestaurant = [  "https://imageproxy.wolt.com/venue/6049015c277cf0ebd69a61f7/
 ]
 
 
-40.times do
+240.times do
   Restaurant.create(
     name: Faker::Restaurant.name,
     address: Faker::Address.full_address,
@@ -312,7 +335,7 @@ users = User.all
 restaurants = Restaurant.all
 
 
-90.times do
+800.times do
   user = users.sample
   restaurant = restaurants.sample
   weight= 1
