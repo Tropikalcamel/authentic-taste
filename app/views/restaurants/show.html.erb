@@ -21,7 +21,7 @@
       <div id="listOfRestautants">
       <!-- start Restaurant Title -->
       <div class="restaurantTitle">
-          <h2>Restaurant name</h2>
+          <h2><%= @restaurant.name %></h2>
       </div>
       <!-- END Restaurant Title -->
 
@@ -141,9 +141,10 @@
         <div class="badge-text">
 
           <div class="badge">
+
             <div class="badge-persentage">
               <img class="badge-left-wing" src="https://c.animaapp.com/GgaLeXbT/img/badge-left-wing-1.svg" />
-              <p class="element"><span class="text-wrapper">90</span> <span class="span">%</span></p>
+              <p class="element"><span class="text-wrapper"><%= (@average_rating * 100) / 5 %></span> <span class="span">%</span></p>
               <img class="badge-left-wing" src="https://c.animaapp.com/GgaLeXbT/img/badge-left-wing.svg" />
             </div>
             <p class="authentic-taste">
@@ -176,24 +177,24 @@
           </div>
           <div class="rating-score-bar">
             <div class="rating-bar" id="greenBar">
-              <div class="text-wrapper-6">5.</div>
-              <div class="group"><div class="rating-bar-green" style="width: 90%;" ></div></div>
+              <div class="text-wrapper-6"><%= Review.where(rating: 5).count %></div>
+              <div class="group"><div class="rating-bar-green" style="<%= (Review.where(rating: 5).count / Review.count * 100).round(2) %>%;" ></div></div>
             </div>
             <div class="rating-bar">
-              <div class="text-wrapper-6">4.</div>
-              <div class="group"><div class="rating-bar-green" style="width: 60%;" ></div></div>
+              <div class="text-wrapper-6"><%= Review.where(rating: 4).count %></div>
+              <div class="group"><div class="rating-bar-green" style="<%= (Review.where(rating: 4).count / Review.count * 100).round(2) %>%;" ></div></div>
             </div>
             <div class="rating-bar">
-              <div class="text-wrapper-6">3.</div>
-              <div class="group"><div class="rating-bar-green" style="width: 50%;" ></div></div>
+              <div class="text-wrapper-6"><%= Review.where(rating: 3).count %></div>
+              <div class="group"><div class="rating-bar-green" style="<%= (Review.where(rating: 3).count / Review.count * 100).round(2) %>%;" ></div></div>
             </div>
             <div class="rating-bar">
-              <div class="text-wrapper-6">2.</div>
-              <div class="group"><div class="rating-bar-green" style="width: 20%;" ></div></div>
+              <div class="text-wrapper-6"><%= Review.where(rating: 2).count %></div>
+              <div class="group"><div class="rating-bar-green" style="<%= (Review.where(rating: 2).count / Review.count * 100).round(2) %>%;" ></div></div>
             </div>
             <div class="rating-bar">
-              <div class="text-wrapper-6">1.</div>
-              <div class="group"><div class="rating-bar-green" style="width: 10%;" ></div></div>
+              <div class="text-wrapper-6"><%= Review.where(rating: 1).count %></div>
+              <div class="group"><div class="rating-bar-green" style="<%= (Review.where(rating: 1).count / Review.count * 100).round(2) %>%;" ></div></div>
             </div>
           </div>
         </div>
@@ -259,10 +260,11 @@
   });
 </script>
 <script>
+
 document.addEventListener('DOMContentLoaded', function() {
     var percentageElement = document.querySelector('.element .text-wrapper');
     var currentPercentage = 0;
-    var targetPercentage = 90;
+    var targetPercentage = <%= (@average_rating * 100) / 5 %>;
     var duration = 2000; // Duration in milliseconds
     var increment = targetPercentage / (duration / 100); // Increment per 100 milliseconds
 

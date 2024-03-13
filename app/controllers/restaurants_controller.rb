@@ -7,6 +7,8 @@ class RestaurantsController < ApplicationController
   def index
   end
 
+
+
   def show
     # calculting the rating of authenthic user as two reviews,
     # and the result is a persantge
@@ -25,6 +27,7 @@ class RestaurantsController < ApplicationController
 
       # end
   end
+
 
 
   # private
