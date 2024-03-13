@@ -2,16 +2,20 @@
   width: 100%;
   height: 200px;
   object-fit: cover;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 68%, transparent 98%);
 }
 
 .big-container {
   display: flex;
+  margin-top: -70px;
+  border-radius: 24px;
 }
 
 .left-container {
   display: flex;
   justify-content: center;
   width: 30%;
+  height: 700px;
   background: rgba(248, 244, 244, 0.6);
   backdrop-filter: blur(21px);
   border-radius: 24px;
@@ -27,44 +31,34 @@
   margin-top: 25px;
 }
 
-.card h1 {
-  color: #4D4949;
-  font-family: Roboto;
-  font-size: 28px;
-  font-weight: 700;
-  text-transform: capitalize;
-  text-align: center;
+h1 {
+margin-bottom: 50px;
+font-size: 35px;
 }
 
-
-.card h2 {
+.profile-box h1, h2 {
   color: #4D4949;
-  font-family: Roboto;
-  font-size: 22px;
-  font-weight: 700;
   text-transform: capitalize;
-  text-align: center;
+  font-weight: 800;
+  text-align: left;
 }
 
-.card p {
+.profile-box p {
   color: #828282;
-  font-family: Roboto;
   font-size: 22px;
-  font-weight: 400;
   text-transform: capitalize;
-  text-align: center;
+  text-align: left;
 }
 
 .custom-image {
   width: 300px;
   height: 200px;
   border-radius: 24px;
+  margin-bottom: 30px;
   }
-
 
 .right-container {
   width: 60%;
-  backdrop-filter: blur(21px);
   }
 
   .orange-button {
