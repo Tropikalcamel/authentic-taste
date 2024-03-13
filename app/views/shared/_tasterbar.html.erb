@@ -3,36 +3,26 @@
 <strong>taster</strong></h3>
 <div class="flex-wrap">
 
-
-
   <% @top_users.take(3).each do |user| %>
 
-<div class="profile">
+    <div class="profile">
 
-  <div class="profile-img">
-    <img src="<%= asset_path('taster1.png') %>" alt="">
-  </div>
-  <div class="profile-info">
-
-    <span class="taster-name"><%= user.username %> </span>
-    <span class="taster-about"><%= user.description %> </span>
-     <div class="followbtn" onclick="toggleFollow(this)">
-        <div class="taster-btn">
-            <span class="v57_400">Follow</span>
-        </div>
+      <div class="profile-img">
+        <img src="<%= asset_path('taster1.png') %>" alt="">
       </div>
-  </div>
-</div>
+      <div class="profile-info">
+
+        <span class="taster-name"><%= user.username %> </span>
+        <span class="taster-about"><%= user.description %> </span>
+        <div class="followbtn" onclick="toggleFollow(this)">
+            <div class="taster-btn">
+                <span class="v57_400">Follow</span>
+            </div>
+          </div>
+      </div>
+    </div>
 
   <% end %>
-
-
-
-
-
-
-
-
 
 </div>
 
@@ -60,5 +50,4 @@ function toggleFollow(button) {
         buttonText.style.cursor = "pointer";
     }
 }
-
 </script>

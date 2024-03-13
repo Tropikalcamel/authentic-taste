@@ -301,8 +301,18 @@ restaurants = Restaurant.all
   Review.create!(
     user_id: user.id,
     restaurant_id: restaurant.id,
+<<<<<<< HEAD
+<<<<<<< HEAD
+    rating: rand(2..5),
+    service: rand(2..5),
+=======
     rating: rand(3..5),
     service: rand(3..5),
+>>>>>>> 9af66759fb049903d9c76005e6ef57e176554d31
+=======
+    rating: rand(3..5),
+    service: rand(3..5),
+>>>>>>> bbee61b45df68b49591dec211fce2b383ed77797
     weight: weight,
     description: Faker::Lorem.paragraph,
     created_at: Faker::Time.between(from: 1.month.ago, to: Time.now)
