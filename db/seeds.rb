@@ -91,11 +91,12 @@ nationality6= Nationality.create!(
 
 )
 
+
+
 UserNationality.create!(
 user_id: user1.id,
 nationality_id: nationality2.id
 )
-
 # NationalitiesList 1
  UserNationality.create!(
   user_id: user2.id,
@@ -129,6 +130,54 @@ user_nationality6= UserNationality.create!(
   nationality_id: nationality6.id
 )
 
+
+
+# nationalities= ["Turkish","American", "German", "Thai","Indian","Italian"]
+
+200.times do
+  username = Faker::Internet.username
+  photo = Faker::Avatar.image
+  email = Faker::Internet.email
+  password = Faker::Internet.password(min_length: 7)
+
+
+  User.create!(
+    username: username,
+    photo: photo,
+    email: email,
+    password: password,
+        )
+  end
+
+
+  # user_ids = User.pluck(:id)
+  nationality_id = UserNationality.pluck( :nationality_id)
+
+  User.all.each do |user|
+    #generate a random number
+    rand_num = rand(1..3)
+    used = []
+
+    rand_num.times do
+      nationality = nationality_id.sample
+      nationality_id.delete(nationality)
+      used << nationality
+
+      UserNationality.create!(
+        user_id: user.id,
+        nationality_id: nationality
+      )
+
+
+    end
+
+    used.each do |nationality|
+      nationality_id << nationality
+    end
+  end
+
+
+
 berlin_neighborhoods = [
   'Kreuzberg', 'Neukölln', 'Prenzlauer Berg', 'Friedrichshain', 'Mitte',
   'Spandau', 'Charlottenburg', 'Pankow', 'Schöneberg', 'Köpenick',
@@ -140,6 +189,7 @@ cuisine = [
   'Italian', 'Chinese', 'Thai', 'Mexican', 'Indian',
   'Turkish'
 ]
+dietary_requirements =["Kosher", "Halal", "Vegan", "Vegetarian"]
 imagrestaurant = [  "https://imageproxy.wolt.com/venue/6049015c277cf0ebd69a61f7/cbc3ba12-077b-11ed-bc5c-722a4a08bf78_city_chicken_close_up_2.jpg",
   "https://images.unsplash.com/photo-1543992321-cefacfc2322e?q=80&w=1700&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   "https://plus.unsplash.com/premium_photo-1687888327531-090715f28f74?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -172,7 +222,7 @@ imagrestaurant = [  "https://imageproxy.wolt.com/venue/6049015c277cf0ebd69a61f7/
 ]
 
 
-30.times do
+240.times do
   Restaurant.create(
     name: Faker::Restaurant.name,
     address: Faker::Address.full_address,
@@ -183,7 +233,7 @@ imagrestaurant = [  "https://imageproxy.wolt.com/venue/6049015c277cf0ebd69a61f7/
     take_away: Faker::Boolean.boolean,
     opening_hours: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :short),
     neighborhood: berlin_neighborhoods.sample,
-    dietary_requirements: Faker::Food.ingredient
+    dietary_requirements: dietary_requirements.sample
   )
 
 end
@@ -286,7 +336,7 @@ users = User.all
 restaurants = Restaurant.all
 
 
-90.times do
+800.times do
   user = users.sample
   restaurant = restaurants.sample
   weight= 1
@@ -301,18 +351,8 @@ restaurants = Restaurant.all
   Review.create!(
     user_id: user.id,
     restaurant_id: restaurant.id,
-<<<<<<< HEAD
-<<<<<<< HEAD
     rating: rand(2..5),
     service: rand(2..5),
-=======
-    rating: rand(3..5),
-    service: rand(3..5),
->>>>>>> 9af66759fb049903d9c76005e6ef57e176554d31
-=======
-    rating: rand(3..5),
-    service: rand(3..5),
->>>>>>> bbee61b45df68b49591dec211fce2b383ed77797
     weight: weight,
     description: Faker::Lorem.paragraph,
     created_at: Faker::Time.between(from: 1.month.ago, to: Time.now)
