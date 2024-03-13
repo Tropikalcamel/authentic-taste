@@ -1,6 +1,6 @@
 
 .rightCol {
-  width: 50%;
+  width: 49%;
   margin-top: 20px;
 }
 
@@ -303,7 +303,7 @@ display: inline-flex;
   align-items: flex-start;
   justify-content: center;
   gap: 37.27px;
-  padding: 40.82px 43.78px;
+  padding: 40.82px 36.78px;
   position: relative;
   background-color: #fcfcfc;
   border: 0px none;
@@ -576,11 +576,12 @@ font-size: 20.1px;
 }
 
 .badge-rating-card .users-img {
-  display: inline-flex;
-  align-items: center;
-  position: absolute;
-  top: 28px;
-  left: 0;
+    display: inline-flex;
+      align-items: center;
+      position: absolute;
+      top: 28px;
+      left: 0;
+      cursor: pointer;
 }
 
 .badge-rating-card .img-2 {
@@ -697,3 +698,44 @@ font-size: 20.1px;
 
 
 // for the % animation
+// img gallery
+
+.portfolio-menu{
+	text-align:center;
+}
+.portfolio-menu ul li{
+	display:inline-block;
+	margin:0;
+	list-style:none;
+	padding:10px 15px;
+	cursor:pointer;
+	-webkit-transition:all 05s ease;
+	-moz-transition:all 05s ease;
+	-ms-transition:all 05s ease;
+	-o-transition:all 05s ease;
+	transition:all .5s ease;
+}
+
+.portfolio-item{
+	/*width:100%;*/
+}
+.portfolio-item .item{
+    width: 185px;
+    float: left;
+    margin-bottom: 14px;
+    border-radius: 9px;
+}
+
+
+.restaurant-img-item{
+    max-width: 100%;
+      height: 100%;
+      margin: 0px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+.image-gallery{
+      padding-top: 45px;
+
+}
