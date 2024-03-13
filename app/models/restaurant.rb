@@ -1,7 +1,8 @@
 class Restaurant < ApplicationRecord
   has_many :reviews
   has_many :boomarks
-
+  # validates :rating, presence: true, inclusion: { in: 1..5 }
+  # validates :service, presence: true, inclusion: { in: 1..5 }
   # include PgSearch::Model
   # pg_search_scope :search_by_cuisine_and_neighborhood_and_dietary_requirements ,
   #   against: [ :neighborhood, :cuisine, :dietary_requirements],
@@ -41,6 +42,15 @@ class Restaurant < ApplicationRecord
         review_sum += review.rating
       end
       review_sum/ reviews.length
+    end
+
+    def reviews_amount_stars
+      review_sum = 0
+      self.reviews.each do |review|
+        if review.rating > 5
+
+        end
+      end
     end
 
   end
