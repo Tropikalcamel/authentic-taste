@@ -29,13 +29,13 @@ class RestaurantsController < ApplicationController
     # show review
 
     @restaurant = Restaurant.find(params[:id])
-    @review = Review.all
+    @reviews = Review.all
     @sum_review = @restaurant.reviews.count
 
 
-    @review.order(created_at:  :desc, rating: :desc)
+    @reviews.order(created_at:  :desc, rating: :desc)
 
-
+    @review = Review.new
       # end
   end
 
