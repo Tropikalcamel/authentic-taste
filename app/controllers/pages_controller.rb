@@ -50,9 +50,12 @@ end
 
 
     # reviews of the week
-    @reviews_of_the_week = Review.joins(user: :followers)
+    if current_user
+      @reviews_of_the_week = Review.joins(user: :followers)
                 &.where(followers: { taster_id: current_user.id} ).order(created_at: :desc)
                 .limit(10)
+      end
+
 
     # search method
     @restaurants = Restaurant.all
