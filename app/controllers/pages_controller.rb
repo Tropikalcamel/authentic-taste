@@ -34,7 +34,7 @@ end
 
   if average_rating_last_week > 4
     @top_restaurants_last_week << restaurant
-    
+
   end
 end
 

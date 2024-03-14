@@ -496,7 +496,7 @@ follower02= Follower.create!(
 user_ids = User.pluck(:id)
 
 # Create multiple followers with Faker
-30.times do
+500.times do
   Follower.create!(
     user_id: user_ids.sample,
     taster_id: user_ids.sample,
