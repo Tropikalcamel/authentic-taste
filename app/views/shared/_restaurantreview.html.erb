@@ -10,11 +10,11 @@
       <div class="profile-user">
         <div class=" restaurant-rating-scoreVar ">
               <div class="restaurant-rating-scoreVar restaurant-rating" style="background-image: url(<%= asset_path('ratingbackground.svg') %>) ">
-                 <img class="Popular-rating-score rating-score" src="<%= asset_path('ratingscore.svg') %>" width="<%= (@restaurant.calculate_average * 100) / 5 %>%"   alt=" ">
+                 <img class="Popular-rating-score rating-score" src="<%= asset_path('ratingscore.svg') %>" width="<%= (review.rating * 100) / 5 %>%"   alt=" ">
               </div>
 
 
-              <div class=" rateScorVar "><%= sprintf("%.1f", @restaurant.calculate_average) %></div>
+              <div class=" rateScorVar "><%= sprintf("%.1f", review.rating) %></div>
           </div>
 
         <div class="WadeWarren"><%= review.user.username %></div>

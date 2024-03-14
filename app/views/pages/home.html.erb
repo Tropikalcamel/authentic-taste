@@ -1,12 +1,10 @@
 <%= render "shared/search" %>
 <%= render "shared/categorybar"%>
 <%= render "shared/toprestaurants" %>
-<h3 class="section-header">Trending <strong>restaurant</strong> </h3>
+<h3 class="container-xxl">Trending <strong>restaurant</strong> </h3>
 
 <%= render "shared/trending", restaurants: @top_restaurants_last_week.take(6) %>
 <%= render "shared/tasterbar" %>
 <%= render "shared/reviews" %>
 
 <%= render "shared/footer" %>
-
-<%= link_to "View Restaurants", restaurants_path, class: "btn btn-primary" %>
