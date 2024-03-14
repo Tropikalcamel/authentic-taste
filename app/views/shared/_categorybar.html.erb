@@ -1,41 +1,58 @@
 <section>
 <div class="category-wrapper">
     <div class="category">
+          <%= link_to restaurants_path(query: "italian") do  %>
         <div class="categoryImg " >
           <img src="<%= asset_path('italian.svg') %>" alt="">
 
 
         </div>
+          <% end %>
         <div class="categoryText">Italian</div>
     </div>
+
     <div class="category">
+      <%= link_to restaurants_path(query: "chinese") do  %>
         <div class="categoryImg" >
             <img src="<%= asset_path('chinese.svg') %>" alt="">
         </div>
+        <% end %>
         <div class="categoryText">chinese</div>
+
     </div>
     <div class="category">
+      <%= link_to restaurants_path(query: "thai") do  %>
         <div class="categoryImg">
             <img src="<%= asset_path('thai.svg')%> " alt="">
         </div>
+        <% end %>
         <div class="categoryText">thai</div>
-    </div>
+          </div>
     <div class="category">
+      <%= link_to restaurants_path(query: "mexican") do  %>
         <div class="categoryImg">
             <img src="<%= asset_path('mexican.svg') %>" alt="">
+
         </div>
+       <% end %>
         <div class="categoryText">mexican</div>
+
     </div>
     <div class="category">
+         <%= link_to restaurants_path(query: "indian") do  %>
         <div class="categoryImg" >
             <img src="<%= asset_path('indian.svg') %>" alt="">
         </div>
+        <% end %>
         <div class="categoryText">indian</div>
     </div>
+
     <div class="category">
+         <%= link_to restaurants_path(query: "turkish") do  %>
         <div class="categoryImg">
             <img src="<%= asset_path('turkish.svg') %>" alt="">
         </div>
+           <% end %>
         <div class="categoryText">turkish</div>
     </div>
 </section>
