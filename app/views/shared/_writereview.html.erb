@@ -1,42 +1,27 @@
 <div class="review-container ReviewRestaurantcontainer	">
 
 <%= simple_form_for [@restaurant , @review] do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
-  <div class="form-inputs">
-    <%= f.input :rating %>
-    <%= f.input :service %>
-    <%= f.input :description %>
-    <%= f.input :photo %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.submit "Add review", class: 'btn btn-primary'  %>
-        </div>
-<% end %>
-
-  <form action='/restaurants/<%= @restaurant.id %>/reviews' method='post' id="review-form">
-  <input type="hidden" name="authenticity_token" value="<%=session[:_csrf_token] %> >
-    <div class="form-group-review">
-     <textarea id="review-content" name="review[description]" rows="4" cols="50" placeholder="Write your review here..." required></textarea>
-    </div>
-    <div class="reviewBtnBlex">
+  <%= f.input :rating, input_html: { class: 'review-content-style' }%>
+  <%= f.input :description, input_html: { class: 'review-content-style' } %>
+  <div class="reviewBtnBlex">
     <div class="form-group flex-review">
-      <label class="label-margin" for="star-rating">Overall rating:</label>
+
+      <%= f.label :rating, "Overall rating:", class: "label-margin" %>
       <div class="star-rating" id="star-rating">
-        <input type="hidden" name="review[rating]" id="rating-value" value="0" />
-        <span class="star" data-value="1">&#9733;</span>
-        <span class="star" data-value="2">&#9733;</span>
-        <span class="star" data-value="3">&#9733;</span>
-        <span class="star" data-value="4">&#9733;</span>
-        <span class="star" data-value="5">&#9733;</span>
+        <%= f.input :rating, as: :hidden, input_html: { id: "rating-value", value: "5" } %>
+        <% (1..5).each do |value| %>
+          <%= content_tag :span, "&#9733;".html_safe, class: "star", data: { value: value } %>
+        <% end %>
       </div>
     </div>
-    <button type="submit" class="submit-btn">Submit Review</button>
+    <%= f.submit "Add review", class: 'submit-btn'  %>
+  </div>
 
-    </div>
-  </form>
+
+<% end %>
+
+
+
 </div>
 
 <script>

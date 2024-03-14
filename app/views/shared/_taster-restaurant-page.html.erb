@@ -1,11 +1,12 @@
+<% @restaurant.reviews.each do |review| %>
 <div class="profile-taster">
   <div class="profile-img-taster">
-    <img src="<%= asset_path('taster1.png') %>" alt="">
+    <img src="https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1705658652/vqsr5vfilkemiywrdect.jpg" alt="">
   </div>
   <div class="profile-info-taster">
       <div class="username-desc">
-        <span class="taster-name-taster">name </span>
-        <span class="taster-about-taster">description </span>
+        <span class="taster-name-taster"><%= review.user.username %> </span>
+        <span class="taster-about-taster"><%= review.user.description %> </span>
       </div>
 
     <div class="followbtn" onclick="toggleFollow(this)">
@@ -15,3 +16,5 @@
       </div>
   </div>
 </div>
+
+<% end %>

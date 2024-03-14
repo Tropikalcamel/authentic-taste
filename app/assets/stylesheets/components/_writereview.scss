@@ -29,7 +29,10 @@ textarea {
   resize: vertical;
 }
 #review-content{
- border-radius: 12px;
+ border-radius: 12px
+}
+.review-content-style {
+  border-radius: 12px !important;
 }
 .star-rating {
   font-size: 0;
@@ -106,6 +109,7 @@ textarea {
   border-radius: 15px;
   border-radius: 35px;
   cursor: pointer;
+      height: 50px;
 }
 .form-group-review{
   margin-bottom: 8px;

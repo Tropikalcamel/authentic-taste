@@ -10,7 +10,9 @@ class PagesController < ApplicationController
   review_sum = 0
 
   restaurant.reviews.each do |review|
-    review_sum += review.rating
+     if review.rating.present?
+      review_sum += review.rating
+    end
   end
 
   average_rating = (review_sum / restaurant.reviews.count.to_f).round(1)
@@ -27,7 +29,9 @@ end
   review_sum_last_week = 0
 
   restaurant.reviews.where(created_at: 1.week.ago..Time.now).each do |review|
-    review_sum_last_week += review.rating
+    if review.rating.present?
+      review_sum_last_week += review.rating
+    end
   end
 
   average_rating_last_week = (review_sum_last_week / restaurant.reviews.where(created_at: 1.week.ago..Time.now).count.to_f).round(1)
