@@ -7,12 +7,15 @@ class FollowersController < ApplicationController
     taster_id = params[:user_id]
     user_id = current_user.id
 
-    if user_id != taster_id.to_i && !current_user.following?(taster_id)
+    if user_id != taster_id.to_i
+      # && !current_user.following?(taster_id)
       Follower.create(user_id: user_id, taster_id: taster_id)
-      redirect_to taster_follow_path(taster_id), notice: 'You are now following this user.'
-    else
-      redirect_to taster_follow_path(taster_id), alert: 'Unable to follow this user.'
-    end
+              end
+  end
+
+  def destroy
+    follower = Follower.find_by(taster_id: params[:user_id], user: current_user)
+    follower.destroy
   end
 end
 

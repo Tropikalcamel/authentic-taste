@@ -1,4 +1,4 @@
-<div class="container-xxl	">
+<div class="container-xxl"	 data-controller="follow-button">
 <h3 class="section-header">Top
 <strong>taster</strong></h3>
 <div class="flex-wrap">
@@ -14,9 +14,9 @@
 
         <span class="taster-name"><%= user.username %> </span>
         <span class="taster-about"><%= user.description %> </span>
-        <div class="followbtn" onclick="toggleFollow(this)">
-            <div class="taster-btn">
-                <span class="v57_400">Follow</span>
+        <div class="followbtn" data-action="click->follow-button#toggleFollow">
+            <div class="taster-btn" data-taster="<%= user.id %>" >
+                <span class="v57_400" data-follow-button-target='button' >Follow</span>
             </div>
           </div>
       </div>
@@ -27,27 +27,3 @@
 </div>
 
 </div>
-
-<script>
-function toggleFollow(button) {
-    var buttonText = button.querySelector(".v57_400");
-
-    if (buttonText.innerHTML === "Follow") {
-        buttonText.innerHTML = "Unfollow";
-        buttonText.style.color = "#8c800d"; // Change text color to black
-        buttonText.style.border = " 1px solid #afa011"; // Add border
-        buttonText.style.background= "#afa01100"
-    } else {
-        buttonText.innerHTML = "Follow";
-        // buttonText.style.color = ""; // Reset text color
-        // buttonText.style.border = ""; // Reset border
-        // buttonText.style.padding = ""; // Reset padding
-          buttonText.style.padding = "8px 16px";
-        buttonText.style.backgroundColor = "#afa011";
-        buttonText.style.color = "#fff";
-        buttonText.style.border = "none";
-        buttonText.style.borderRadius = "20px";
-        buttonText.style.cursor = "pointer";
-    }
-}
-</script>
