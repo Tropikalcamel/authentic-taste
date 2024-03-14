@@ -123,8 +123,7 @@
 
          <div class="portfolio-item row">
           <div class="item selfie ">
-
-              <a href="<%= @restaurant.photo %>" data-fancybox-group="light">
+              <a href="<%= @restaurant.photo %>" class="fancylight popup-btn" data-fancybox-group="light">
               <img class="  restaurant-img-item" src="<%= @restaurant.photo %>" alt="">
               </a>
           </div>
@@ -135,7 +134,7 @@
           </div>
           <div class="item selfie ">
               <a href="https://cdn.pixabay.com/photo/2018/10/14/18/29/meatloaf-3747129_1280.jpg" class="fancylight popup-btn" data-fancybox-group="light">
-              <img class="  restaurant-img-item" src="https://cdn.pixabay.com/photo/2018/10/14/18/29/meatloaf-3747129_1280.jpg" alt="">
+              <img class="restaurant-img-item" src="https://cdn.pixabay.com/photo/2018/10/14/18/29/meatloaf-3747129_1280.jpg" alt="">
               </a>
           </div>
 
@@ -158,12 +157,7 @@
     <%= render "shared/restaurantreview" %>
   </div>
 
-<% @reviewers.each do |reviewer| %>
-  <%= "Username: #{reviewer.username}" %>
-  <%= "Email: #{reviewer.email}" %>
-  <%= "Description: #{reviewer.description}" %>
-  <!-- Display other user information as needed -->
-<% end %>
+
 
 </div>
 
@@ -189,7 +183,7 @@
 
           <img class="seperator" src="https://c.animaapp.com/GgaLeXbT/img/seperator-1.svg" />
           <p class="element-of-italian-rate">
-            <span class="text-wrapper-4">90% of </span>
+            <span class="text-wrapper-4"><%= Review.count %> of </span>
             <span class="text-wrapper-2"><%= @restaurant.cuisine %><br /></span>
             <span class="text-wrapper-4">rate this restaurant as </span>
             <span class="text-wrapper-5">Authentic</span>
