@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The page you were looking for doesn't exist (404)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>
+    body {
+      background-color: #F49B3F;; /* Adjusted to match the image's background color */
+      color: #ffffff;
+      text-align: center;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;', cursive, sans-serif; /* Comic Sans is used for example purposes */
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .dialog {
+      text-shadow: 2px 2px #000000; /* Adding text shadow for better readability */
+    }
+
+    h1 {
+      font-size: 2em; /* Adjusted size for emphasis */
+      color: #ffffff;
+      position: relative; /* Allows for absolute positioning of pseudo-elements */
+      padding: 0 150px; /* Adjust padding to make room for images */
+    }
+
+    .dialog {
+      background: transparent; /* Remove background from the dialog box */
+      border: none;
+      padding: 0;
+      box-shadow: none;
+    }
+
+    h1:before {
+      content: ''; /* Clear out default content */
+      display: inline-block;
+      width: 100px; /* Width of your fork image */
+      height: 100px; /* Height of your fork image */
+      background: url('/home/marcus/code/marcusxmeier/authentic-taste/app/assets/images/fork.png') no-repeat center center;
+      background-size: contain;
+      margin-right: 20px; /* Adjust spacing as needed */
+    }
+
+    h1:after {
+      content: ''; /* Clear out default content */
+      display: inline-block;
+      width: 100px; /* Width of your knife image */
+      height: 100px; /* Height of your knife image */
+      background: url('/home/marcus/code/marcusxmeier/authentic-taste/app/assets/images/fork.png') no-repeat center center;
+      background-size: contain;
+      margin-left: 20px; /* Adjust spacing as needed */
+    }
+
+    h1 span {
+      content: '';
+      display: inline-block;
+      width: 100px; /* Width of your plate image */
+      height: 100px; /* Height of your plate image */
+      background: url('/home/marcus/code/marcusxmeier/authentic-taste/app/assets/images/fork.png') no-repeat center center;
+      background-size: contain;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    p {
+      font-size: 1.2em; /* Adjusted size for emphasis */
+      color: #ffffff;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- This file lives in public/404.html -->
+  <div class="dialog">
+    <h1>
+      <span></span>Whoops! Nothing delicious to find here!
+    </h1>
+    <p>Seems like the page you were trying to find isn't available.</p>
+  </div>
+</body>
+</html>

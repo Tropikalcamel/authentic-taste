@@ -11,7 +11,7 @@
 }
 
 .zoom-effect:hover {
-  transform: scale(1.09);
+  transform: scale(1.04);
   cursor: pointer;
 }
 
@@ -25,16 +25,18 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding-top: 12px;
     margin: 0 0px;
 }
 
 .Popular-restaurant-img-link {
-    width: 216px;
-      height: 174px;
-      -o-object-fit: cover;
-      object-fit: cover;
-      border-radius: 14px;
+    width: 100%;
+    height: 174px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: 14px 14px 0 0;
+}
+.Popular-restaurant-img{
+  width: 100%;
 }
 
 .Popular-restaurant-title a {
@@ -80,10 +82,10 @@
   margin: 0;
 }
 .restaurant-category-tag {
-      padding: 13px 36px;
+  padding: 13px 36px;
   width: 75px;
   height: 15px;
-  background: #fb000054;
+      background: #afafaf;
   border-radius: 12px;
   display: flex;
   font-style: normal;

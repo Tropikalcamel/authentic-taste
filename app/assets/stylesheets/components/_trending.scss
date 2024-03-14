@@ -31,8 +31,8 @@
     display: flex;
     align-items: center;
     margin-bottom: 12px;
-    padding: 9px;
-}
+    padding: 9px 16px 9px 9px;
+  }
 
 .restaurant-text-Title-favoriteIcon {
   display: flex;
@@ -63,11 +63,13 @@
   flex-direction: row;
   font-family: Roboto;
   font-style: normal;
+  min-height: 46px;
   font-weight: normal;
-  font-size: 0.9em;
+  font-size: 13px;
+  /* background-color: antiquewhite; */
   display: flex;
   align-items: center;
-  margin-bottom: 12px;
+  /* margin-bottom: 12px; */
   color: #808080;
 }
 
@@ -112,7 +114,6 @@
 
 .rating-score {
   object-fit: none;
-  width: 91%;
   object-position: left;
   height: 13.12px;
   position: absolute;
@@ -158,10 +159,11 @@
 }
 
 .restaurant-category-tag {
+          background: #afafaf;
         padding: 13px 36px;
       width: 66px;
       height: 15px;
-      background: #DBDBDB;
+
       border-radius: 12px;
       font-family: Roboto;
       display: flex;
@@ -187,4 +189,50 @@
 
 .restaurant-OpenNow img {
   margin-left: 4px;
+}
+
+.fa-heart {
+
+  /* Default color */
+  cursor: pointer;
+}
+.favorite-btn {
+  color: rgb(235, 152, 152);
+  /* Color when active (clicked) */
+}
+
+.favorite-btn.active {
+  color: red;
+  animation: zoomOut 0.2s ease-in-out forwards;
+  opacity: 1;
+  /* Color when active (clicked) */
+}
+
+
+// favorite Icon annim
+
+
+
+@keyframes zoomOut {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  90% {
+    transform: scale(4);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.favorite-btn.active i.fa-heart {
+  transition: transform 0.3s ease-in-out;
+}
+
+.favorite-btn.active.clicked i.fa-heart {
+  animation: zoomOut 0.5s ease-in-out forwards;
 }

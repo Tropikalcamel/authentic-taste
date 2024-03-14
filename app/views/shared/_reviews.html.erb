@@ -1,23 +1,26 @@
-<div class="container">
+
+
+<div class="container-xxl	">
 <h3 class="section-header">Top <strong>taster</strong> reviews</h3>
 
 <div class="flex-wrap">
-<div class="ReviewContainer">
+
+<% @reviews_of_the_week.take(3).each do |review| %>
+
+  <div class="Reviewcontainer	">
   <div class="ProfileImgBtn">
     <div class="profile-user-img">
       <img class="Profile3" src="https://ca.slack-edge.com/T02NE0241-U06CPF00BQV-3b15642a65d4-512" alt="">
       <div class="profile-user">
-        <div class="WadeWarren">Sidney poulet</div>
+        <div class="WadeWarren"><%= review.user.username %></div>
         <div class="Colleages">Hüner fresser</div>
       </div>
     </div>
   </div>
   <div class="ReviewContent">
-    <div class="LoremIpsumDolorSitAmetConsecteturAdipiscingElitIdQuamTortorNecArcuEuismodNequeUltriciesEgetAdipiscingCondimentumLoremIpsumDolorSitAmetConsecteturAdipiscingElitIdQuamTortorNecArcuEuismodNequeUltriciesEgetAdipiscingCondimentum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id quam tortor nec arcu. Euismod neque ultricies eget adipiscing condimentum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id quam tortor nec arcu. Euismod neque ultricies eget adipiscing condimentum.</div>
+    <div class="review-text"><%= review.description %>   </div>
   </div>
   <div class="ReviewImgWrap">
-    <img class="Rectangle340" src="https://via.placeholder.com/140x102" alt="">
-    <img class="Rectangle339" src="https://via.placeholder.com/139x102" alt="">
 
   </div>
   <div class="Seperator"></div>
@@ -28,21 +31,21 @@
         </div>
         <div class=" restaurant-text-info ">
             <div class=" restaurant-text-Title-favoriteIcon ">
-                <h3 class=" restaurant-title "><a href=" # ">La Femme Patisserie</a></h3>
-                <div class=" favoriteIcon ">
-                    <img src="/assets/favoriteIcon-96d11ebd1ef8da04c35331684fcfc148183dbfd95e66c1af1c90db204f45816c.svg" alt=" ">
+                <h3 class=" restaurant-title "><a href=" # "><%= review.restaurant.name %></a></h3>
+                <div class="favorite-btn" onclick="toggleFavorite(this)">
+                   <i class="fa fa-heart " id="heart-icon"></i>
                 </div>
             </div>
             <div class=" restaurant-adress ">
                 <img src=" /assets/adressIcon-9b5480c829a84d0145f4b452f421c50c081a6941bf1428316a887a06ceb36c21.svg" alt=" ">
-                <div>Sonnenallee 26, 12047, Berlin</div>
+                <div><%= review.restaurant.address %></div>
             </div>
 
             <div class=" restaurant-rating-scoreVar ">
-                <div class=" restaurant-rating ">
-                    <img class=" rating-score " src="/assets/ratingscore-80de8d55a2c8c420a5dcd401580190fe9bcc8fbb2f70bc91cf8ea37d43c72c6b.svg" alt=" ">
+                <div class=" restaurant-rating " style="background-image: url(<%= asset_path('ratingbackground.svg') %>)">
+                    <img class=" rating-score " src="<%= asset_path('ratingscore.svg') %>" width="<%= (review.rating * 100) / 5 %>%"  alt=" ">
                 </div>
-                <div class=" rateScorVar ">4.9</div>
+                <div class=" rateScorVar "><%= review.rating %></div>
             </div>
 
             <div class=" restaurant-description ">
@@ -63,127 +66,7 @@
 </div>
 
 
-<div class="ReviewContainer">
-  <div class="ProfileImgBtn">
-    <div class="profile-user-img">
-      <img class="Profile3" src="https://ca.slack-edge.com/T02NE0241-U02FW703QBZ-210ec2150a11-72" alt="">
-      <div class="profile-user">
-        <div class="WadeWarren">Emma Anna</div>
-        <div class="Colleages">Hüner fresser</div>
-      </div>
-    </div>
-  </div>
-  <div class="ReviewContent">
-    <div class="LoremIpsumDolorSitAmetConsecteturAdipiscingElitIdQuamTortorNecArcuEuismodNequeUltriciesEgetAdipiscingCondimentumLoremIpsumDolorSitAmetConsecteturAdipiscingElitIdQuamTortorNecArcuEuismodNequeUltriciesEgetAdipiscingCondimentum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id quam tortor nec arcu. Euismod neque ultricies eget adipiscing condimentum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id quam tortor nec arcu. Euismod neque ultricies eget adipiscing condimentum.</div>
-  </div>
-  <div class="ReviewImgWrap">
-    <img class="Rectangle340" src="https://via.placeholder.com/140x102" alt="">
-    <img class="Rectangle339" src="https://via.placeholder.com/139x102" alt="">
-
-  </div>
-  <div class="Seperator"></div>
-  <div class="RestaurantCard">
-  <div class="restaurant-info-reviews">
-        <div class="restaurant-img">
-            <a href="#"><img class=" restaurant-img-link " src="https://imageproxy.wolt.com/venue/6049015c277cf0ebd69a61f7/cbc3ba12-077b-11ed-bc5c-722a4a08bf78_city_chicken_close_up_2.jpg" alt=" "></a>
-        </div>
-        <div class=" restaurant-text-info ">
-            <div class=" restaurant-text-Title-favoriteIcon ">
-                <h3 class=" restaurant-title "><a href=" # ">La Femme Patisserie</a></h3>
-                <div class=" favoriteIcon ">
-                    <img src="/assets/favoriteIcon-96d11ebd1ef8da04c35331684fcfc148183dbfd95e66c1af1c90db204f45816c.svg" alt=" ">
-                </div>
-            </div>
-            <div class=" restaurant-adress ">
-                <img src=" /assets/adressIcon-9b5480c829a84d0145f4b452f421c50c081a6941bf1428316a887a06ceb36c21.svg" alt=" ">
-                <div>Sonnenallee 26, 12047, Berlin</div>
-            </div>
-
-            <div class=" restaurant-rating-scoreVar ">
-                <div class=" restaurant-rating ">
-                    <img class=" rating-score " src="/assets/ratingscore-80de8d55a2c8c420a5dcd401580190fe9bcc8fbb2f70bc91cf8ea37d43c72c6b.svg" alt=" ">
-                </div>
-                <div class=" rateScorVar ">4.9</div>
-            </div>
-
-            <div class=" restaurant-description ">
-
-            </div>
-            <div class=" restaurant-tel-cuisine-openNow ">
-
-                <div class=" restaurant-category-tag ">
-                    Italian
-                </div>
-
-
-            </div>
-        </div>
-
-    </div>
-  </div>
-</div>
-
-
-<div class="ReviewContainer">
-  <div class="ProfileImgBtn">
-    <div class="profile-user-img">
-      <img class="Profile3" src="https://ca.slack-edge.com/T02NE0241-U06CPF00BQV-3b15642a65d4-512" alt="">
-      <div class="profile-user">
-        <div class="WadeWarren">Sidney poulet</div>
-        <div class="Colleages">Hüner fresser</div>
-      </div>
-    </div>
-  </div>
-  <div class="ReviewContent">
-    <div class="LoremIpsumDolorSitAmetConsecteturAdipiscingElitIdQuamTortorNecArcuEuismodNequeUltriciesEgetAdipiscingCondimentumLoremIpsumDolorSitAmetConsecteturAdipiscingElitIdQuamTortorNecArcuEuismodNequeUltriciesEgetAdipiscingCondimentum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id quam tortor nec arcu. Euismod neque ultricies eget adipiscing condimentum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id quam tortor nec arcu. Euismod neque ultricies eget adipiscing condimentum.</div>
-  </div>
-  <div class="ReviewImgWrap">
-    <img class="Rectangle340" src="https://via.placeholder.com/140x102" alt="">
-    <img class="Rectangle339" src="https://via.placeholder.com/139x102" alt="">
-
-  </div>
-  <div class="Seperator"></div>
-  <div class="RestaurantCard">
-  <div class="restaurant-info-reviews">
-        <div class="restaurant-img">
-            <a href="#"><img class=" restaurant-img-link " src="https://imageproxy.wolt.com/venue/6049015c277cf0ebd69a61f7/cbc3ba12-077b-11ed-bc5c-722a4a08bf78_city_chicken_close_up_2.jpg" alt=" "></a>
-        </div>
-        <div class=" restaurant-text-info ">
-            <div class=" restaurant-text-Title-favoriteIcon ">
-                <h3 class=" restaurant-title "><a href=" # ">La Femme Patisserie</a></h3>
-                <div class=" favoriteIcon ">
-                    <img src="/assets/favoriteIcon-96d11ebd1ef8da04c35331684fcfc148183dbfd95e66c1af1c90db204f45816c.svg" alt=" ">
-                </div>
-            </div>
-            <div class=" restaurant-adress ">
-                <img src=" /assets/adressIcon-9b5480c829a84d0145f4b452f421c50c081a6941bf1428316a887a06ceb36c21.svg" alt=" ">
-                <div>Sonnenallee 26, 12047, Berlin</div>
-            </div>
-
-            <div class=" restaurant-rating-scoreVar ">
-                <div class=" restaurant-rating ">
-                    <img class=" rating-score " src="/assets/ratingscore-80de8d55a2c8c420a5dcd401580190fe9bcc8fbb2f70bc91cf8ea37d43c72c6b.svg" alt=" ">
-                </div>
-                <div class=" rateScorVar ">4.9</div>
-            </div>
-
-            <div class=" restaurant-description ">
-
-            </div>
-            <div class=" restaurant-tel-cuisine-openNow ">
-
-                <div class=" restaurant-category-tag ">
-                    Italian
-                </div>
-
-
-            </div>
-        </div>
-
-    </div>
-  </div>
-</div>
-
+<% end %>
 
 
 

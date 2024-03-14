@@ -1,242 +1,61 @@
-<div class="container">
+<div class="container-xxl	">
 <h3 class="section-header">Trending <strong>restaurant</strong> </h3>
 
-<div class="results-for-restaurants">
-  <div class="restaurant-info">
-        <div class="restaurant-img">
-            <a href="#"><img class=" restaurant-img-link " src="https://imageproxy.wolt.com/venue/6049015c277cf0ebd69a61f7/cbc3ba12-077b-11ed-bc5c-722a4a08bf78_city_chicken_close_up_2.jpg" alt=" "></a>
-        </div>
-        <div class=" restaurant-text-info ">
-            <div class=" restaurant-text-Title-favoriteIcon ">
-                <h3 class=" restaurant-title "><a href=" # ">La Femme Patisserie</a></h3>
-                <div class=" favoriteIcon ">
-                    <img src="<%= asset_path('favoriteIcon.svg') %>" alt=" ">
-                </div>
-            </div>
-            <div class=" restaurant-adress ">
-                <img src=" <%= asset_path('adressIcon.svg') %>" alt=" ">
-                <div>Sonnenallee 26, 12047, Berlin</div>
-            </div>
 
-            <div class=" restaurant-rating-scoreVar ">
-                <div class=" restaurant-rating ">
-                    <img class=" rating-score " src="<%= asset_path('ratingscore.svg') %>" alt=" ">
-                </div>
-                <div class=" rateScorVar ">4.9</div>
-            </div>
-
-            <div class=" restaurant-description ">
-
-            </div>
-            <div class=" restaurant-tel-cuisine-openNow ">
-
-                <div class=" restaurant-category-tag ">
-                    Italian
-                </div>
-
-
-            </div>
-        </div>
-
-    </div>
+<div class="results-for-restaurants flex-wrap" data-controller="like-button">
 
 
 
-      <div class="restaurant-info">
-        <div class="restaurant-img">
-            <a href="#"><img class=" restaurant-img-link " src="https://imageproxy.wolt.com/venue/6049015c277cf0ebd69a61f7/cbc3ba12-077b-11ed-bc5c-722a4a08bf78_city_chicken_close_up_2.jpg" alt=" "></a>
-        </div>
-        <div class=" restaurant-text-info ">
-            <div class=" restaurant-text-Title-favoriteIcon ">
-                <h3 class=" restaurant-title "><a href=" # ">La Femme Patisserie</a></h3>
-                <div class=" favoriteIcon ">
-                    <img src="<%= asset_path('favoriteIcon.svg') %>" alt=" ">
-                </div>
-            </div>
-            <div class=" restaurant-adress ">
-                <img src=" <%= asset_path('adressIcon.svg') %>" alt=" ">
-                <div>Sonnenallee 26, 12047, Berlin</div>
-            </div>
-
-            <div class=" restaurant-rating-scoreVar ">
-                <div class=" restaurant-rating ">
-                    <img class=" rating-score " src="<%= asset_path('ratingscore.svg') %>" alt=" ">
-                </div>
-                <div class=" rateScorVar ">4.9</div>
-            </div>
-
-            <div class=" restaurant-description ">
-
-            </div>
-            <div class=" restaurant-tel-cuisine-openNow ">
-
-                <div class=" restaurant-category-tag ">
-                    Italian
-                </div>
-
-
-            </div>
-        </div>
-
-    </div>
 
 
 
-      <div class="restaurant-info">
-        <div class="restaurant-img">
-            <a href="#"><img class=" restaurant-img-link " src="https://imageproxy.wolt.com/venue/6049015c277cf0ebd69a61f7/cbc3ba12-077b-11ed-bc5c-722a4a08bf78_city_chicken_close_up_2.jpg" alt=" "></a>
-        </div>
-        <div class=" restaurant-text-info ">
-            <div class=" restaurant-text-Title-favoriteIcon ">
-                <h3 class=" restaurant-title "><a href=" # ">La Femme Patisserie</a></h3>
-                <div class=" favoriteIcon ">
-                    <img src="<%= asset_path('favoriteIcon.svg') %>" alt=" ">
-                </div>
-            </div>
-            <div class=" restaurant-adress ">
-                <img src=" <%= asset_path('adressIcon.svg') %>" alt=" ">
-                <div>Sonnenallee 26, 12047, Berlin</div>
-            </div>
-
-            <div class=" restaurant-rating-scoreVar ">
-                <div class=" restaurant-rating ">
-                    <img class=" rating-score " src="<%= asset_path('ratingscore.svg') %>" alt=" ">
-                </div>
-                <div class=" rateScorVar ">4.9</div>
-            </div>
-
-            <div class=" restaurant-description ">
-
-            </div>
-            <div class=" restaurant-tel-cuisine-openNow ">
-
-                <div class=" restaurant-category-tag ">
-                    Italian
-                </div>
-
-
-            </div>
-        </div>
-
-    </div>
-
+<% @top_restaurants_last_week.take(6).each do |restaurant| %>
 
     <div class="restaurant-info">
-      <div class="restaurant-img">
-            <a href="#"><img class=" restaurant-img-link " src="https://imageproxy.wolt.com/venue/6049015c277cf0ebd69a61f7/cbc3ba12-077b-11ed-bc5c-722a4a08bf78_city_chicken_close_up_2.jpg" alt=" "></a>
-        </div>
-        <div class=" restaurant-text-info ">
-            <div class=" restaurant-text-Title-favoriteIcon ">
-                <h3 class=" restaurant-title "><a href=" # ">La Femme Patisserie</a></h3>
-                <div class=" favoriteIcon ">
-                    <img src="<%= asset_path('favoriteIcon.svg') %>" alt=" ">
-                </div>
-            </div>
-            <div class=" restaurant-adress ">
-                <img src=" <%= asset_path('adressIcon.svg') %>" alt=" ">
-                <div>Sonnenallee 26, 12047, Berlin</div>
-            </div>
-
-            <div class=" restaurant-rating-scoreVar ">
-                <div class=" restaurant-rating ">
-                    <img class=" rating-score " src="<%= asset_path('ratingscore.svg') %>" alt=" ">
-                </div>
-                <div class=" rateScorVar ">4.9</div>
-            </div>
-
-            <div class=" restaurant-description ">
-
-            </div>
-            <div class=" restaurant-tel-cuisine-openNow ">
-
-                <div class=" restaurant-category-tag ">
-                    Italian
-                </div>
-
-
-            </div>
-        </div>
-
+    <div class="restaurant-img">
+        <a href="<%= restaurant_path(restaurant) %>"><img class=" restaurant-img-link " src="<%= restaurant.photo %>" alt=" "></a>
     </div>
 
-      <div class="restaurant-info">
-        <div class="restaurant-img">
-            <a href="#"><img class=" restaurant-img-link " src="https://imageproxy.wolt.com/venue/6049015c277cf0ebd69a61f7/cbc3ba12-077b-11ed-bc5c-722a4a08bf78_city_chicken_close_up_2.jpg" alt=" "></a>
+    <div class=" restaurant-text-info ">
+        <div class=" restaurant-text-Title-favoriteIcon ">
+            <h3 class=" restaurant-title "><a href=" # "><%= restaurant.name %></a></h3>
+          <div class="favorite-btn" data-action="click->like-button#toggleFavorite" data-like-button-target='button'>
+              <i class="fa fa-heart " id="heart-icon" data-like-button-target='heart' data-user="<%= current_user.id %>" data-restaurant="<%= restaurant.id %> "></i>
+          </div>
+
+
         </div>
-        <div class=" restaurant-text-info ">
-            <div class=" restaurant-text-Title-favoriteIcon ">
-                <h3 class=" restaurant-title "><a href=" # ">La Femme Patisserie</a></h3>
-                <div class=" favoriteIcon ">
-                    <img src="<%= asset_path('favoriteIcon.svg') %>" alt=" ">
-                </div>
-            </div>
-            <div class=" restaurant-adress ">
-                <img src=" <%= asset_path('adressIcon.svg') %>" alt=" ">
-                <div>Sonnenallee 26, 12047, Berlin</div>
-            </div>
+        <div class=" restaurant-adress ">
 
-            <div class=" restaurant-rating-scoreVar ">
-                <div class=" restaurant-rating ">
-                    <img class=" rating-score " src="<%= asset_path('ratingscore.svg') %>" alt=" ">
-                </div>
-                <div class=" rateScorVar ">4.9</div>
-            </div>
-
-            <div class=" restaurant-description ">
-
-            </div>
-            <div class=" restaurant-tel-cuisine-openNow ">
-
-                <div class=" restaurant-category-tag ">
-                    Italian
-                </div>
-
-
-            </div>
+            <div><%= restaurant.description %></div>
         </div>
 
+        <div class=" restaurant-rating-scoreVar ">
+            <div class="restaurant-rating"  style="background-image: url(<%= asset_path('ratingbackground.svg') %>)">
+                <img class=" rating-score " src="<%= asset_path('ratingscore.svg') %>" width="<%= (restaurant.calculate_average * 100) / 5 %>%"  alt=" ">
+            </div>
+            <div class=" rateScorVar "><%= restaurant.calculate_average %></div>
+        </div>
+
+        <div class=" restaurant-description ">
+
+        </div>
+        <div class=" restaurant-tel-cuisine-openNow ">
+
+            <div class=" restaurant-category-tag ">
+                <%= restaurant.cuisine %>
+            </div>
+
+
+        </div>
     </div>
+  </div>
+
+
+<% end %>
 
 
 
-
-    <div class="restaurant-info">
-        <div class="restaurant-img">
-            <a href="#"><img class=" restaurant-img-link " src="https://imageproxy.wolt.com/venue/6049015c277cf0ebd69a61f7/cbc3ba12-077b-11ed-bc5c-722a4a08bf78_city_chicken_close_up_2.jpg" alt=" "></a>
-        </div>
-        <div class=" restaurant-text-info ">
-            <div class=" restaurant-text-Title-favoriteIcon ">
-                <h3 class=" restaurant-title "><a href=" # ">La Femme Patisserie</a></h3>
-                <div class=" favoriteIcon ">
-                    <img src="<%= asset_path('favoriteIcon.svg') %>" alt=" ">
-                </div>
-            </div>
-            <div class=" restaurant-adress ">
-                <img src=" <%= asset_path('adressIcon.svg') %>" alt=" ">
-                <div>Sonnenallee 26, 12047, Berlin</div>
-            </div>
-
-            <div class=" restaurant-rating-scoreVar ">
-                <div class=" restaurant-rating ">
-                    <img class=" rating-score " src="<%= asset_path('ratingscore.svg') %>" alt=" ">
-                </div>
-                <div class=" rateScorVar ">4.9</div>
-            </div>
-
-            <div class=" restaurant-description ">
-
-            </div>
-            <div class=" restaurant-tel-cuisine-openNow ">
-
-                <div class=" restaurant-category-tag ">
-                    Italian
-                </div>
-
-
-            </div>
-        </div>
-
-    </div>
 
 
 
