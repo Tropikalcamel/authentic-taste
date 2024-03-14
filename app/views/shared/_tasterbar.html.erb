@@ -3,26 +3,37 @@
 <strong>taster</strong></h3>
 <div class="flex-wrap">
 
-  <% @top_users.take(3).each do |user| %>
 
-    <div class="profile">
 
-      <div class="profile-img">
-        <img src="<%= asset_path('taster1.png') %>" alt="">
-      </div>
-      <div class="profile-info">
 
-        <span class="taster-name"><%= user.username %> </span>
-        <span class="taster-about"><%= user.description %> </span>
-        <div class="followbtn" data-action="click->follow-button#toggleFollow">
-            <div class="taster-btn" data-taster="<%= user.id %>" >
-                <span class="v57_400" data-follow-button-target='button' >Follow</span>
-            </div>
-          </div>
+<% @top_users.take(3).each_with_index do |user, index| %>
+  <div class="profile">
+    <div class="profile-img">
+      <% # Check if the index is within the bounds of the image URLs array %>
+      <% if index < @image_urls.length %>
+        <img src="<%= @image_urls[index] %>" alt="">
+      <% else %>
+        <% # Handle the case when there are fewer image URLs than users %>
+        <img src="default_image_url_here" alt="">
+      <% end %>
+    </div>
+    <div class="profile-info">
+      <span class="taster-name"><%= user.username %> </span>
+      <span class="taster-about"><%= @fake_profile_text[index] %> </span>
+      <div class="followbtn" data-action="click->follow-button#toggleFollow">
+        <div class="taster-btn" data-taster="<%= user.id %>" >
+          <span class="v57_400" data-follow-button-target='button' >Follow</span>
+        </div>
       </div>
     </div>
+  </div>
+<% end %>
 
-  <% end %>
+
+
+
+
+
 
 </div>
 

@@ -5,68 +5,62 @@
 
 <div class="flex-wrap" data-controller="like-button">
 
-<% @reviews_of_the_week.take(3).each do |review| %>
+
+
+<% @reviews_of_the_week.take(3).each_with_index do |review, index| %>
 
   <div class="Reviewcontainer	">
-  <div class="ProfileImgBtn">
-    <div class="profile-user-img">
-      <img class="Profile3" src="https://ca.slack-edge.com/T02NE0241-U06CPF00BQV-3b15642a65d4-512" alt="">
-      <div class="profile-user">
-        <div class="WadeWarren"><%= review.user.username %></div>
-        <div class="Colleages">Hüner fresser</div>
+    <div class="ProfileImgBtn">
+      <div class="profile-user-img">
+        <img class="Profile3" src="<%= @teachers_img[index] %>" alt="">
+        <div class="profile-user">
+          <div class="WadeWarren"><%= review.user.username %></div>
+          <div class="Colleages">Hüner fresser</div>
+        </div>
+      </div>
+    </div>
+    <div class="ReviewContent">
+      <div class="review-text"><%= @fake_reviews[index] %>   </div>
+    </div>
+    <div class="ReviewImgWrap">
+    </div>
+    <div class="Seperator"></div>
+    <div class="RestaurantCard">
+      <div class="restaurant-info-reviews">
+        <div class="restaurant-img">
+          <a href="#"><img class=" restaurant-img-link " src="<%= review.restaurant.photo %>" alt=" "></a>
+        </div>
+        <div class=" restaurant-text-info ">
+          <div class=" restaurant-text-Title-favoriteIcon ">
+            <h3 class=" restaurant-title "><a href=" # "><%= review.restaurant.name %></a></h3>
+            <div class="favorite-btn" data-action="click->like-button#toggleFavorite">
+              <i class="fa fa-heart " id="heart-icon" data-like-button-target='heart' data-user="<%= current_user.id %>" data-restaurant="<%= review.restaurant.id %>"></i>
+            </div>
+          </div>
+          <div class=" restaurant-adress ">
+            <img src=" /assets/adressIcon-9b5480c829a84d0145f4b452f421c50c081a6941bf1428316a887a06ceb36c21.svg" alt=" ">
+            <div><%= review.restaurant.description %></div>
+          </div>
+          <div class=" restaurant-rating-scoreVar ">
+            <div class=" restaurant-rating " style="background-image: url(<%= asset_path('ratingbackground.svg') %>)">
+              <img class=" rating-score " src="<%= asset_path('ratingscore.svg') %>" width="<%= (review.rating * 100) / 5 %>%"  alt=" ">
+            </div>
+            <div class=" rateScorVar "><%= review.rating %></div>
+          </div>
+          <div class=" restaurant-description ">
+          </div>
+          <div class=" restaurant-tel-cuisine-openNow ">
+            <div class=" restaurant-category-tag ">
+              Italian
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="ReviewContent">
-    <div class="review-text"><%= review.description %>   </div>
-  </div>
-  <div class="ReviewImgWrap">
-
-  </div>
-  <div class="Seperator"></div>
-  <div class="RestaurantCard">
-  <div class="restaurant-info-reviews">
-        <div class="restaurant-img">
-            <a href="#"><img class=" restaurant-img-link " src="<%= review.restaurant.photo %>" alt=" "></a>
-        </div>
-        <div class=" restaurant-text-info ">
-            <div class=" restaurant-text-Title-favoriteIcon ">
-                <h3 class=" restaurant-title "><a href=" # "><%= review.restaurant.name %></a></h3>
-                <div class="favorite-btn" data-action="click->like-button#toggleFavorite">
-                   <i class="fa fa-heart " id="heart-icon" data-like-button-target='heart' data-user="<%= current_user.id %>" data-restaurant="<%= review.restaurant.id %>"></i>
-                </div>
-            </div>
-            <div class=" restaurant-adress ">
-                <img src=" /assets/adressIcon-9b5480c829a84d0145f4b452f421c50c081a6941bf1428316a887a06ceb36c21.svg" alt=" ">
-                <div><%= review.restaurant.description %></div>
-            </div>
-
-            <div class=" restaurant-rating-scoreVar ">
-                <div class=" restaurant-rating " style="background-image: url(<%= asset_path('ratingbackground.svg') %>)">
-                    <img class=" rating-score " src="<%= asset_path('ratingscore.svg') %>" width="<%= (review.rating * 100) / 5 %>%"  alt=" ">
-                </div>
-                <div class=" rateScorVar "><%= review.rating %></div>
-            </div>
-
-            <div class=" restaurant-description ">
-
-            </div>
-            <div class=" restaurant-tel-cuisine-openNow ">
-
-                <div class=" restaurant-category-tag ">
-                    Italian
-                </div>
-
-
-            </div>
-        </div>
-
-    </div>
-  </div>
-</div>
-
 
 <% end %>
+
 
 
 
