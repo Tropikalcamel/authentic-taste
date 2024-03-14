@@ -1069,7 +1069,75 @@ button {
 
 .search-div{
       background-color: rgb(175, 148, 17);
-        height: 170px;
+      height: 313px;
         display: flex;
         align-content: center;
+        background: linear-gradient(96deg, rgba(255, 145, 31, 0.81) 7.37%, rgba(255, 0, 0, 0.83) 96.35%), url(app/assets/images/search-bk.avif), lightgray 0px -506.632px / 100% 252.961% no-repeat;
+}
+.action-title{
+    text-align: center;
+      color: white;
+}
+
+// search btn UI
+
+.search-box {
+    position: relative;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #ffffff;
+      display: flex;
+      width: 559px;
+      border-radius: 50px;
+      height: 54px;
+      padding: 5px;
+      align-content: space-between;
+      justify-content: space-between;
+      align-items: center;
+}
+
+.search-input {
+  outline: none;
+  border: none;
+  background: none;
+  width: 0;
+  padding: 0;
+  color: #782f2f;
+  font-size: 16px;
+  transition: .3s;
+  line-height: 40px;
+}
+
+.search-input::placeholder {
+  color: #dbc5b0;
+}
+
+.search-btn {
+    color: #fff;
+      width: 187px;
+      height: 47px;
+      border-radius: 50px;
+      background: #cd595a;
+      font-size: 22px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+}
+.fa-search{
+      margin-left: 9px;
+}
+.search-box:hover{
+  text-decoration:none;
+}
+
+/* Remove hover and focus effects */
+.search-box:hover .search-input,
+.search-box:focus .search-input,
+.search-input:hover,
+.search-input:focus,
+.search-input:not(:placeholder-shown) {
+  width: 240px;
+  padding: 0 6px;
 }

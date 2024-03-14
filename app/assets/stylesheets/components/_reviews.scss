@@ -1,23 +1,19 @@
-/* ReviewContainer */
-.ReviewContainer {
-    // margin: 20px;
-    padding: 11px 10px;
-    width: min-content;
-    border-radius: 36px;
-    width: -moz-min-content;
-    width: min-content;
-    background: #F8F4F4;
-    // opacity: 0.6;
-}
-.profile-user{
-      margin-left: 15px;
+/* Reviewcontainer */
+.Reviewcontainer {
+  // margin: 20px;
+  padding: 11px 10px;
+  width: min-content;
+  border-radius: 36px;
+  width: -moz-min-content;
+  width: min-content;
+  background: #F8F4F4;
+  // opacity: 0.6;
 }
 
-/* ProfileImgBtn */
-.ProfileImgBtn {}
+.profile-user {
+  margin-left: 15px;
+}
 
-/* Frame36145 */
-.Frame36145 {}
 
 /* Profile3 */
 .Profile3 {
@@ -26,8 +22,6 @@
   border-radius: 50%;
 }
 
-/* Frame35586 */
-.Frame35586 {}
 
 /* WadeWarren */
 .WadeWarren {
@@ -44,6 +38,7 @@
 /* ReviewContent */
 .ReviewContent {
   margin-top: 10px;
+  min-height: 57px;
 }
 
 /* reviewText */
@@ -80,8 +75,6 @@
   margin-bottom: 10px;
 }
 
-/* RestaurantCard */
-.RestaurantCard {}
 
 /* Resto1 */
 .Resto1 {
@@ -90,8 +83,7 @@
   margin-top: 10px;
 }
 
-/* Group1290 */
-.Group1290 {}
+
 
 /* Rectangle337 */
 .Rectangle337 {
@@ -110,8 +102,8 @@
 }
 
 /* Frame13 */
-.ReviewImgWrap img{
-      width: 121px;
+.ReviewImgWrap img {
+  width: 121px;
 }
 
 /* Italian */
@@ -126,9 +118,6 @@
   align-items: center;
   margin-top: 5px;
 }
-
-/* Ratingbackground */
-.Ratingbackground {}
 
 /* IconToggleStar24px */
 .IconToggleStar24px {
@@ -178,22 +167,23 @@
   width: 24px;
 }
 
-.profile-user-img{
+.profile-user-img {
 
-      display: flex;
-        align-content: center;
-        align-items: center;
-        justify-content: flex-start;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: flex-start;
 }
-.restaurant-info-reviews{
-    width: 400px;
-      height: 171px;
-      background: #FFFFFF;
-      border: 0.5px solid #EFEFEF;
-      box-shadow: 9px 28px 26px -37px rgba(0, 0, 0, 0.25);
-      border-radius: 26px;
-      display: flex;
-      align-items: center;
 
-      padding: 9px;
+.restaurant-info-reviews {
+  width: 400px;
+  height: 171px;
+  background: #FFFFFF;
+  border: 0.5px solid #EFEFEF;
+  box-shadow: 9px 28px 26px -37px rgba(0, 0, 0, 0.25);
+  border-radius: 26px;
+  display: flex;
+  align-items: center;
+
+  padding: 9px;
 }

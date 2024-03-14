@@ -1,0 +1,28 @@
+
+<%= simple_form_for [@restaurant , @review] do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :rating %>
+    <%= f.input :service %>
+    <%= f.input :description %>
+    <%= f.input :photo %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit "Add review", class: 'btn btn-primary'  %>
+        </div>
+<% end %>
+
+
+</div>
+
+</div>
+
+<div class="" style="width: 18rem;">
+
+
+</div>
+
+<%# <%= link_to "review", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %> %>

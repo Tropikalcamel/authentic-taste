@@ -1,11 +1,11 @@
-.profile {
+.profile-taster {
     display: flex;
-    /* align-items: center; */
-    width: 32%;
-    justify-content: center;
-
-    /* flex-direction: row;
-
+      /* align-items: center; */
+      width: 100%;
+      justify-content: center;
+      /* margin: 18px; */
+      border-bottom: 1px solid #fff2f2;
+      padding: 10px;
 }
 
 .profile-img {
@@ -13,36 +13,38 @@
   /* Adjust as needed */
 }
 
-.profile-img img {
-  width: 100px;
-  /* Adjust as needed */
-  height: 100px;
+.profile-img-taster img {
+    height: 72px;
   /* Adjust as needed */
   border-radius: 50%;
   /* Makes the image round */
 }
 
-.profile-info {
-  display: flex;
-  flex-direction: column;
+.profile-info-taster {
+display: flex;
+  flex-direction: row;
   margin-left: 12px;
   color: #333;
+  column-gap: 1;
+  flex-shrink: 12;
+  width: 148%;
+  justify-content: space-between;
 }
 
-.taster-name {
+.taster-name-taster {
   font-size: 1.2rem;
   /* Adjust as needed */
   font-weight: bold;
 }
 
-.taster-about {
+.taster-about-taster {
     font-size: 15px;
       color: #555;
       overflow: hidden;
       max-height: 49px;
 }
 
-.taster-btn {
+.taster-btn-taster {
   margin-top: 10px;
   /* Adjust as needed */
 }
@@ -61,4 +63,8 @@
 .v57_400:hover {
   background-color: #24b300;
   /* Adjust the hover background color as needed */
+}
+.username-desc{
+      display: flex;
+        flex-direction: column;
 }

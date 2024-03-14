@@ -1,3 +1,6 @@
+require 'faker'
+Faker::Config.locale = :en
+
   UserNationality.destroy_all
   Nationality.destroy_all
   User.destroy_all
@@ -88,11 +91,12 @@ nationality6= Nationality.create!(
 
 )
 
+
+
 UserNationality.create!(
 user_id: user1.id,
 nationality_id: nationality2.id
 )
-
 # NationalitiesList 1
  UserNationality.create!(
   user_id: user2.id,
@@ -126,10 +130,117 @@ user_nationality6= UserNationality.create!(
   nationality_id: nationality6.id
 )
 
+
+
+# nationalities= ["Turkish","American", "German", "Thai","Indian","Italian"]
+
+200.times do
+  username = Faker::Internet.username
+  photo = Faker::Avatar.image
+  email = Faker::Internet.email
+  password = Faker::Internet.password(min_length: 7)
+
+
+  User.create!(
+    username: username,
+    photo: photo,
+    email: email,
+    password: password,
+        )
+  end
+
+
+  # user_ids = User.pluck(:id)
+  nationality_id = UserNationality.pluck( :nationality_id)
+
+  User.all.each do |user|
+    #generate a random number
+    rand_num = rand(1..3)
+    used = []
+
+    rand_num.times do
+      nationality = nationality_id.sample
+      nationality_id.delete(nationality)
+      used << nationality
+
+      UserNationality.create!(
+        user_id: user.id,
+        nationality_id: nationality
+      )
+
+
+    end
+
+    used.each do |nationality|
+      nationality_id << nationality
+    end
+  end
+
+
+
+berlin_neighborhoods = [
+  'Kreuzberg', 'Neukölln', 'Prenzlauer Berg', 'Friedrichshain', 'Mitte',
+  'Spandau', 'Charlottenburg', 'Pankow', 'Schöneberg', 'Köpenick',
+  'Lichtenberg', 'Reinickendorf', 'Tempelhof', 'Wilmersdorf', 'Zehlendorf',
+  'Marzahn-Hellersdorf', 'Siemensstadt', 'Tegel', 'Alt-Treptow', 'Wedding',
+  'Falkenberg', 'Adlershof'
+]
+cuisine = [
+  'Italian', 'Chinese', 'Thai', 'Mexican', 'Indian',
+  'Turkish'
+]
+dietary_requirements =["Kosher", "Halal", "Vegan", "Vegetarian"]
+imagrestaurant = [  "https://imageproxy.wolt.com/venue/6049015c277cf0ebd69a61f7/cbc3ba12-077b-11ed-bc5c-722a4a08bf78_city_chicken_close_up_2.jpg",
+  "https://images.unsplash.com/photo-1543992321-cefacfc2322e?q=80&w=1700&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://plus.unsplash.com/premium_photo-1687888327531-090715f28f74?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://cdn.pixabay.com/photo/2016/11/22/18/52/cake-1850011_1280.jpg",
+  "https://cdn.pixabay.com/photo/2017/03/30/15/47/churros-2188871_1280.jpg",
+  "https://cdn.pixabay.com/photo/2017/02/15/10/57/pizza-2068272_1280.jpg",
+  "https://cdn.pixabay.com/photo/2018/08/29/19/01/fig-3640553_1280.jpg",
+  "https://cdn.pixabay.com/photo/2018/07/14/21/30/club-sandwich-3538455_1280.jpg",
+  "https://cdn.pixabay.com/photo/2018/10/14/18/29/meatloaf-3747129_1280.jpg",
+  "https://cdn.pixabay.com/photo/2016/11/19/12/44/burgers-1839090_1280.jpg",
+  "https://cdn.pixabay.com/photo/2016/06/06/18/29/meat-skewer-1440105_1280.jpg",
+  "https://cdn.pixabay.com/photo/2017/07/14/23/25/kebab-2505237_1280.jpg",
+  "https://cdn.pixabay.com/photo/2021/06/25/22/33/rice-6364832_1280.jpg",
+  "https://cdn.pixabay.com/photo/2021/02/26/21/57/swedish-6053302_1280.jpg",
+  "https://cdn.pixabay.com/photo/2016/11/19/12/44/burgers-1839090_1280.jpg",
+    "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://plus.unsplash.com/premium_photo-1661600643912-dc6dbb1db475?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1738&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://plus.unsplash.com/premium_photo-1674106347866-8282d8c19f84?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://cdn.pixabay.com/photo/2021/06/25/22/33/rice-6364832_1280.jpg",
+  "https://cdn.pixabay.com/photo/2021/02/26/21/57/swedish-6053302_1280.jpg",
+  "https://cdn.pixabay.com/photo/2016/11/19/12/44/burgers-1839090_1280.jpg",
+    "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://plus.unsplash.com/premium_photo-1661600643912-dc6dbb1db475?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1738&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://plus.unsplash.com/premium_photo-1674106347866-8282d8c19f84?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+]
+
+
+240.times do
+  Restaurant.create(
+    name: Faker::Restaurant.name,
+    address: Faker::Address.full_address,
+    cuisine: cuisine.sample,
+    phone: Faker::PhoneNumber.phone_number,
+    photo: imagrestaurant.sample,
+    description: Faker::Lorem.paragraph,
+    take_away: Faker::Boolean.boolean,
+    opening_hours: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :short),
+    neighborhood: berlin_neighborhoods.sample,
+    dietary_requirements: dietary_requirements.sample
+  )
+
+end
 restaurant1= Restaurant.create!(
   name: "City Chicken",
   address:"Sonnenallee 59, 12045 Berlin",
-  cuisine: "turkish",
+  cuisine: "Turkish",
   phone: "030-6248600",
   photo: "https://lh3.googleusercontent.com/p/AF1QipO5ocbjjwmv1W9aKz4Fj2aETBHNQ6UeQeG5LCGh=s1360-w1360-h1020-rw",
   description: "Best chicken",
@@ -190,10 +301,10 @@ restaurant4= Restaurant.create!(
 )
 
 # Seed 5
-restaurant5= Restaurant.create!(
+restaurant5 = Restaurant.create!(
   name: "Thai Mai",
   address: "Warschauer Straße 15, 10245 Berlin",
-  cuisine: "thai",
+  cuisine: "Thai",
   phone: "030-55554444",
   photo: "https://example.com/urban_eats.jpg",
   description: "A culinary adventure through Thai flavors, bringing the world to your plate.",
@@ -209,7 +320,7 @@ restaurant5= Restaurant.create!(
 restaurant6= Restaurant.create!(
   name: "Taco Delight",
   address: "Alexanderplatz 2, 10178 Berlin",
-  cuisine: "mexican",
+  cuisine: "Mexican",
   phone: "030-99998888",
   photo: "https://www.exberliner.com/wp-content/uploads/2023/09/Screenshot-2023-09-11-at-10-53-50-Taqueria-el-Oso-@taqueria_el_oso_berlin-%E2%80%A2-Instagram-photos-and-videos.png",
   description: "Experience the art of taco with our fresh and exquisite Mexican creations.",
@@ -221,6 +332,33 @@ restaurant6= Restaurant.create!(
   dietary_requirements: "Pescatarian options"
 )
 
+users = User.all
+restaurants = Restaurant.all
+
+
+4000.times do
+  user = users.sample
+  restaurant = restaurants.sample
+  weight= 1
+  user.nationalities.each do |nationality|
+    if nationality.name == restaurant.cuisine
+      weight= 2
+      break
+    end
+  end
+
+
+  Review.create!(
+    user_id: user.id,
+    restaurant_id: restaurant.id,
+    rating: rand(2..5),
+    service: rand(2..5),
+    weight: weight,
+    description: Faker::Lorem.paragraph,
+    created_at: Faker::Time.between(from: 1.month.ago, to: Time.now)
+  )
+end
+
 review1= Review.create!(
   user_id: user1.id,
   restaurant_id: restaurant1.id,
@@ -229,6 +367,8 @@ review1= Review.create!(
   description: "the greatest place in town! such a crazy chicken!",
   photo: "https://imageproxy.wolt.com/venue/6049015c277cf0ebd69a61f7/cbc3ba12-077b-11ed-bc5c-722a4a08bf78_city_chicken_close_up_2.jpg",
 )
+
+
 
 review2= Review.create!(
   user_id: user2.id,
@@ -248,7 +388,15 @@ review3= Review.create!(
   description: "Average experience. The ambiance could be improved, but the food was decent.",
 
 )
+review7= Review.create!(
+  user_id: user2.id,
+  restaurant_id: restaurant3.id,
+  rating: "5",
+  service: "5",
+  weight: 2,
+  description: "authenthic! the food and the service.",
 
+)
 # Review 4
 review4= Review.create!(
   user_id: user4.id,
@@ -278,6 +426,20 @@ review6= Review.create!(
   description: "the worst place in town! such a crazy chicken!",
   photo: "https://imageproxy.wolt.com/venue/6049015c277cf0ebd69a61f7/cbc3ba12-077b-11ed-bc5c-722a4a08bf78_city_chicken_close_up_2.jpg"
 )
+
+
+
+30.times do
+  user = users.sample
+  restaurant = restaurants.sample
+
+  Bookmark.create!(
+    user_id: user.id,
+    restaurant_id: restaurant.id,
+    )
+end
+
+
 bookmark1= Bookmark.create!(
   user_id: user1.id,
   restaurant_id: restaurant1.id,
@@ -328,3 +490,16 @@ follower02= Follower.create!(
   user_id: user1.id,
   taster_id: user5.id
 )
+
+
+# Assuming you have users in your database
+user_ids = User.pluck(:id)
+
+# Create multiple followers with Faker
+500.times do
+  Follower.create!(
+    user_id: user_ids.sample,
+    taster_id: user_ids.sample,
+    created_at: Faker::Time.between(from: 1.year.ago, to: Time.current)
+  )
+end

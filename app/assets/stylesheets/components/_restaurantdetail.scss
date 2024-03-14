@@ -1,6 +1,6 @@
 
 .rightCol {
-  width: 60%;
+  width: 49%;
   margin-top: 20px;
 }
 
@@ -46,7 +46,7 @@ width: 74.04px;
 }
 
 .Popular-rating-score.rating-score {
-  width: 92%;
+  // width: 92%;
   height: auto;
 }
 
@@ -303,7 +303,7 @@ display: inline-flex;
   align-items: flex-start;
   justify-content: center;
   gap: 37.27px;
-  padding: 40.82px 43.78px;
+  padding: 40.82px 36.78px;
   position: relative;
   background-color: #fcfcfc;
   border: 0px none;
@@ -315,7 +315,7 @@ display: inline-flex;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 36.09px;
+  gap: 57.09px;
   position: relative;
   flex: 0 0 auto;
 }
@@ -363,6 +363,7 @@ display: inline-flex;
   color: #b1471c;
   font-size: 29.9px;
   text-align: center;
+  margin: 0;
   letter-spacing: 0;
   line-height: normal;
   white-space: nowrap;
@@ -407,11 +408,11 @@ display: inline-flex;
 
 .badge-rating-card .element-of-italian-rate {
   position: relative;
-  width: 155.58px;
+  width: 184.58px;
   font-family: "Roboto", Helvetica;
   font-weight: 400;
   color: #773216;
-  font-size: 15.1px;
+font-size: 18.1px;
   text-align: center;
   letter-spacing: 0;
   line-height: normal;
@@ -422,7 +423,7 @@ display: inline-flex;
   font-family: "Roboto", Helvetica;
   font-weight: 400;
   color: #773216;
-  font-size: 15.1px;
+
   letter-spacing: 0;
 }
 
@@ -439,7 +440,7 @@ display: inline-flex;
 .badge-rating-card .rating-div {
   flex-direction: column;
   justify-content: center;
-  gap: 72.85px;
+  gap: 93.85px;
   display: inline-flex;
   align-items: center;
   position: relative;
@@ -480,7 +481,7 @@ display: inline-flex;
   font-family: "Roboto", Helvetica;
   font-weight: 400;
   color: #818181;
-  font-size: 8.9px;
+  font-size: 16.9px;
   letter-spacing: 0;
   line-height: normal;
   white-space: nowrap;
@@ -530,7 +531,22 @@ display: inline-flex;
   height: 10px;
   background-color: #ff7f00;
   border-radius: 13.01px;
+  animation: increaseWidth 2s forwards;
 }
+
+// animation
+@keyframes increaseWidth {
+  from {
+    width: 0;
+    /* Start with a width of 0 */
+  }
+
+  to {
+
+    /* End with the desired width */
+  }
+}
+// end Anim
 
 .badge-rating-card .tasters-users {
   position: relative;
@@ -546,7 +562,7 @@ display: inline-flex;
   font-family: "Roboto", Helvetica;
   font-weight: 400;
   color: #000000;
-  font-size: 15.1px;
+font-size: 20.1px;
   letter-spacing: 0;
   line-height: normal;
   white-space: nowrap;
@@ -556,16 +572,16 @@ display: inline-flex;
   font-family: "Roboto", Helvetica;
   font-weight: 400;
   color: #000000;
-  font-size: 15.1px;
   letter-spacing: 0;
 }
 
 .badge-rating-card .users-img {
-  display: inline-flex;
-  align-items: center;
-  position: absolute;
-  top: 28px;
-  left: 0;
+    display: inline-flex;
+      align-items: center;
+      position: absolute;
+      top: 28px;
+      left: 0;
+      cursor: pointer;
 }
 
 .badge-rating-card .img-2 {
@@ -619,7 +635,6 @@ display: inline-flex;
   left: 12px;
   font-weight: 600;
   color: #ffffff;
-  font-size: 15.1px;
   font-family: "Roboto", Helvetica;
   letter-spacing: 0;
   line-height: normal;
@@ -663,4 +678,64 @@ display: inline-flex;
   box-shadow: -2px 1px 85.8px 0px rgba(0, 0, 0, 0.14);
   position: sticky;
   top: 33px;
+}
+
+.category-badge p{
+  color: #ffffff;
+  background-color: #b1471c;
+  padding: 6px 13px;
+  margin: auto;
+  font-size: 19px;
+  border-radius: 24px;
+  border: solid #b6522a33 2px;
+  margin-bottom: 0;
+  display: flex;
+  font-weight: normal;
+  align-items: center;
+  align-content: center;
+  overscroll-behavior: none;
+}
+
+
+// for the % animation
+// img gallery
+
+.portfolio-menu{
+	text-align:center;
+}
+.portfolio-menu ul li{
+	display:inline-block;
+	margin:0;
+	list-style:none;
+	padding:10px 15px;
+	cursor:pointer;
+	-webkit-transition:all 05s ease;
+	-moz-transition:all 05s ease;
+	-ms-transition:all 05s ease;
+	-o-transition:all 05s ease;
+	transition:all .5s ease;
+}
+
+.portfolio-item{
+	/*width:100%;*/
+}
+.portfolio-item .item{
+    width: 185px;
+    float: left;
+    margin-bottom: 14px;
+    border-radius: 9px;
+}
+
+
+.restaurant-img-item{
+    max-width: 100%;
+      height: 100%;
+      margin: 0px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+.image-gallery{
+      padding-top: 45px;
+
 }

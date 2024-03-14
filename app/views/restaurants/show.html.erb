@@ -2,12 +2,12 @@
 
 
 <div class="">
+<img src="" alt="">
+  <img class="restaurant-cover-img" src="<%= @restaurant.photo %>" alt="" "card-img-top" >
 
-  <img class="restaurant-cover-img" src="https://imageproxy.wolt.com/venue/6049015c277cf0ebd69a61f7/cbc3ba12-077b-11ed-bc5c-722a4a08bf78_city_chicken_close_up_2.jpg" alt="" "card-img-top" >
 </div>
 
-
-<div class="container">
+<div class="container-xxl	">
 
 <div class=" flex-wrap">
 <div class="rightCol">
@@ -17,93 +17,92 @@
   </div>
 
   <div id="RestaurantDetail" class="tabcontent">
-    <!-- Restaurant detail content goes here -->
       <div id="listOfRestautants">
-      <!-- start Restaurant Title -->
-      <div class="restaurantTitle">
-          <h2>Restaurant name</h2>
-      </div>
-      <!-- END Restaurant Title -->
+        <!-- start Restaurant Title -->
+        <div class="restaurantTitle">
+            <h2><%= @restaurant.name %></h2>
+        </div>
+        <!-- END Restaurant Title -->
 
-      <!-- start Restaurant Rating - Price - OpenNow-->
-      <div class="restaurant-Rate-Price-OpenNow">
+        <!-- start Restaurant Rating - Price - OpenNow-->
+        <div class="restaurant-Rate-Price-OpenNow">
 
-          <div class=" restaurant-rating-scoreVar ">
-              <div class="restaurant-rating-scoreVar restaurant-rating" style="background-image: url(<%= asset_path('ratingbackground.svg') %>) ">
-                 <img class="Popular-rating-score rating-score" src="<%= asset_path('ratingscore.svg') %>" width="80%"   alt=" ">
-              </div>
-
-
-              <div class=" rateScorVar ">5</div>
-          </div>
+            <div class=" restaurant-rating-scoreVar ">
+                <div class="restaurant-rating-scoreVar restaurant-rating" style="background-image: url(<%= asset_path('ratingbackground.svg') %>) ">
+                  <img class="Popular-rating-score rating-score" src="<%= asset_path('ratingscore.svg') %>" width="<%= (@restaurant.calculate_average * 100) / 5 %>%"   alt=" ">
+                </div>
 
 
-          <div class="divider"></div>
-          <div class="restaurant-Price">€€€</div>
-          <div class="divider"></div>
-          <div class=" restaurant-OpenNow ">
-
-              <img src="<%= asset_path('Open-now-Icon.svg') %>" alt=" ">
-              <p>Open now</p>
-          </div>
-      </div>
-      <!-- END Restaurant Rating - Price - OpenNow-->
+                <div class=" rateScorVar "><%= sprintf("%.1f", @restaurant.calculate_average) %></div>
+            </div>
 
 
-      <!-- start Restaurant Cuisine / DietaryRestriction / Delivery -->
-      <div class="restaurant-Cuisine-DietaryRestriction-Delivery">
-          <div class="restaurant-Cuisine CuisineContainer">
-              <div class="CuisineImg">
+            <div class="divider"></div>
+            <div class="restaurant-Price">€€€</div>
+            <div class="divider"></div>
+            <div class=" restaurant-OpenNow ">
+
+                <img src="<%= asset_path('Open-now-Icon.svg') %>" alt=" ">
+                <p>Open now</p>
+            </div>
+        </div>
+        <!-- END Restaurant Rating - Price - OpenNow-->
 
 
-                <img src="<%= asset_path("indian.svg") %>" alt="">
-              </div>
-              <div class="CuisineTitle">
-                  <p>indian</p>
-              </div>
-          </div>
-          <div class="categoryDivider"></div>
-          <div class="restaurant-DietaryRestriction CuisineContainer">
-              <div class="CuisineImg">
-                  <img src="<%= asset_path("Kosher.svg") %>" alt="">
-              </div>
-              <div class="CuisineTitle">
-                  <p>Halal</p>
-              </div>
-          </div>
-          <div class="categoryDivider"></div>
-          <div class="restaurant-Delivery CuisineContainer">
-              <div class="CuisineImg">
-                  <img src="<%= asset_path("pickup.svg") %>" alt="">
-              </div>
-              <div class="CuisineTitle">
-                  <p>pickup</p>
-              </div>
-          </div>
-
-      </div>
-      <!-- END Restaurant Cuisine / DietaryRestriction / Delivery -->
+        <!-- start Restaurant Cuisine / DietaryRestriction / Delivery -->
+        <div class="restaurant-Cuisine-DietaryRestriction-Delivery">
+            <div class="restaurant-Cuisine Cuisinecontainer	">
+                <div class="CuisineImg">
 
 
-      <!-- start Restaurant Description -->
-      <div class="restaurantDescription">
-          <p>blabla restaurant/p>
-      </div>
-      <!-- End Restaurant Description -->
+                  <img src="<%= asset_path("indian.svg") %>" alt="">
+                </div>
+                <div class="CuisineTitle">
+                    <p>indian</p>
+                </div>
+            </div>
+            <div class="categoryDivider"></div>
+            <div class="restaurant-DietaryRestriction Cuisinecontainer	">
+                <div class="CuisineImg">
+                    <img src="<%= asset_path("Kosher.svg") %>" alt="">
+                </div>
+                <div class="CuisineTitle">
+                    <p>Halal</p>
+                </div>
+            </div>
+            <div class="categoryDivider"></div>
+            <div class="restaurant-Delivery Cuisinecontainer	">
+                <div class="CuisineImg">
+                    <img src="<%= asset_path("pickup.svg") %>" alt="">
+                </div>
+                <div class="CuisineTitle">
+                    <p>pickup</p>
+                </div>
+            </div>
 
-      <!-- start Restaurant Address -->
-      <div class="restaurant-Address">
-          <img class="Img-Icon" src="<%= asset_path("adressIcon.svg") %>" alt=" ">
-          <div class="textInfo">adress.str 15</div>
-      </div>
-      <!-- END Restaurant Address -->
+        </div>
+        <!-- END Restaurant Cuisine / DietaryRestriction / Delivery -->
 
-      <!-- start Restaurant Phone Number -->
-      <div class=" restaurant-tel ">
+
+        <!-- start Restaurant Description -->
+        <div class="restaurantDescription">
+            <p><%= @restaurant.description %></p>
+        </div>
+        <!-- End Restaurant Description -->
+
+        <!-- start Restaurant Address -->
+        <div class="restaurant-Address">
+            <img class="Img-Icon" src="<%= asset_path("adressIcon.svg") %>" alt=" ">
+            <div class="textInfo"><%= @restaurant.address %></div>
+        </div>
+        <!-- END Restaurant Address -->
+
+        <!-- start Restaurant Phone Number -->
+        <div class=" restaurant-tel ">
           <img class="Img-Icon" src="<%= asset_path("phoneIcon.svg") %>"alt=" ">
 
-          <div class="textInfo">+495265624555</div>
-      </div>
+          <div class="textInfo"><%= @restaurant.phone %></div>
+        </div>
       <!-- END Restaurant Phone Number -->
 
       <!-- start Restaurant OpningTime -->
@@ -116,6 +115,34 @@
 
       </div>
       <!-- END Restaurant OpningTime -->
+
+
+
+
+ <div class="image-gallery">
+
+         <div class="portfolio-item row">
+          <div class="item selfie ">
+              <a href="<%= @restaurant.photo %>" class="fancylight popup-btn" data-fancybox-group="light">
+              <img class="  restaurant-img-item" src="<%= @restaurant.photo %>" alt="">
+              </a>
+          </div>
+            <div class="item selfie ">
+              <a href="https://cdn.pixabay.com/photo/2021/02/26/21/57/swedish-6053302_1280.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+              <img class="  restaurant-img-item" src="https://cdn.pixabay.com/photo/2021/02/26/21/57/swedish-6053302_1280.jpg" alt="">
+              </a>
+          </div>
+          <div class="item selfie ">
+              <a href="https://cdn.pixabay.com/photo/2018/10/14/18/29/meatloaf-3747129_1280.jpg" class="fancylight popup-btn" data-fancybox-group="light">
+              <img class="restaurant-img-item" src="https://cdn.pixabay.com/photo/2018/10/14/18/29/meatloaf-3747129_1280.jpg" alt="">
+              </a>
+          </div>
+
+         </div>
+      </div>
+
+
+
 
   </div>
 
@@ -139,21 +166,25 @@
  <div class="badge-rating-card">
       <div class="badge-rating">
         <div class="badge-text">
+
           <div class="badge">
+
             <div class="badge-persentage">
               <img class="badge-left-wing" src="https://c.animaapp.com/GgaLeXbT/img/badge-left-wing-1.svg" />
-              <p class="element"><span class="text-wrapper">90</span> <span class="span">%</span></p>
+              <p class="element"><span class="text-wrapper"><%= (@average_rating * 100) / 5 %></span> <span class="span">%</span></p>
               <img class="badge-left-wing" src="https://c.animaapp.com/GgaLeXbT/img/badge-left-wing.svg" />
             </div>
             <p class="authentic-taste">
               <span class="text-wrapper-2">Authentic</span>
               <span class="text-wrapper-3">taste</span>
             </p>
+            <div class="category-badge"><p><%= @restaurant.cuisine %></p></div>
           </div>
+
           <img class="seperator" src="https://c.animaapp.com/GgaLeXbT/img/seperator-1.svg" />
           <p class="element-of-italian-rate">
-            <span class="text-wrapper-4">90% of </span>
-            <span class="text-wrapper-2">Italian<br /></span>
+            <span class="text-wrapper-4"><%= @restaurant.reviews.count %> of </span>
+            <span class="text-wrapper-2"><%= @restaurant.cuisine %><br /></span>
             <span class="text-wrapper-4">rate this restaurant as </span>
             <span class="text-wrapper-5">Authentic</span>
             <span class="text-wrapper-4"> taste.</span>
@@ -162,44 +193,53 @@
         <img class="img" src="https://c.animaapp.com/GgaLeXbT/img/seperator.svg" />
         <div class="rating-div">
           <div class="rating-score">
-            <div class="div">4.2</div>
-            <div class="element-reviews">1,200 Reviews</div>
+            <div class="div"><%= sprintf("%.1f", @restaurant.calculate_average) %></div>
+            <div class="element-reviews"><%= @restaurant.reviews.count %></div>
             <div class=" restaurant-rating-scoreVar ">
               <div class="restaurant-rating-scoreVar restaurant-rating" style="background-image: url(/assets/ratingbackground-ba9a001ee738eaf740c2e1ba23e5252f80cd4b10023bab69e1c7311a8707034a.svg) ">
-                 <img class="Popular-rating-score rating-score" src="/assets/ratingscore-80de8d55a2c8c420a5dcd401580190fe9bcc8fbb2f70bc91cf8ea37d43c72c6b.svg" width="80%" alt=" ">
+                 <img class="Popular-rating-score rating-score" src="/assets/ratingscore-80de8d55a2c8c420a5dcd401580190fe9bcc8fbb2f70bc91cf8ea37d43c72c6b.svg" width="<%= (@restaurant.calculate_average * 100) / 5 %>%" alt=" ">
               </div>
-              <div class=" rateScorVar ">5</div>
+              <div class=" rateScorVar "><%= sprintf("%.1f", @restaurant.calculate_average) %></div>
           </div>
           </div>
           <div class="rating-score-bar">
-            <div class="rating-bar">
-              <div class="text-wrapper-6">5.</div>
-              <div class="group"><div class="rating-bar-green"></div></div>
+            <div class="rating-bar" id="greenBar">
+              <div class="text-wrapper-6"><%= @restaurant.reviews.where(rating: 5).count %></div>
+              <div class="group"><div class="rating-bar-green" style="width:<%= (@restaurant.reviews.where(rating: 5).count.to_f / @restaurant.reviews.count * 100) %>%;" ></div></div>
             </div>
             <div class="rating-bar">
-              <div class="text-wrapper-6">4.</div>
-              <div class="group"><div class="rating-bar-green"></div></div>
+              <div class="text-wrapper-6"><%= @restaurant.reviews.where(rating: 4).count %></div>
+              <div class="group"><div class="rating-bar-green" style="width:<%= (@restaurant.reviews.where(rating: 4).count.to_f / @restaurant.reviews.count * 100) %>%;" ></div></div>
             </div>
             <div class="rating-bar">
-              <div class="text-wrapper-6">3.</div>
-              <div class="group"><div class="rating-bar-green"></div></div>
+              <div class="text-wrapper-6"><%= @restaurant.reviews.where(rating: 3).count %></div>
+              <div class="group"><div class="rating-bar-green" style="width:<%= (@restaurant.reviews.where(rating: 3).count.to_f / @restaurant.reviews.count * 100) %>%;" ></div></div>
             </div>
             <div class="rating-bar">
-              <div class="text-wrapper-6">2.</div>
-              <div class="group"><div class="rating-bar-green"></div></div>
+              <div class="text-wrapper-6"><%= @restaurant.reviews.where(rating: 2).count %></div>
+              <div class="group"><div class="rating-bar-green" style="width:<%= (@restaurant.reviews.where(rating: 2).count.to_f / @restaurant.reviews.count * 100) %>%;" ></div></div>
             </div>
             <div class="rating-bar">
-              <div class="text-wrapper-6">1.</div>
-              <div class="group"><div class="rating-bar-green"></div></div>
+              <div class="text-wrapper-6"><%= @restaurant.reviews.where(rating: 1).count %></div>
+              <div class="group"><div class="rating-bar-green" style="width:<%= (@restaurant.reviews.where(rating: 1).count.to_f / @restaurant.reviews.count * 100) %>%;" ></div></div>
             </div>
           </div>
         </div>
       </div>
       <div class="tasters-users">
+
+
+
+
+
+
+
+
+
         <p class="top-authentic">
           <span class="text-wrapper-7">Top authentic </span> <span class="text-wrapper">tasters</span>
         </p>
-        <div class="users-img">
+        <div class="users-img" data-bs-toggle="modal" data-bs-target="#exampleModal">
           <div class="img-2"></div>
           <img class="img-3" src="https://c.animaapp.com/GgaLeXbT/img/img2@2x.png" />
           <img class="img-4" src="https://c.animaapp.com/GgaLeXbT/img/img3@2x.png" />
@@ -210,8 +250,8 @@
           </div>
         </div>
       </div>
-    </div>
-  </body>
+
+
 
 
 
@@ -221,6 +261,28 @@
 </div>
 
 <div class="" style="width: 18rem;">
+        <%# popup code %>
+        <!-- Button trigger modal -->
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Top authentic tasters</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                 <%= render "shared/taster-restaurant-page" %>
+                 <%= render "shared/taster-restaurant-page" %>
+                 <%= render "shared/taster-restaurant-page" %>
+                 <%= render "shared/taster-restaurant-page" %>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <%# end popup %>
 
 
 </div>
@@ -230,7 +292,11 @@
 </div>
 
 <script>
-  function openTab(evt, tabName) {
+// Call the openTab function directly to open the "Restaurant Detail" tab by default
+openTab(null, 'RestaurantDetail');
+
+// Define the openTab function
+function openTab(evt, tabName) {
     var i, tabcontent, tablinks;
 
     // Hide all tabcontent elements
@@ -247,11 +313,77 @@
 
     // Show the current tab, and add an "active" class to the button that opened the tab
     document.getElementById(tabName).style.display = "block";
-    evt.currentTarget.className += " active";
-  }
+    if (evt) {
+        evt.currentTarget.className += " active";
+    }
+}
 
-  // By default, display the "Restaurant Detail" tab
-  document.addEventListener("DOMContentLoaded", function() {
-    document.querySelector('.tablinks.active').click();
+</script>
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+    var percentageElement = document.querySelector('.element .text-wrapper');
+    var currentPercentage = 0;
+    var targetPercentage = <%= (@average_rating * 100) / 5 %>;
+    var duration = 2000; // Duration in milliseconds
+    var increment = targetPercentage / (duration / 100); // Increment per 100 milliseconds
+
+    var interval = setInterval(function() {
+        if (currentPercentage >= targetPercentage) {
+            clearInterval(interval);
+        } else {
+            currentPercentage += increment;
+            percentageElement.textContent = Math.floor(currentPercentage);
+        }
+    }, 100);
+});
+
+
+</script>
+<script>
+        // $('.portfolio-item').isotope({
+        //  	itemSelector: '.item',
+        //  	layoutMode: 'fitRows'
+        //  });
+         $('.portfolio-menu ul li').click(function(){
+         	$('.portfolio-menu ul li').removeClass('active');
+         	$(this).addClass('active');
+
+         	var selector = $(this).attr('data-filter');
+         	$('.portfolio-item').isotope({
+         		filter:selector
+         	});
+         	return  false;
+         });
+         $(document).ready(function() {
+         var popup_btn = $('.popup-btn');
+         popup_btn.magnificPopup({
+         type : 'image',
+         gallery : {
+         	enabled : true
+         }
+         });
+         });
+</script>
+<script>
+$(document).ready(function() {
+  // Large modal
+  $('.bd-example-modal-lg').on('shown.bs.modal', function (e) {
+    // Modal is shown
   });
+
+  $('.bd-example-modal-lg').on('hidden.bs.modal', function (e) {
+    // Modal is hidden
+  });
+
+  // Small modal
+  $('.bd-example-modal-sm').on('shown.bs.modal', function (e) {
+    // Modal is shown
+  });
+
+  $('.bd-example-modal-sm').on('hidden.bs.modal', function (e) {
+    // Modal is hidden
+  });
+});
+
 </script>
