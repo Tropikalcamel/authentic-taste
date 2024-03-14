@@ -31,16 +31,16 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
   end
 
-  def update
-  @review = Review.find(params[:id])
-    if @review.update(review_params)
-      # Handle successful update
-      # redirect_to restaurant_review_path(params :restaurant_id), notice: 'Review was successfully updated.'
-    else
-      # Handle validation errors or other errors
-      render :edit
-    end
-  end
+  # def update
+  # @review = Review.find(params[:id])
+  #   if @review.update(review_params)
+  #     # Handle successful update
+  #     # redirect_to restaurant_review_path(params :restaurant_id), notice: 'Review was successfully updated.'
+  #   else
+  #     # Handle validation errors or other errors
+  #     render :edit
+  #   end
+  # end
 
   def destroy
     @review = Review.find(params[:id])
