@@ -34,7 +34,11 @@ end
 
   if average_rating_last_week > 4
     @top_restaurants_last_week << restaurant
+<<<<<<< HEAD
+
+=======
  
+>>>>>>> f95e809c19d4873c5c7b3e98ead406565516141a
   end
 end
 
