@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "pages#home"
+  devise_scope :user do
+    authenticated :user do
+      root to: 'pages#home', as: :authenticated_root
+    end
+    unauthenticated :user do
+      root to: 'devise/registrations#new', as: :unauthenticated_root
+    end
+  end
+
   resources :restaurants
 
   resources :restaurants do
