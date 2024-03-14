@@ -29,11 +29,11 @@
 
             <div class=" restaurant-rating-scoreVar ">
                 <div class="restaurant-rating-scoreVar restaurant-rating" style="background-image: url(<%= asset_path('ratingbackground.svg') %>) ">
-                  <img class="Popular-rating-score rating-score" src="<%= asset_path('ratingscore.svg') %>" width="80%"   alt=" ">
+                  <img class="Popular-rating-score rating-score" src="<%= asset_path('ratingscore.svg') %>" width="<%= (@restaurant.calculate_average * 100) / 5 %>%"   alt=" ">
                 </div>
 
 
-                <div class=" rateScorVar ">5</div>
+                <div class=" rateScorVar "><%= sprintf("%.1f", @restaurant.calculate_average) %></div>
             </div>
 
 
@@ -86,14 +86,14 @@
 
         <!-- start Restaurant Description -->
         <div class="restaurantDescription">
-            <p>blabla restaurant/p>
+            <p><%= @restaurant.description %></p>
         </div>
         <!-- End Restaurant Description -->
 
         <!-- start Restaurant Address -->
         <div class="restaurant-Address">
             <img class="Img-Icon" src="<%= asset_path("adressIcon.svg") %>" alt=" ">
-            <div class="textInfo">adress.str 15</div>
+            <div class="textInfo"><%= @restaurant.address %></div>
         </div>
         <!-- END Restaurant Address -->
 
@@ -101,7 +101,7 @@
         <div class=" restaurant-tel ">
           <img class="Img-Icon" src="<%= asset_path("phoneIcon.svg") %>"alt=" ">
 
-          <div class="textInfo">+495265624555</div>
+          <div class="textInfo"><%= @restaurant.phone %></div>
         </div>
       <!-- END Restaurant Phone Number -->
 
@@ -123,8 +123,8 @@
 
          <div class="portfolio-item row">
           <div class="item selfie ">
-              <a href="https://imageproxy.wolt.com/venue/6049015c277cf0ebd69a61f7/cbc3ba12-077b-11ed-bc5c-722a4a08bf78_city_chicken_close_up_2.jpg" class="fancylight popup-btn" data-fancybox-group="light">
-              <img class="  restaurant-img-item" src="https://imageproxy.wolt.com/venue/6049015c277cf0ebd69a61f7/cbc3ba12-077b-11ed-bc5c-722a4a08bf78_city_chicken_close_up_2.jpg" alt="">
+              <a href="<%= @restaurant.photo %>" class="fancylight popup-btn" data-fancybox-group="light">
+              <img class="  restaurant-img-item" src="<%= @restaurant.photo %>" alt="">
               </a>
           </div>
             <div class="item selfie ">
@@ -134,7 +134,7 @@
           </div>
           <div class="item selfie ">
               <a href="https://cdn.pixabay.com/photo/2018/10/14/18/29/meatloaf-3747129_1280.jpg" class="fancylight popup-btn" data-fancybox-group="light">
-              <img class="  restaurant-img-item" src="https://cdn.pixabay.com/photo/2018/10/14/18/29/meatloaf-3747129_1280.jpg" alt="">
+              <img class="restaurant-img-item" src="https://cdn.pixabay.com/photo/2018/10/14/18/29/meatloaf-3747129_1280.jpg" alt="">
               </a>
           </div>
 
@@ -178,13 +178,13 @@
               <span class="text-wrapper-2">Authentic</span>
               <span class="text-wrapper-3">taste</span>
             </p>
-            <div class="category-badge"><p>Italian</p></div>
+            <div class="category-badge"><p><%= @restaurant.cuisine %></p></div>
           </div>
 
           <img class="seperator" src="https://c.animaapp.com/GgaLeXbT/img/seperator-1.svg" />
           <p class="element-of-italian-rate">
-            <span class="text-wrapper-4">90% of </span>
-            <span class="text-wrapper-2">Italian<br /></span>
+            <span class="text-wrapper-4"><%= @restaurant.reviews.count %> of </span>
+            <span class="text-wrapper-2"><%= @restaurant.cuisine %><br /></span>
             <span class="text-wrapper-4">rate this restaurant as </span>
             <span class="text-wrapper-5">Authentic</span>
             <span class="text-wrapper-4"> taste.</span>
@@ -193,35 +193,35 @@
         <img class="img" src="https://c.animaapp.com/GgaLeXbT/img/seperator.svg" />
         <div class="rating-div">
           <div class="rating-score">
-            <div class="div">4.2</div>
-            <div class="element-reviews">1,200 Reviews</div>
+            <div class="div"><%= sprintf("%.1f", @restaurant.calculate_average) %></div>
+            <div class="element-reviews"><%= @restaurant.reviews.count %></div>
             <div class=" restaurant-rating-scoreVar ">
               <div class="restaurant-rating-scoreVar restaurant-rating" style="background-image: url(/assets/ratingbackground-ba9a001ee738eaf740c2e1ba23e5252f80cd4b10023bab69e1c7311a8707034a.svg) ">
-                 <img class="Popular-rating-score rating-score" src="/assets/ratingscore-80de8d55a2c8c420a5dcd401580190fe9bcc8fbb2f70bc91cf8ea37d43c72c6b.svg" width="80%" alt=" ">
+                 <img class="Popular-rating-score rating-score" src="/assets/ratingscore-80de8d55a2c8c420a5dcd401580190fe9bcc8fbb2f70bc91cf8ea37d43c72c6b.svg" width="<%= (@restaurant.calculate_average * 100) / 5 %>%" alt=" ">
               </div>
-              <div class=" rateScorVar ">5</div>
+              <div class=" rateScorVar "><%= sprintf("%.1f", @restaurant.calculate_average) %></div>
           </div>
           </div>
           <div class="rating-score-bar">
             <div class="rating-bar" id="greenBar">
-              <div class="text-wrapper-6"><%= Review.where(rating: 5).count %></div>
-              <div class="group"><div class="rating-bar-green" style="<%= (Review.where(rating: 5).count / Review.count * 100).round(2) %>%;" ></div></div>
+              <div class="text-wrapper-6"><%= @restaurant.reviews.where(rating: 5).count %></div>
+              <div class="group"><div class="rating-bar-green" style="width:<%= (@restaurant.reviews.where(rating: 5).count.to_f / @restaurant.reviews.count * 100) %>%;" ></div></div>
             </div>
             <div class="rating-bar">
-              <div class="text-wrapper-6"><%= Review.where(rating: 4).count %></div>
-              <div class="group"><div class="rating-bar-green" style="<%= (Review.where(rating: 4).count / Review.count * 100).round(2) %>%;" ></div></div>
+              <div class="text-wrapper-6"><%= @restaurant.reviews.where(rating: 4).count %></div>
+              <div class="group"><div class="rating-bar-green" style="width:<%= (@restaurant.reviews.where(rating: 4).count.to_f / @restaurant.reviews.count * 100) %>%;" ></div></div>
             </div>
             <div class="rating-bar">
-              <div class="text-wrapper-6"><%= Review.where(rating: 3).count %></div>
-              <div class="group"><div class="rating-bar-green" style="<%= (Review.where(rating: 3).count / Review.count * 100).round(2) %>%;" ></div></div>
+              <div class="text-wrapper-6"><%= @restaurant.reviews.where(rating: 3).count %></div>
+              <div class="group"><div class="rating-bar-green" style="width:<%= (@restaurant.reviews.where(rating: 3).count.to_f / @restaurant.reviews.count * 100) %>%;" ></div></div>
             </div>
             <div class="rating-bar">
-              <div class="text-wrapper-6"><%= Review.where(rating: 2).count %></div>
-              <div class="group"><div class="rating-bar-green" style="<%= (Review.where(rating: 2).count / Review.count * 100).round(2) %>%;" ></div></div>
+              <div class="text-wrapper-6"><%= @restaurant.reviews.where(rating: 2).count %></div>
+              <div class="group"><div class="rating-bar-green" style="width:<%= (@restaurant.reviews.where(rating: 2).count.to_f / @restaurant.reviews.count * 100) %>%;" ></div></div>
             </div>
             <div class="rating-bar">
-              <div class="text-wrapper-6"><%= Review.where(rating: 1).count %></div>
-              <div class="group"><div class="rating-bar-green" style="<%= (Review.where(rating: 1).count / Review.count * 100).round(2) %>%;" ></div></div>
+              <div class="text-wrapper-6"><%= @restaurant.reviews.where(rating: 1).count %></div>
+              <div class="group"><div class="rating-bar-green" style="width:<%= (@restaurant.reviews.where(rating: 1).count.to_f / @restaurant.reviews.count * 100) %>%;" ></div></div>
             </div>
           </div>
         </div>

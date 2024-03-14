@@ -1,14 +1,14 @@
 <div class="review-container ReviewRestaurantcontainer	">
 
-  <form id="review-form">
+  <form action='/restaurants/<%= @restaurant.id %>/reviews' method='post' id="review-form">
     <div class="form-group-review">
-     <textarea id="review-content" name="review-content" rows="4" cols="50" placeholder="Write your review here..." required></textarea>
+     <textarea id="review-content" name="review[description]" rows="4" cols="50" placeholder="Write your review here..." required></textarea>
     </div>
     <div class="reviewBtnBlex">
     <div class="form-group flex-review">
       <label class="label-margin" for="star-rating">Overall rating:</label>
       <div class="star-rating" id="star-rating">
-        <input type="hidden" name="rating" id="rating-value" value="0" />
+        <input type="hidden" name="review[rating]" id="rating-value" value="0" />
         <span class="star" data-value="1">&#9733;</span>
         <span class="star" data-value="2">&#9733;</span>
         <span class="star" data-value="3">&#9733;</span>

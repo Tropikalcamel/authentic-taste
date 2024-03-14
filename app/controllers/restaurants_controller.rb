@@ -21,19 +21,29 @@ class RestaurantsController < ApplicationController
     @average_rating = (review_sum / total_weight.to_f).round(1)
 
 
-    # show review
-    @review = Review.all
-      @review.order(created_at:  :desc, rating: :desc)
 
-      
+
+    @reviewers = @restaurant.reviews.includes(:user).map(&:user)
+
+
+    # show review
+
+    @restaurant = Restaurant.find(params[:id])
+    @review = Review.all
+    @sum_review = @restaurant.reviews.count
+
+
+    @review.order(created_at:  :desc, rating: :desc)
+
+
       # end
   end
 
 
 
-  # private
+  private
 
-  # def set_restaurant
-  #   @restaurant = Restaurant.find(params[:restaurant_id])
-  # end
+  def set_restaurant
+    @restaurant = Restaurant.find(params[:restaurant_id])
+  end
 end
