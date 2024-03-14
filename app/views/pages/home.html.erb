@@ -1,12 +1,20 @@
 <%= render "shared/search" %>
 <%= render "shared/categorybar"%>
 <%= render "shared/toprestaurants" %>
-<%= render "shared/trending" %>
+<h3 class="section-header">Trending <strong>restaurant</strong> </h3>
+
+<%= render "shared/trending", restaurants: @top_restaurants_last_week.take(6) %>
 <%= render "shared/tasterbar" %>
 <%= render "shared/reviews" %>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <%= render "shared/footer" %>
 
 =======
 >>>>>>> a618ed4fe85722509efed5c46214b73d3b33bd20
+=======
+
+<%= render "shared/footer" %>
+
+>>>>>>> 5765408fbfc2f560d174c99a8e17ea4581b6f5da
 <%= link_to "View Restaurants", restaurants_path, class: "btn btn-primary" %>

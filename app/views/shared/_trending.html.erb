@@ -1,15 +1,9 @@
 <div class="container-xxl	">
-<h3 class="section-header">Trending <strong>restaurant</strong> </h3>
 
 
 <div class="results-for-restaurants flex-wrap" data-controller="like-button">
 
-
-
-
-
-
-<% @top_restaurants_last_week.take(6).each do |restaurant| %>
+<% restaurants.each do |restaurant| %>
 
     <div class="restaurant-info">
     <div class="restaurant-img">

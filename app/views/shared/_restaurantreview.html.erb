@@ -1,4 +1,4 @@
-<% @reviewers.each do |reviewer| %>
+<% @restaurant.reviews.each do |review| %>
 
 <div class="ReviewRestaurantcontainer">
   <div class="ProfileImgBtn">
@@ -17,7 +17,7 @@
               <div class=" rateScorVar "><%= sprintf("%.1f", @restaurant.calculate_average) %></div>
           </div>
 
-        <div class="WadeWarren"><%= reviewer.username %></div>
+        <div class="WadeWarren"><%= review.user.username %></div>
       </div>
       <div class="followbtn" onclick="toggleFollow(this)">
         <div class="taster-btn">
@@ -34,7 +34,7 @@
 
   </div>
   <div class="ReviewContent">
-    <div class="description"><%= reviewer.description %></div>
+    <div class="description"><%= review.description %></div>
   </div>
 
 
