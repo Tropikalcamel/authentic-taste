@@ -22,12 +22,17 @@ class RestaurantsController < ApplicationController
 
 
 
-     
+
     @reviewers = @restaurant.reviews.includes(:user).map(&:user)
 
 
     # show review
+
+    @restaurant = Restaurant.find(params[:id])
     @review = Review.all
+    @sum_review = @restaurant.reviews.count
+
+
     @review.order(created_at:  :desc, rating: :desc)
 
 
@@ -36,9 +41,9 @@ class RestaurantsController < ApplicationController
 
 
 
-  # private
+  private
 
-  # def set_restaurant
-  #   @restaurant = Restaurant.find(params[:restaurant_id])
-  # end
+  def set_restaurant
+    @restaurant = Restaurant.find(params[:restaurant_id])
+  end
 end

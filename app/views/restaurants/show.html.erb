@@ -183,7 +183,7 @@
 
           <img class="seperator" src="https://c.animaapp.com/GgaLeXbT/img/seperator-1.svg" />
           <p class="element-of-italian-rate">
-            <span class="text-wrapper-4"><%= Review.count %> of </span>
+            <span class="text-wrapper-4"><%= @restaurant.reviews.count %> of </span>
             <span class="text-wrapper-2"><%= @restaurant.cuisine %><br /></span>
             <span class="text-wrapper-4">rate this restaurant as </span>
             <span class="text-wrapper-5">Authentic</span>
@@ -194,7 +194,7 @@
         <div class="rating-div">
           <div class="rating-score">
             <div class="div"><%= sprintf("%.1f", @restaurant.calculate_average) %></div>
-            <div class="element-reviews"><%= Review.count %></div>
+            <div class="element-reviews"><%= @restaurant.reviews.count %></div>
             <div class=" restaurant-rating-scoreVar ">
               <div class="restaurant-rating-scoreVar restaurant-rating" style="background-image: url(/assets/ratingbackground-ba9a001ee738eaf740c2e1ba23e5252f80cd4b10023bab69e1c7311a8707034a.svg) ">
                  <img class="Popular-rating-score rating-score" src="/assets/ratingscore-80de8d55a2c8c420a5dcd401580190fe9bcc8fbb2f70bc91cf8ea37d43c72c6b.svg" width="<%= (@restaurant.calculate_average * 100) / 5 %>%" alt=" ">
@@ -204,24 +204,24 @@
           </div>
           <div class="rating-score-bar">
             <div class="rating-bar" id="greenBar">
-              <div class="text-wrapper-6"><%= Review.where(rating: 5).count %></div>
-              <div class="group"><div class="rating-bar-green" style="width:<%= (Review.where(rating: 5).count.to_f / Review.count * 100) %>%;" ></div></div>
+              <div class="text-wrapper-6"><%= @restaurant.reviews.where(rating: 5).count %></div>
+              <div class="group"><div class="rating-bar-green" style="width:<%= (@restaurant.reviews.where(rating: 5).count.to_f / @restaurant.reviews.count * 100) %>%;" ></div></div>
             </div>
             <div class="rating-bar">
-              <div class="text-wrapper-6"><%= Review.where(rating: 4).count %></div>
-              <div class="group"><div class="rating-bar-green" style="width:<%= (Review.where(rating: 4).count.to_f / Review.count * 100) %>%;" ></div></div>
+              <div class="text-wrapper-6"><%= @restaurant.reviews.where(rating: 4).count %></div>
+              <div class="group"><div class="rating-bar-green" style="width:<%= (@restaurant.reviews.where(rating: 4).count.to_f / @restaurant.reviews.count * 100) %>%;" ></div></div>
             </div>
             <div class="rating-bar">
-              <div class="text-wrapper-6"><%= Review.where(rating: 3).count %></div>
-              <div class="group"><div class="rating-bar-green" style="width:<%= (Review.where(rating: 3).count.to_f / Review.count * 100) %>%;" ></div></div>
+              <div class="text-wrapper-6"><%= @restaurant.reviews.where(rating: 3).count %></div>
+              <div class="group"><div class="rating-bar-green" style="width:<%= (@restaurant.reviews.where(rating: 3).count.to_f / @restaurant.reviews.count * 100) %>%;" ></div></div>
             </div>
             <div class="rating-bar">
-              <div class="text-wrapper-6"><%= Review.where(rating: 2).count %></div>
-              <div class="group"><div class="rating-bar-green" style="width:<%= (Review.where(rating: 2).count.to_f / Review.count * 100) %>%;" ></div></div>
+              <div class="text-wrapper-6"><%= @restaurant.reviews.where(rating: 2).count %></div>
+              <div class="group"><div class="rating-bar-green" style="width:<%= (@restaurant.reviews.where(rating: 2).count.to_f / @restaurant.reviews.count * 100) %>%;" ></div></div>
             </div>
             <div class="rating-bar">
-              <div class="text-wrapper-6"><%= Review.where(rating: 1).count %></div>
-              <div class="group"><div class="rating-bar-green" style="width:<%= (Review.where(rating: 1).count.to_f / Review.count * 100) %>%;" ></div></div>
+              <div class="text-wrapper-6"><%= @restaurant.reviews.where(rating: 1).count %></div>
+              <div class="group"><div class="rating-bar-green" style="width:<%= (@restaurant.reviews.where(rating: 1).count.to_f / @restaurant.reviews.count * 100) %>%;" ></div></div>
             </div>
           </div>
         </div>
