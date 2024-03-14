@@ -12,11 +12,15 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.new
     @bookmark.user = current_user
     @bookmark.restaurant = @restaurant
+    respond_to do |format|
+
       if @bookmark.save
-      redirect_to profile_path
-      # needs to go confiramtion page
-    else
-      render "bookmark/new", status: :unprocessable_entity
+        format.html { redirect_to monument_path(@bookmark) }
+        format.json # Follows the classic Rails flow and look for a create.json view
+      else
+        format.html { render "monuments/new", status: :unprocessable_entity }
+        format.json # Follows the classic Rails flow and look for a create.json view
+      end
     end
   end
 
@@ -36,9 +40,10 @@ class BookmarksController < ApplicationController
   end
 
   def destroy
-    @bookmark = Bookmark.find(params[:id])
-    @bookmark.destroy
-    redirect_to profile_path, status: :see_other
+    bookmark = Bookmark.find_by(restaurant_id: params[:restaurant_id], user: current_user)
+    bookmark.destroy!
+    #@bookmark.destroy
+    #redirect_to profile_path, status: :see_other
   end
 
   private

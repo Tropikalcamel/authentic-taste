@@ -336,7 +336,7 @@ users = User.all
 restaurants = Restaurant.all
 
 
-800.times do
+4000.times do
   user = users.sample
   restaurant = restaurants.sample
   weight= 1

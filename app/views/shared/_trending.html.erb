@@ -1,7 +1,11 @@
 <div class="container-xxl	">
 <h3 class="section-header">Trending <strong>restaurant</strong> </h3>
 
-<div class="results-for-restaurants flex-wrap">
+
+<div class="results-for-restaurants flex-wrap" data-controller="like-button">
+
+
+
 
 
 
@@ -15,8 +19,8 @@
     <div class=" restaurant-text-info ">
         <div class=" restaurant-text-Title-favoriteIcon ">
             <h3 class=" restaurant-title "><a href=" # "><%= restaurant.name %></a></h3>
-          <div class="favorite-btn" onclick="toggleFavorite(this)">
-              <i class="fa fa-heart " id="heart-icon"></i>
+          <div class="favorite-btn" data-action="click->like-button#toggleFavorite" data-like-button-target='button'>
+              <i class="fa fa-heart " id="heart-icon" data-like-button-target='heart' data-user="<%= current_user.id %>" data-restaurant="<%= restaurant.id %> "></i>
           </div>
 
 
@@ -62,31 +66,3 @@
 
 
 </div>
-
-<script>
-
-function toggleFavorite(button) {
-    var heartIcon = button.querySelector(".favorite-btn");
-    heartIcon.classList.add("clicked");
-    setTimeout(function() {
-        heartIcon.style.transform = "scale(1)";
-        heartIcon.style.opacity = "1";
-        button.style.display = "block";
-    }, 500); // Adjust the delay to match the animation duration
-}
-
-
-</script>
-<script>
-// function toggleFavorite() {
-//     var heartIcon = document.getElementById('heart-icon');
-
-//     // Toggle the 'active' class to change the color
-//     heartIcon.classList.toggle('active');
-// }
-  function toggleFavorite(icon) {
-    // Toggle the 'active' class to change the color of the clicked icon
-    icon.classList.toggle('active');
-  }
-
-</script>
