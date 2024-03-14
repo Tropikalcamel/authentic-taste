@@ -27,7 +27,7 @@ class Restaurant < ApplicationRecord
           to_tsvector('english', coalesce(cuisine, '')) ||
           to_tsvector('english', coalesce(neighborhood, '')) ||
           to_tsvector('english', coalesce(dietary_requirements, '')),
-          plainto_tsquery('english', :query)
+          plainto_tsquery('english', query)
         ) DESC,
         authentic DESC
       SQL

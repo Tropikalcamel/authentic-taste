@@ -24,14 +24,20 @@
               <div class="action-title">
                 <h3>Find your favorite restaurant get authentic</h3>
               </div>
-                  <div class="search-box">
-                    <input type="text" class="search-input" placeholder="Start Looking For Something!">
-                    <a class="search-btn" href="#">
-                    Get authentic
-                      <!-- Seach Icon -->
-                      <i class="fas fa-search"></i>
-                    </a>
-                  </div>
+
+<div class="row justify-content-center">
+  <div class="col-sm-8 my-3">
+    <%= form_with url: restaurants_path, method: :get, class: "d-flex search-box" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "search-input",
+            placeholder: "Start Looking For Something!"
+        %>
+      <%= submit_tag 'Search', name: '', class: "search-btn" do %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
 
 
             </div>
