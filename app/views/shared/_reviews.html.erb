@@ -3,7 +3,7 @@
 <div class="container-xxl	">
 <h3 class="section-header">Top <strong>taster</strong> reviews</h3>
 
-<div class="flex-wrap">
+<div class="flex-wrap" data-controller="like-button">
 
 <% @reviews_of_the_week.take(3).each do |review| %>
 
@@ -27,18 +27,18 @@
   <div class="RestaurantCard">
   <div class="restaurant-info-reviews">
         <div class="restaurant-img">
-            <a href="#"><img class=" restaurant-img-link " src="https://imageproxy.wolt.com/venue/6049015c277cf0ebd69a61f7/cbc3ba12-077b-11ed-bc5c-722a4a08bf78_city_chicken_close_up_2.jpg" alt=" "></a>
+            <a href="#"><img class=" restaurant-img-link " src="<%= review.restaurant.photo %>" alt=" "></a>
         </div>
         <div class=" restaurant-text-info ">
             <div class=" restaurant-text-Title-favoriteIcon ">
                 <h3 class=" restaurant-title "><a href=" # "><%= review.restaurant.name %></a></h3>
-                <div class="favorite-btn" onclick="toggleFavorite(this)">
-                   <i class="fa fa-heart " id="heart-icon"></i>
+                <div class="favorite-btn" data-action="click->like-button#toggleFavorite">
+                   <i class="fa fa-heart " id="heart-icon" data-like-button-target='heart' data-user="<%= current_user.id %>" data-restaurant="<%= review.restaurant.id %>"></i>
                 </div>
             </div>
             <div class=" restaurant-adress ">
                 <img src=" /assets/adressIcon-9b5480c829a84d0145f4b452f421c50c081a6941bf1428316a887a06ceb36c21.svg" alt=" ">
-                <div><%= review.restaurant.address %></div>
+                <div><%= review.restaurant.description %></div>
             </div>
 
             <div class=" restaurant-rating-scoreVar ">
