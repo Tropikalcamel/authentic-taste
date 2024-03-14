@@ -1,11 +1,50 @@
 
+<img src="<%= asset_path('chicken.jpeg') %>" class="chicken" alt="banner">
+
+<div class="big-container">
+  <div class="left-container">
+    <div class="avatar-container">
+        <img class="custom-image" src="<%= asset_path('widget.png') %>">
+
+    <div class="container">
+      <div class="profile-name">
+        <h1>City Widget</h1>
+      </div>
+      <div class="profile-box">
+          <h2>About:</h2>
+          <p>Lorem ipsum</p>
+      </div>
+
+      <div class="profile-box">
+          <h2>Nationality:</h2>
+          <p>Italian</p>
+      </div>
+
+      <div class="profile-box">
+          <h2>Reviews:</h2>
+          <p>120</p>
+      </div>
+
+
 <div class="big-container-xxl	">
   <div class="left-container-xxl	">
     <div class="avatar-container-xxl	">
       <p>imag</p>
+
     </div>
-    <p>"profile details"</p>
   </div>
+
+</div>
+
+
+  <div class="right-container">
+        <div class="container">
+      <div class="top-right-container">
+          <h2>Widget's Favourites</h2>
+    <button class="orange-button">+ Add To My List</button>
+        </div>
+      <%= render "shared/reviewsProfile" %>
+
   <div class="right-container-xxl	">
       <div class="top-right-container-xxl	">
           <!-- Content for the top right container-xxl	 goes here -->
@@ -18,5 +57,6 @@
               <!-- Content for the bottom right subcontainer-xxl	 2 goes here -->
           </div>
       </div>
+
   </div>
 </div>
