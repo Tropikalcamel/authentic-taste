@@ -1,7 +1,19 @@
 class BookmarksController < ApplicationController
   before_action :set_restaurant, only: %i[ new create edit update destroy]
+
   def show
+    @bookmark = Bookmark.find_by(restaurant_id: params[:restaurant_id], user: current_user)
     @bookmark= Bookmark.all
+  end
+
+  def index
+    bookmarks = Bookmark.where(user_id: current_user.id)
+    @restaurants = []
+
+    bookmarks.each do |bookmark|
+      @restaurants << bookmark.restaurant
+    end
+
   end
 
   def new
