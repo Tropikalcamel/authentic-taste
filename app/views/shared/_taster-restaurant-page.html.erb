@@ -1,7 +1,7 @@
-<% @restaurant.reviews.each do |review| %>
+<% @restaurant.reviews.each_with_index  do |review, index| %>
 <div class="profile-taster">
   <div class="profile-img-taster">
-    <img src="https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1705658652/vqsr5vfilkemiywrdect.jpg" alt="">
+    <img src="<%= @teachers_img[index] %>" alt="">
   </div>
   <div class="profile-info-taster">
       <div class="username-desc">

@@ -1,10 +1,12 @@
-<% @restaurant.reviews.each do |review| %>
+
+<% @restaurant.reviews.each_with_index  do |review, index| %>
 
 <div class="ReviewRestaurantcontainer">
   <div class="ProfileImgBtn">
 
     <div class="profile-user-img">
-      <img class="Profile3" src="https://ca.slack-edge.com/T02NE0241-U02FW703QBZ-210ec2150a11-72" alt="">
+
+      <img class="Profile3" src="<%= @teachers_img[index] %>" alt="">
 
       <div class="reviewBtnFollow">
       <div class="profile-user">
