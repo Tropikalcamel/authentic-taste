@@ -6,7 +6,7 @@
 
 
 
-<div class="container-xxl	">
+<div class="container-xxl	" data-controller="arrow-button">
 
 <h3 class="section-header">Top <strong>restaurant</strong> </h3>
 <div class="flex-wrap">
@@ -18,7 +18,7 @@
 </div>
 
 <div class="carousel-container">
-  <div class="carousel">
+  <div class="carousel" data-arrow-button-target="carousel">
 
   <% @top_restaurants.each do |restaurant| %>
 
@@ -79,34 +79,10 @@
 
     <!-- Repeat the above div for each restaurant card -->
   </div>
-  <button class="prev" onclick="moveCarousel(-1)">&#10094;</button>
-  <button class="next" onclick="moveCarousel(1)">&#10095;</button>
+  <button class="prev" data-action="click->arrow-button#moveCarousel" data-direction='0'>&#10094;</button>
+  <button class="next" data-action="click->arrow-button#moveCarousel" data-direction='1'>&#10095;</button>
 </div>
 
 </div>
 </div>
 </section>
-
-
-
-
-<script>
-let currentIndex = 0;
-const carousel = document.querySelector('.carousel');
-
-function moveCarousel(direction) {
-  const cardWidth = carousel.offsetWidth / 5; // Display 5 cards at a time
-  const numCards = carousel.querySelectorAll('.restaurant-card').length;
-  const maxIndex = Math.ceil(numCards / 5) - 1;
-
-  currentIndex += direction;
-  if (currentIndex < 0) {
-    currentIndex = maxIndex;
-  } else if (currentIndex > maxIndex) {
-    currentIndex = 0;
-  }
-
-  const offset = -currentIndex * cardWidth * 5;
-  carousel.style.transform = `translateX(${offset}px)`;
-}
-</script>
