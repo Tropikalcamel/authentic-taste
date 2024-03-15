@@ -242,7 +242,7 @@ restaurant1= Restaurant.create!(
   address:"Sonnenallee 59, 12045 Berlin",
   cuisine: "Turkish",
   phone: "030-6248600",
-  photo: "https://lh3.googleusercontent.com/p/AF1QipO5ocbjjwmv1W9aKz4Fj2aETBHNQ6UeQeG5LCGh=s1360-w1360-h1020-rw",
+  photo: "https://mitvergnuegen.com/resizer/images/7b227769647468223a3636382c22686569676874223a3337367d/wp-content/uploads/2016/05/DSC_0101-1.jpg.webp",
   description: "Best chicken",
   take_away: true,
   price_catagory: "1",

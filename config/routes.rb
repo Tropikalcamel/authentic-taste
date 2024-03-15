@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :reviews
   end
   get 'profile', to: 'pages#profile', as: 'profile'
+  get 'users/:user_id/bookmarks', to: 'bookmarks#index', as: 'bookmarks_index'
   post 'users/:user_id/followers', to: "followers#create", as: :taster_follow
   delete 'users/:user_id/followers_destroy', to: "followers#destroy", as: :taster_destroy
   post 'users/:user_id/bookmarks', to: "bookmarks#create", as: :boomark_create
